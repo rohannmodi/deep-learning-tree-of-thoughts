@@ -27,6 +27,7 @@ We reproduce this CoT baseline (**10% on puzzles 901–910 with GPT-4o**), and e
 - **Competition algebra (MATH dataset)**: ToT BFS vs. CoT vs. IO
 - **5×5 Mini Crosswords**: ToT DFS with backtracking
 - **GSM8K**: Grade-school math word problems (CoT / IO baseline)
+- **Game of 24**: ToT BFS vs. CoT vs. IO
 
 Our key finding: **ToT's advantage is task-dependent**. On Game of 24, where CoT reliably fails, the search benefit is real. On structured algebra, CoT already traces the natural solution path, so ToT's overhead yields no benefit.
 
@@ -159,9 +160,9 @@ All experiments are inference-only (no training). A full MATH run of 30 problems
 
 | Method | Accuracy | LLM Calls (total) | Avg. Time/Problem |
 |--------|----------|-------------------|-------------------|
-| IO | 76.7% (23/30) | ~30 | 2–4s |
-| CoT | **83.3% (25/30)** | ~30 | 2–7s |
-| ToT BFS (b=3) | 73.3% (22/30) | ~1,800 | 36–188s |
+| IO | 84% | ~30 | 2–4s |
+| CoT | 88% | ~30 | 15–27s |
+| ToT BFS (b=3) | 88% | ~1,800 | 36–188s |
 
 CoT outperforms ToT despite ToT using ~60× more compute. A separate run of 10 different problems (seed=99) showed CoT at 100%, reinforcing the pattern.
 
