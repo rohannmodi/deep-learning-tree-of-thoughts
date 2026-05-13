@@ -1,0 +1,191 @@
+Logging output to run_20260503_215813.log...
+
+
+──────────── 3-Way MATH Benchmark  ·  Single-Shot | CoT | ToT ────────────
+
+  Model  : qwen2.5:1.5b
+  Subject: algebra   N: 2
+  Level  : 1
+  ToT    : k=3 thoughts, b=2 beam, depth≤5
+
+Loading dataset…
+Loaded 2 example(s).
+
+
+─────────────────── Problem 1/2  —  Algebra  [Level 1] ───────────────────
+
+Problem:
+What is the positive difference between $120\%$ of 30 and $130\%$ of 20?
+
+Ground truth answer: 10
+
+
+▶ Single-Shot
+
+\boxed{8}
+
+  Predicted: 8  → ✗ WRONG  (0.3s, 1 call)
+
+▶ Chain-of-Thought
+
+To find the positive difference between \(120\%\) of 30 and \(130\%\) of 20, we will follow these steps:
+
+1. Calculate \(120\%\) of 30.
+2. Calculate \(130\%\) of 20.
+3. Find the positive difference between the two results.
+
+**Step 1: Calculate \(120\%\) of 30**
+
+First, convert \(120\%\) to a decimal:
+\[ 120\% = \frac{120}{100} = 1.2 \]
+
+Now multiply 1.2 by 30:
+\[ 1.2 \times 30 = 36 \]
+
+So, \(120\%\) of 30 is 36.
+
+**Step 2: Calculate \(130\%\) of 20**
+
+First, convert \(130\%\) to a decimal:
+\[ 130\% = \frac{130}{100} = 1.3 \]
+
+Now multiply 1.3 by 20:
+\[ 1.3 \times 20 = 26 \]
+
+So, \(130\%\) of 20 is 26.
+
+**Step 3: Find the positive difference between the two results**
+
+Subtract the smaller result from the larger result:
+\[ 36 - 26 = 10 \]
+
+The positive difference between \(120\%\) of 30 and \(130\%\) of 20 is 10.
+
+**ANSWER:**
+\boxed{10}
+
+  Predicted: 10  → ✓ CORRECT  (4.2s, 1 call)
+
+▶ Tree-of-Thoughts
+  k=3 thoughts per node, beam b=2, max depth=5
+    [ToT] depth=0, expanding node (score=0)…
+      ↳ T1: To solve this problem, we first need to calculate \(120\%\) of 30. Then, we will... -> likely
+      ↳ T2: To find the positive difference between \(120\%\) of 30 and \(130\%\) of 20, we ... -> likely
+      ↳ T3: To find the positive difference between \(120\%\) of 30 and \(130\%\) of 20, we ... -> sure
+    [ToT] Solution found at depth 1.
+
+…(trajectory preview)…
+To find the positive difference between \(120\%\) of 30 and \(130\%\) of 20, we first need to calculate each percentage individually.
+
+### Step 1: Calculate \(120\%\) of 30
+\[ 120\% \text{ of } 30 = \frac{120}{100} \times 30 = 1.2 \times 30 = 36 \]
+
+### Step 2: Calculate \(130\%\) of 20
+\[ 130\% \text{ of } 20 = \frac{130}{100} \times 20 = 1.3 \times 20 = 26 \]
+
+### Step 3: Find the positive difference between the two results
+\[ 36 - 26 = 10 \]
+
+So, the positive difference is \(10\).
+
+Final answer:
+\[
+\boxed{10}
+\]
+
+  Predicted: 10  → ✓ CORRECT  (8.6s, 7 API calls)
+
+─────────────────── Problem 2/2  —  Algebra  [Level 1] ───────────────────
+
+Problem:
+If $2^8=4^x$, what is the value of $x$?
+
+Ground truth answer: 4
+
+
+▶ Single-Shot
+
+\boxed{3}
+
+  Predicted: 3  → ✗ WRONG  (0.2s, 1 call)
+
+▶ Chain-of-Thought
+
+To find the value of \( x \) in the equation \( 2^8 = 4^x \), we start by expressing both sides of the equation with a common base. Notice that \( 4 \) can be written as \( 2^2 \). Therefore, we rewrite the equation as follows:
+
+\[ 2^8 = (2^2)^x \]
+
+Using the property of exponents that states \((a^m)^n = a^{mn}\), we get:
+
+\[ 2^8 = 2^{2x} \]
+
+Since the bases are the same, we can equate the exponents:
+
+\[ 8 = 2x \]
+
+To solve for \( x \), divide both sides by 2:
+
+\[ x = \frac{8}{2} = 4 \]
+
+Thus, the value of \( x \) is:
+
+ANSWER: \boxed{4}
+
+Therefore, the final answer is 4.
+
+  Predicted: 4  → ✓ CORRECT  (2.3s, 1 call)
+
+▶ Tree-of-Thoughts
+  k=3 thoughts per node, beam b=2, max depth=5
+    [ToT] depth=0, expanding node (score=0)…
+      ↳ T1: To solve for \( x \) in the equation \( 2^8 = 4^x \), we need to express both si... -> sure
+    [ToT] Solution found at depth 1.
+
+…(trajectory preview)…
+To solve for \( x \) in the equation \( 2^8 = 4^x \), we need to express both sides with the same base. Notice that \( 4 \) can be written as a power of \( 2 \):
+
+\[ 4 = 2^2 \]
+
+Thus, substituting this into our original equation gives:
+
+\[ 2^8 = (2^2)^x \]
+
+Using the property of exponents that states \((a^m)^n = a^{mn}\), we can simplify the right side:
+
+\[ 2^8 = 2^{2x} \]
+
+Since the bases are now the same, we can equate the exponents:
+
+\[ 8 = 2x \]
+
+Now, solve for \( x \):
+
+\[ x = \frac{8}{2} \]
+\[ x = 4 \]
+
+Therefore, the value of \( x \) is:
+\[
+\boxed{4}
+\]
+
+  Predicted: 4  → ✓ CORRECT  (7.6s, 5 API calls)
+
+──────────────────────────────── Summary ────────────────────────────────
+
+
+  Strategy              Correct   Accuracy   Avg Time   Avg Calls
+  ─────────────────────────────────────────────────────────────────
+  Single-Shot          0/2         0%        0.2s         1.0
+  Chain-of-Thought     2/2       100%        3.2s         1.0
+  Tree-of-Thoughts     2/2       100%        8.1s         6.0
+
+  Note: accuracy uses \boxed{} extraction + LaTeX normalization.
+  ToT makes more API calls but explores multiple reasoning paths.
+
+
+  Per-problem breakdown:
+  #    Level    SS Ans             CoT Ans            ToT Ans            GT Ans
+  ──────────────────────────────────────────────────────────────────────────────────────────
+  1    Level 1  8                  10                 10                 10
+  2    Level 1  3                  4                  4                  4
+

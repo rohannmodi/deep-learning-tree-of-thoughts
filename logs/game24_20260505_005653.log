@@ -1,0 +1,43 @@
+Logging to game24_20260505_005653.log
+
+
+───────────────────── Game of 24  ·  IO | CoT | ToT ─────────────────────
+
+  Model: gemini-2.5-flash   N: 2   ToT: k=5, b=5, depth=3, search=bfs
+
+
+───────────────────────── Puzzle 1/2  —  1 2 3 4 ─────────────────────────
+
+
+▶ IO (Single-Shot)
+  (1+  →  ✗  (0.9s)
+
+▶ Chain-of-Thought
+  Step 1: 4 * 3 = 12  →  ✗  (2.4s)
+
+▶ ToT-BFS
+    [BFS] depth=0, beam size=1
+  Final: (no solution)  →  ✗  (2.9s, 1 API calls)
+
+───────────────────────── Puzzle 2/2  —  1 1 8 8 ─────────────────────────
+
+
+▶ IO (Single-Shot)
+  (8+  →  ✗  (0.8s)
+
+▶ Chain-of-Thought
+  Step 1: 8 / 1 = 8 (left:  →  ✗  (2.1s)
+
+▶ ToT-BFS
+    [BFS] depth=0, beam size=1
+  Final: (no solution)  →  ✗  (2.7s, 1 API calls)
+
+──────────────────────────────── Summary ────────────────────────────────
+
+
+  Strategy          Correct   Accuracy   Avg Time   Avg Calls
+  ────────────────────────────────────────────────────────────
+  IO             0/2         0%        0.9s         1.0
+  CoT            0/2         0%        2.3s         1.0
+  ToT-BFS        0/2         0%        2.8s         1.0
+

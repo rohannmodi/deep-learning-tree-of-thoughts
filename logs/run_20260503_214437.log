@@ -1,0 +1,20 @@
+Logging output to run_20260503_214437.log...
+
+usage: math_eval_3way.py [-h] [--model MODEL] [--n N] [--subject SUBJECT]
+                         [--tot-k TOT_K] [--tot-b TOT_B] [--tot-d TOT_D]
+                         [--level LEVEL] [--sim-threshold SIM_THRESHOLD]
+
+3-way MATH benchmark: Single-Shot | CoT | ToT via local Ollama
+
+options:
+  -h, --help            show this help message and exit
+  --model MODEL         Ollama model (default: llama3.1:8b)
+  --n N                 Number of examples (default: 2)
+  --subject SUBJECT     MATH subject (default: algebra)
+  --tot-k TOT_K         ToT thoughts per node (default: 3)
+  --tot-b TOT_B         ToT beam width (default: 2)
+  --tot-d TOT_D         ToT max depth (default: 5)
+  --level LEVEL         Filter by difficulty level (e.g. '5' for Level 5)
+  --sim-threshold SIM_THRESHOLD
+                        Character-level dedup similarity threshold 0–1
+                        (default: 0.85)

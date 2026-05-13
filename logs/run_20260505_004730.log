@@ -1,0 +1,153 @@
+Logging output to run_20260505_004730.log...
+
+
+─────────────── MATH Benchmark  ·  Single-Shot | CoT | ToT ───────────────
+
+  Model  : gemini-2.5-flash
+  Subject: algebra   N: 2
+  ToT    : k=5 thoughts, b=5 beam, depth≤3, search=BFS, eval_samples=1
+
+Loading dataset…
+Loaded 2 example(s).
+
+
+─────────────────── Problem 1/2  —  Algebra  [Level 3] ───────────────────
+
+Problem:
+How many vertical asymptotes does the graph of $y=\frac{2}{x^2+x-6}$ have?
+
+Ground truth answer: 2
+
+
+▶ Single-Shot
+
+\boxed{2}
+
+  Predicted: 2  → ✓ CORRECT  (1.7s, 1 call)
+
+▶ Chain-of-Thought
+
+To find the vertical asymptotes of a rational function, we need to find the values of x for which the denominator is equal to zero and the numerator is non-zero.
+
+The given function is $y=\frac{2}{x^2+x-6}$.
+The numerator is 2, which is never zero.
+We need to find the values of x for which the denominator is zero.
+Set the denominator equal to zero:
+$x^2+x-6=0$
+
+We can solve this quadratic equation by factoring. We are looking for two numbers that multiply to -6 and add to 1. These numbers are 3 and -2.
+So, we can factor the quadratic expression as:
+$(x+3)(x-2)=0$
+
+Now, set each factor equal to zero to find the values of x:
+$x+3=0 \Rightarrow x=-3$
+$x-2=0 \Rightarrow x=2$
+
+These are the x-values where the denominator is zero. Since the numerator (2) is not zero at these x-values, these are indeed the locations of the vertical asymptotes.
+Since we found two distinct values of x for which the denominator is zero, there are two vertical asymptotes.
+
+The final answer is $\boxed{2}$.
+
+  Predicted: 2  → ✓ CORRECT  (2.5s, 1 call)
+
+▶ ToT-BFS
+  k=5, b=5, depth≤3, eval_samples=1
+    [BFS] depth=0, expanding node…
+    [BFS] Consensus + verified: 5/5 agree at depth 1.
+
+…(trajectory preview)…
+
+So, we can factor the quadratic as:
+$(x+3)(x-2) = 0$
+
+Now, set each factor equal to zero to find the values of x:
+$x+3 = 0 \Rightarrow x = -3$
+$x-2 = 0 \Rightarrow x = 2$
+
+These are the x-values where the denominator is zero.
+Finally, we check if the numerator is zero at these x-values. The numerator is 2, which is a non-zero constant. Since the numerator is never zero, both $x=-3$ and $x=2$ correspond to vertical asymptotes.
+
+Since we found two distinct values for x that make the denominator zero and the numerator non-zero, there are two vertical asymptotes.
+
+The final answer is $\boxed{2}$.
+
+  Predicted: 2  → ✓ CORRECT  (17.4s, 6 API calls)
+
+─────────────────── Problem 2/2  —  Algebra  [Level 1] ───────────────────
+
+Problem:
+What is the positive difference between $120\%$ of 30 and $130\%$ of 20?
+
+Ground truth answer: 10
+
+
+▶ Single-Shot
+
+Let's calculate each part of the problem:
+
+First, calculate $120\%$ of 30:
+$120\%$ of 30 = $\frac{120}{100} \times 30 = 1.2 \times 30 = 36$.
+
+Next, calculate $130\%$ of 20:
+$130\%$ of 20 = $\frac{130}{100} \times 20 = 1.3 \times 20 = 26$.
+
+Finally, find the positive difference between these two values:
+Positive difference = $|36 - 26| = |10| = 10$.
+
+The final answer is $\boxed{10}$.
+
+  Predicted: 10  → ✓ CORRECT  (2.6s, 1 call)
+
+▶ Chain-of-Thought
+
+First, calculate 120% of 30:
+$120\%$ of $30 = (120/100) \times 30 = 1.20 \times 30 = 36$.
+
+Next, calculate 130% of 20:
+$130\%$ of $20 = (130/100) \times 20 = 1.30 \times 20 = 26$.
+
+Finally, find the positive difference between the two results:
+Positive difference = $|36 - 26| = 10$.
+
+The final answer is $\boxed{10}$.
+
+  Predicted: 10  → ✓ CORRECT  (1.9s, 1 call)
+
+▶ ToT-BFS
+  k=5, b=5, depth≤3, eval_samples=1
+    [BFS] depth=0, expanding node…
+      ↳ T1: First, calculate $120\%$ of 30. $120\%$ of 30 = $(120/100) \times 30 = 1.20 \tim... -> sure
+    [BFS] Solution found at depth 1.
+
+…(trajectory preview)…
+First, calculate $120\%$ of 30.
+$120\%$ of 30 = $(120/100) \times 30 = 1.20 \times 30 = 36$.
+
+Next, calculate $130\%$ of 20.
+$130\%$ of 20 = $(130/100) \times 20 = 1.30 \times 20 = 26$.
+
+Finally, find the positive difference between 36 and 26.
+Positive difference = $36 - 26 = 10$.
+
+The final answer is $\boxed{10}$.
+
+  Predicted: 10  → ✓ CORRECT  (12.0s, 6 API calls)
+
+──────────────────────────────── Summary ────────────────────────────────
+
+
+  Strategy                Correct   Accuracy   Avg Time   Avg Calls
+  ───────────────────────────────────────────────────────────────────
+  Single-Shot            2/2       100%        2.1s         1.0
+  Chain-of-Thought       2/2       100%        2.2s         1.0
+  ToT-BFS                2/2       100%       14.7s         6.0
+
+  Note: accuracy uses \boxed{} extraction + LaTeX normalization.
+
+
+  Per-problem breakdown:
+  #    Level    SS           CoT          BFS          GT
+  ──────────────────────────────────────────────────────────────────────────────────────────
+  1    Level 3  2           2           2            2
+  2    Level 1  10          10          10           10
+

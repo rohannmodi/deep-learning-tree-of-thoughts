@@ -1,0 +1,182 @@
+Logging output to run_20260505_004827.log...
+
+
+─────────────── MATH Benchmark  ·  Single-Shot | CoT | ToT ───────────────
+
+  Model  : gemini-2.5-flash
+  Subject: algebra   N: 2
+  Level  : 5
+  ToT    : k=5 thoughts, b=5 beam, depth≤3, search=BFS, eval_samples=1
+
+Loading dataset…
+Loaded 2 example(s).
+
+
+─────────────────── Problem 1/2  —  Algebra  [Level 5] ───────────────────
+
+Problem:
+Evaluate $i^5+i^{-25}+i^{45}$.
+
+Ground truth answer: i
+
+
+▶ Single-Shot
+
+To evaluate the expression $i^5+i^{-25}+i^{45}$,
+
+  Predicted: To evaluate the expression $i^5+i^{-25}+i^{45}$,  → ✗ WRONG  (2.8s, 1 call)
+
+▶ Chain-of-Thought
+
+To evaluate the expression $i^5+i^{-25}+i^{45}$, we need to simplify each term using the property that powers of
+
+  Predicted: need to simplify each term using the property that powers of  → ✗ WRONG  (3.6s, 1 call)
+
+▶ ToT-BFS
+  k=5, b=5, depth≤3, eval_samples=1
+    [BFS] depth=0, expanding node…
+      ↳ T1: To evaluate the expression $i^5+i^{-25}+i^{45}$, we need to simplify each term u... -> likely
+      ↳ T2: To evaluate $i^5+i^{-25}+i^{45}$, we need to simplify each term using the proper... -> likely
+      ↳ T3: To evaluate the expression $i^5+i^{-25}+i^{45}$, we use the property that $i^n$ ... -> likely
+      ↳ T4: To evaluate the expression $i^5+i^{-25}+i^{45}$, we need to simplify each term i... -> likely
+    [BFS] depth=1, expanding node…
+    [BFS] Consensus 4/4 but verifier disagrees — falling through.
+      ↳ T1: To evaluate the expression $i^5+i^{-25}+i^{45}$, we need to simplify each term u... -> likely
+      ↳ T2: Step 2: Simplify $i^{-25}$. For negative exponents, we can add multiples of 4 to... -> likely
+      ↳ T3: To evaluate the expression $i^5+i^{-25}+i^{45}$, we need to simplify each term u... -> likely
+      ↳ T4: Step 2: Simplify $i^{-25}$. For negative exponents, we can add multiples of 4 to... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: Continue from here. Solution: To evaluate $i^5+i^{-25}+i^{45}$, we need to simpl... -> likely
+      ↳ T2: To evaluate $i^5+i^{-25}+i^{45}$, we need to simplify each term using the proper... -> likely
+      ↳ T3: To evaluate $i^5+i^{-25}+i^{45}$, we need to simplify each term using the proper... -> likely
+      ↳ T4: Continue from here. Solution: To evaluate $i^5+i^{-25}+i^{45}$, we need to simpl... -> likely
+      ↳ T5: Continue from here. Solution: To evaluate $i^5+i^{-25}+i^{45}$, we need to simpl... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: For $i^{45}$: Divide 45 by 4: $45 = 4 \times 11 + 1$. So, $i^{45} = i^1 = i$.  N... -> likely
+    [BFS] depth=1, expanding node…
+    [BFS] Consensus 2/2 but verifier disagrees — falling through.
+      ↳ T1: Step 3: Simplify $i^{45}$. Divide 45 by 4: $45 = 4 \times 11 + 1$. So, $i^{45} =... -> likely
+      ↳ T2: Step 3: Simplify $i^{45}$. Divide 45 by 4: $45 = 4 \times 11 + 1$. So, $i^{45} =... -> likely
+      ↳ T3: Solution: The problem is to evaluate $i^5+i^{-25}+i^{45}$. We will simplify each... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: To evaluate the expression $i^5+i^{-25}+i^{45}$, we need to simplify each term u... -> likely
+      ↳ T2: Solution: To evaluate the expression $i^5+i^{-25}+i^{45}$, we need to simplify e... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: To evaluate the expression $i^5+i^{-25}+i^{45}$, we need to simplify each term u... -> likely
+      ↳ T2: To evaluate the expression $i^5+i^{-25}+i^{45}$, we need to simplify each term u... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: To evaluate the expression $i^5+i^{-25}+i^{45}$, we need to simplify each term u... -> likely
+      ↳ T2: To evaluate the expression $i^5+i^{-25}+i^{45}$, we use the property that powers... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: Solution: To evaluate the expression $i^5+i^{-25}+i^{45}$, we need to simplify e... -> likely
+      ↳ T2: To evaluate the expression $i^5+i^{-25}+i^{45}$, we need to simplify each term u... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: Solution: To evaluate $i^5+i^{-25}+i^{45}$, we need to simplify each term using ... -> likely
+      ↳ T2: Solution: To evaluate $i^5+i^{-25}+i^{45}$, we need to simplify each term using ... -> likely
+      ↳ T3: Solution: To evaluate $i^5+i^{-25}+i^{45}$, we need to simplify each term using ... -> likely
+      ↳ T4: Solution: To evaluate $i^5+i^{-25}+i^{45}$, we need to simplify each term using ... -> likely
+    [BFS] Search exhausted — returning greedy fallback.
+
+…(trajectory preview)…
+To evaluate the expression $i^5+i^{-25}+i^{45}$, we need to simplify each term using the property that powers of $i$ repeat in a cycle of 4: $i^1=i$, $i^2=-1$, $i^3=-i$, $i^4=1$. For any integer $n$, $i^n = i^{n \pmod 4}$, where the exponent is taken from {1, 2, 3, 0} corresponding to {i, -1, -i, 1}.
+
+Step 1: Simplify $i^5$.
+Divide 5 by 4: $5 = 4 \times 1 + 1$.
+So, $i^5 = i^1 = i$.
+
+Step 2: Simplify $i^{-25}$.
+For negative exponents, we can add multiples of 4 to the exponent until it becomes a positive remainder.
+$-25 \pmod 4$: We can
+
+  Predicted: Search failed  → ✗ WRONG  (228.4s, 91 API calls)
+
+─────────────────── Problem 2/2  —  Algebra  [Level 5] ───────────────────
+
+Problem:
+What is the smallest value of $x$ such that $|5x - 1| = |3x + 2|$? Express your answer as a common fraction.
+
+Ground truth answer: -\frac{1}{8}
+
+
+▶ Single-Shot
+
+To solve the equation $|5x - 1| = |3x + 2|$,
+
+  Predicted: To solve the equation $|5x - 1| = |3x + 2|$,  → ✗ WRONG  (2.7s, 1 call)
+
+▶ Chain-of-Thought
+
+To solve the equation $|5x - 1| = |3x + 2|$, we consider two cases:
+
+Case 1: The expressions inside the absolute values are equal.
+$5x - 1 = 3x + 2$
+Subtract $3x$ from both sides:
+$2x - 1 = 2$
+Add 1 to both sides:
+$2x = 3$
+Divide by 2:
+$x = \frac{3}{2}$
+
+Case 2:
+
+  Predicted: both sides:
+$2x = 3$
+Divide by 2:
+$x = \frac{3}{2}$
+
+Case 2:  → ✗ WRONG  (3.5s, 1 call)
+
+▶ ToT-BFS
+  k=5, b=5, depth≤3, eval_samples=1
+    [BFS] depth=0, expanding node…
+      ↳ T1: To solve the equation $|5x - 1| = |3x + 2|$, we consider two cases:  Case 1: $5x... -> sure
+    [BFS] Solution found at depth 1.
+
+…(trajectory preview)…
+e consider two cases:
+
+Case 1: $5x - 1 = 3x + 2$
+Subtract $3x$ from both sides:
+$2x - 1 = 2$
+Add $1$ to both sides:
+$2x = 3$
+Divide by $2$:
+$x = \frac{3}{2}$
+
+Case 2: $5x - 1 = -(3x + 2)$
+$5x - 1 = -3x - 2$
+Add $3x$ to both sides:
+$8x - 1 = -2$
+Add $1$ to both sides:
+$8x = -1$
+Divide by $8$:
+$x = -\frac{1}{8}$
+
+We have two possible values for $x$: $\frac{3}{2}$ and $-\frac{1}{8}$.
+To find the smallest value, we compare these two fractions.
+$\frac{3}{2} = 1.5$
+$-\frac{1}{8} = -0.125$
+Comparing $1.5$ and $-0.125$, the smallest value is $-\frac{1}{8}$.
+
+The final answer is $\boxed{-\frac{1}{8}}$.
+
+  Predicted: -\frac{1}{8}  → ✓ CORRECT  (19.5s, 6 API calls)
+
+──────────────────────────────── Summary ────────────────────────────────
+
+
+  Strategy                Correct   Accuracy   Avg Time   Avg Calls
+  ───────────────────────────────────────────────────────────────────
+  Single-Shot            0/2         0%        2.8s         1.0
+  Chain-of-Thought       0/2         0%        3.5s         1.0
+  ToT-BFS                1/2        50%      124.0s        48.5
+
+  Note: accuracy uses \boxed{} extraction + LaTeX normalization.
+
+
+  Per-problem breakdown:
+  #    Level    SS           CoT          BFS          GT
+  ──────────────────────────────────────────────────────────────────────────────────────────
+  1    Level 5  To evaluat..need to si..Search fai.. i
+  2    Level 5  To solve t..both sides..-\frac{1}{.. -\frac{1}{8}
+

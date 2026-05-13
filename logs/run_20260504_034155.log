@@ -1,0 +1,485 @@
+Logging output to run_20260504_034155.log...
+
+
+─────────────── MATH Benchmark  ·  Single-Shot | CoT | ToT ───────────────
+
+  Model  : llama3.1:8b
+  Subject: algebra   N: 5
+  ToT    : k=3 thoughts, b=3 beam, depth≤3, search=BFS, eval_samples=1
+
+Loading dataset…
+Loaded 5 example(s).
+
+
+─────────────────── Problem 1/5  —  Algebra  [Level 3] ───────────────────
+
+Problem:
+How many vertical asymptotes does the graph of $y=\frac{2}{x^2+x-6}$ have?
+
+Ground truth answer: 2
+
+
+▶ Single-Shot
+
+To find the number of vertical asymptotes, we need to determine how many values of x make the denominator equal to zero.
+
+The denominator is given by:
+$x^2 + x - 6$
+
+We can factor this expression as:
+$(x+3)(x-2)$
+
+Setting each factor equal to zero gives us:
+$x+3=0$ or $x-2=0$
+$x=-3$ or $x=2$
+
+Therefore, the graph of $y=\frac{2}{x^2+x-6}$ has two vertical asymptotes at x = -3 and x = 2.
+
+The final answer is: $\boxed{2}$
+
+  Predicted: 2  → ✓ CORRECT  (6.5s, 1 call)
+
+▶ Chain-of-Thought
+
+To find the number of vertical asymptotes for the given function $y=\frac{2}{x^2+x-6}$, we need to determine where the denominator is equal to zero.
+
+Step 1: Factorize the denominator.
+The denominator can be factored as $(x+3)(x-2)$.
+
+Step 2: Set each factor equal to zero and solve for x.
+Setting each factor equal to zero gives us:
+$x+3=0$ or $x-2=0$
+Solving these equations yields:
+$x=-3$ or $x=2$
+
+Step 3: Check if the numerator is also equal to zero at these points.
+Since the numerator is a constant (2), it will never be equal to zero.
+
+Step 4: Determine the number of vertical asymptotes.
+The function has vertical asymptotes at the values of x where the denominator is equal to zero and the numerator is not. Therefore, there are two vertical asymptotes at $x=-3$ and $x=2$.
+
+
+ANSWER: \boxed{2}
+
+  Predicted: 2  → ✓ CORRECT  (16.2s, 1 call)
+
+▶ ToT-BFS
+  k=3, b=3, depth≤3, eval_samples=1
+    [BFS] depth=0, expanding node…
+      ↳ T1: **Factorization and Simplification Approach** To find the vertical asymptotes, w... -> likely
+      ↳ T2: **Quadratic Formula Approach** We can use the quadratic formula to find the root... -> likely
+      ↳ T3: **Graphical Approach** We can examine the graph of the rational function to visu... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: **Rational Root Theorem Approach**  To find the vertical asymptotes, we need to ... -> likely
+      ↳ T2: **Limit-Based Approach**  We can find the vertical asymptotes by evaluating the ... -> likely
+      ↳ T3: **Partial Fraction Decomposition Approach**  We can rewrite the given function i... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: **Factoring Approach** We can factor the quadratic expression in the denominator... -> likely
+      ↳ T2: **Rational Zero Theorem Approach** We can use the Rational Zero Theorem to find ... -> likely
+      ↳ T3: **Graphical Insight Approach** Consider the graph of $y=\frac{2}{x^2+x-6}$.  If ... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: **Factorization Approach** Since we have found two potential vertical asymptotes... -> likely
+      ↳ T2: **Limit-Based Approach** To rigorously confirm our findings from the graphical a... -> likely
+      ↳ T3: **Rational Function Simplification Approach** Consider simplifying the given rat... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: **Graphical Approach** To find the number of vertical asymptotes, let's graph th... -> likely
+      ↳ T2: **Equating Numerator and Denominator Approach** To find the number of vertical a... -> likely
+      ↳ T3: **Limits Approach** To find the number of vertical asymptotes, let's use limits ... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: **Rational Function Simplification Approach** Since the given function is a rati... -> likely
+      ↳ T2: **Graphical Approach** To find the number of vertical asymptotes, we can try gra... -> likely
+      ↳ T3: **Invertible Function Approach** We recall that a rational function is invertibl... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: **Algebraic Manipulation Approach**  From the factored form $y=\frac{2}{(x+3)(x-... -> likely
+      ↳ T2: **Geometric Interpretation Approach**  We can interpret the function $y=\frac{2}... -> likely
+      ↳ T3: **Limit-Based Approach**  To find the vertical asymptotes, we can take the limit... -> likely
+    [BFS] All paths pruned — search failed.
+
+…(trajectory preview)…
+Search failed.
+
+  Predicted: Search failed  → ✗ WRONG  (262.5s, 28 API calls)
+
+─────────────────── Problem 2/5  —  Algebra  [Level 1] ───────────────────
+
+Problem:
+What is the positive difference between $120\%$ of 30 and $130\%$ of 20?
+
+Ground truth answer: 10
+
+
+▶ Single-Shot
+
+## Step 1: First, let's calculate 120% of 30.
+To find 120% of 30, we multiply 30 by 1.2.
+
+## Step 2: Next, let's calculate 130% of 20.
+To find 130% of 20, we multiply 20 by 1.3.
+
+## Step 3: Now, let's compute the actual values for both calculations from step 1 and step 2.
+120% of 30 is 36, and 130% of 20 is 26.
+
+## Step 4: Calculate the positive difference between the two results obtained in step 3.
+The positive difference between 36 and 26 is 10.
+
+The final answer is: $\boxed{10}$
+
+  Predicted: 10  → ✓ CORRECT  (7.2s, 1 call)
+
+▶ Chain-of-Thought
+
+To find the positive difference between $120\%$ of 30 and $130\%$ of 20, we first need to calculate each percentage.
+
+First, let's calculate $120\%$ of 30:
+
+$120\%$ of 30 = (120/100) × 30
+= 1.2 × 30
+= 36
+
+Next, let's calculate $130\%$ of 20:
+
+$130\%$ of 20 = (130/100) × 20
+= 1.3 × 20
+= 26
+
+Now that we have both values, we can find the positive difference between them by subtracting the smaller value from the larger one.
+
+Positive difference = Larger value - Smaller value
+= 36 - 26
+= 10
+
+ANSWER: \boxed{10}
+
+  Predicted: 10  → ✓ CORRECT  (8.8s, 1 call)
+
+▶ ToT-BFS
+  k=3, b=3, depth≤3, eval_samples=1
+    [BFS] depth=0, expanding node…
+      ↳ T1: **Direct Computation Approach**  Let's compute each expression separately. To fi... -> likely
+      ↳ T2: **Percentage-to-Difference Approach**  We notice that both expressions are perce... -> likely
+      ↳ T3: **Ratio-to-Percentage Approach**  Let's consider the ratios of these percentages... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: **Percentage Difference Approach**  Let's directly calculate the percentage diff... -> likely
+      ↳ T2: **Equation Representation Approach**  Let's represent the problem as an equation... -> likely
+      ↳ T3: **Proportion Approach**  Let's find the proportion of each given value to its co... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: **Direct Calculation Approach**  Let's directly calculate $120\%$ of 30 and $130... -> likely
+      ↳ T2: **Percentage-to-Decimal Approach**  We can convert each percentage to its decima... -> likely
+      ↳ T3: **Direct Percentage Comparison Approach**  We can compare the percentages direct... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: **Direct Percentage Calculation Approach** To find the positive difference betwe... -> likely
+      ↳ T2: **Base-Value Approach** We can also approach this problem by first finding the b... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: **Ratio-Based Approach**  We can express the problem as a ratio of $120\%$ to $1... -> likely
+      ↳ T2: **Algebraic Manipulation Approach**  We can express the problem as two algebraic... -> likely
+      ↳ T3: **Percentage-Point Difference Approach**  We can express each percentage value a... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: **Percentage as Factor Approach**  We can represent each percentage as a factor.... -> likely
+      ↳ T2: **Algebraic Expression Simplification Approach**  Let's simplify the expressions... -> likely
+      ↳ T3: **Ratio of Percentages Approach**  Let's approach this problem by finding a rela... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: **Percentage Point Approach**  Let's find $120\%$ of 30 and $130\%$ of 20 by tra... -> likely
+      ↳ T2: **Equivalent Ratio Approach**  Let's express $120\%$ of 30 and $130\%$ of 20 as ... -> likely
+      ↳ T3: **Distributive Property Approach**  Let's apply the distributive property to sim... -> likely
+    [BFS] All paths pruned — search failed.
+
+…(trajectory preview)…
+Search failed.
+
+  Predicted: Search failed  → ✗ WRONG  (239.4s, 27 API calls)
+
+─────────────────── Problem 3/5  —  Algebra  [Level 4] ───────────────────
+
+Problem:
+Find $x$ such that $\lceil x \rceil + x = \dfrac{23}{7}$. Express $x$ as a common fraction.
+
+Ground truth answer: \dfrac{9}{7}
+
+
+▶ Single-Shot
+
+\begin{align*}
+\lceil x \rceil+x&=\frac{23}{7}\\
+\Rightarrow\qquad \lceil x \rceil & = \frac{23}{7}-x\\
+\end{align*}Since $\lceil x\rceil$ is an integer, we must have that $x$ lies in the interval $(n,n+1)$ for some integer $n$.  Then $$n < x < n + 1$$and so $$n < \frac{23}{7}-x < n+1.$$We can now solve this inequality for $n$: \begin{align*}
+n&<\frac{23}{7}-x\\
+\Rightarrow\qquad n+\frac{23}{7}&>x\\
+\Rightarrow\qquad n+\frac{23}{7}&>\frac{23}{7}-x+x\\
+\Rightarrow\qquad n+\frac{23}{7}&>\frac{23}{7}+x-x\\
+\Rightarrow\qquad n&>0.
+\end{align*}Similarly, we can solve the inequality for $n+1$: \begin{align*}
+n+1&<\frac{23}{7}-x\\
+\Rightarrow\qquad n+\frac{8}{7}&<\frac{23}{7}-x\\
+\Rightarrow\qquad n+\frac{8}{7}+x&<\frac{23}{7}\\
+\Rightarrow\qquad n+x+\frac{8}{7}&<\frac{23}{7}.
+\end{align*}Since $n$ is an integer, we must have that $$n+x+\frac{8}{7}<1.$$We can now solve this inequality for $x$: \begin{align*}
+n+x+\frac{8}{7}&<1\\
+\Rightarrow\qquad n+x&<\frac{3}{7}\\
+\Rightarrow\qquad x&<\frac{3}{7}-n.
+\end{align*}Since we know that $x$ lies in the interval $(n,n+1)$, we can now combine this with our previous inequality to get $$0 < x < \min\left(\frac{3}{7}-n, 1-\frac{8}{7}\right).$$We can now solve for $\min\left(\frac{3}{7}-n, 1
+
+  Predicted: 7}\right).$$We can now solve for $\min\left(\frac{3}{7}-n, 1  → ✗ WRONG  (22.3s, 1 call)
+
+▶ Chain-of-Thought
+
+To find the value of \( x \) in the equation \( \lceil x \rceil + x = \frac{23}{7} \), let's break it down step by step.
+
+## Step 1: Understand what the ceiling function does
+The ceiling function, denoted as \( \lceil x \rceil \), rounds a number up to the nearest whole number. For example, \( \lceil 3.14 \rceil = 4 \) and \( \lceil -2.7 \rceil = -2 \).
+
+## Step 2: Analyze the given equation
+We have the equation \( \lceil x \rceil + x = \frac{23}{7} \). To solve for \( x \), we need to find a value that, when added to its ceiling (rounded up to the nearest whole number), equals \( \frac{23}{7} \).
+
+## Step 3: Determine the range of possible values for \( x \)
+Since \( \lceil x \rceil + x = \frac{23}{7} \) and knowing that \( \frac{23}{7} \approx 3.286 \), we can infer that \( x \) must be slightly less than 3 but greater than 2 because the ceiling of such a number would be 3, making the sum approximately equal to 6, which is too high.
+
+## Step 4: Test possible values for \( x \)
+Given that \( \lceil x \rceil = 3 \) (since it's slightly less than 3 but greater than 2), we can substitute this into our equation:
+\[ 3 + x = \frac{23}{7} \]
+
+## Step 5: Solve the equation for \( x \)
+Subtracting 3 from both sides of the equation gives us:
+\[ x = \frac{23}{7} - 3 \]
+To proceed, we need to express 3 as a fraction with a denominator of 7. Since \( 3 = \frac{21}{7} \), we can rewrite our equation as:
+\[ x = \frac{23}{7} - \frac{21}{7} \]
+
+## Step 6: Simplify the expression for \( x \)
+Subtracting the fractions gives us:
+\[ x = \frac{23 - 21}{7} = \frac{2}{7} \]
+
+The final answer is: $\boxed{\frac{2}{7}}$
+
+  Predicted: \frac{2}{7}  → ✗ WRONG  (23.7s, 1 call)
+
+▶ ToT-BFS
+  k=3, b=3, depth≤3, eval_samples=1
+    [BFS] depth=0, expanding node…
+      ↳ T1: **Rationalizing and Rearranging**  Given $\lceil x \rceil + x = \dfrac{23}{7}$, ... -> likely
+      ↳ T2: **Fractional Part Estimation**  Given $\lceil x \rceil + x = \dfrac{23}{7}$, we ... -> likely
+      ↳ T3: **Integer Part Guess-and-Check**  Given $\lceil x \rceil + x = \dfrac{23}{7}$, w... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: **Fractional Part Approach**  Since we know that $0 \leq n < 1$, we can rewrite ... -> likely
+      ↳ T2: **Rational Function Approach**  Let's try to find the value of $x$ by considerin... -> likely
+      ↳ T3: **Linear Diophantine Equation Approach**  We can rewrite the original equation a... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: **Algebraic Manipulation**  We can rewrite the original equation as $\lceil x \r... -> likely
+      ↳ T2: **Fractional Part Analysis**  Let's rewrite $x$ as $n + f$, where $n = \lceil x ... -> likely
+      ↳ T3: **Geometric Series Representation**  The equation $\lceil x \rceil + x = \dfrac{... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: **Fractional Analysis**  Given that $\lceil x \rceil + x = \dfrac{23}{7}$ and th... -> likely
+      ↳ T2: **Algebraic Manipulation**  The original problem states that $\lceil x \rceil + ... -> impossible
+    [BFS] depth=2, expanding node…
+      ↳ T1: **Algebraic Manipulation Approach**  We can rewrite the original equation as $\l... -> likely
+      ↳ T2: **Inequality Approach**  Since $\lceil x\rceil + x = \dfrac{23}{7}$, we know tha... -> likely
+      ↳ T3: **Upper Bound Approach**  Since $x = \lceil x\rceil + f$, we know that $x \geq \... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: We start with the given equation $\lceil x \rceil + x = \dfrac{23}{7}$. Since $x... -> likely
+      ↳ T2: Rearranging this, we get: $\lceil x \rceil < \dfrac{16}{7}$. Since $\lceil x \rc... -> likely
+      ↳ T3: For $\lceil x \rceil = 2$, we have $x + 1 = \dfrac{23}{7}$. Solving for $x$, we ... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: **Geometric Series Approach**  Since $\lceil x \rceil + x = \dfrac{23}{7}$, we c... -> impossible
+      ↳ T2: **Continued Fraction Approach**  We can rewrite the equation $\lceil x \rceil + ... -> likely
+      ↳ T3: **Fixed Point Iteration Approach**  We can rewrite the equation $\lceil x \rceil... -> likely
+    [BFS] All paths pruned — search failed.
+
+…(trajectory preview)…
+Search failed.
+
+  Predicted: Search failed  → ✗ WRONG  (494.5s, 27 API calls)
+
+─────────────────── Problem 4/5  —  Algebra  [Level 5] ───────────────────
+
+Problem:
+Evaluate $i^5+i^{-25}+i^{45}$.
+
+Ground truth answer: i
+
+
+▶ Single-Shot
+
+To evaluate the expression, we need to simplify each term separately.
+
+The powers of i repeat every 4 terms:
+$i^1 = i$
+$i^2 = -1$
+$i^3 = -i$
+$i^4 = 1$
+
+Then $i^5$ is equivalent to $i^{(4+1)}$, which simplifies to $i \cdot (i^4)$. Since $i^4=1$, we have:
+$i^5=i\cdot1=i$
+
+Next, for $i^{-25}$, we can rewrite it as $\frac{1}{i^{25}}$. The powers of i repeat every 4 terms, so we need to find the remainder when dividing 25 by 4. Since $25 \div 4 = 6$ with a remainder of 1, we have:
+$i^{-25}=\frac{1}{i^{(24+1)}}=\frac{1}{i\cdot(i^4)}=\frac{1}{i\cdot1}=\frac{1}{i}$
+
+To simplify $\frac{1}{i}$, multiply the numerator and denominator by $i$:
+$\frac{1}{i}= \frac{i}{i\cdot i} = \frac{i}{-1}=-i$
+
+Finally, for $i^{45}$, we can rewrite it as $(i^4)^{11}\cdot i$. Since $i^4=1$, we have:
+$i^{45}=(i^4)^{11}\cdot i= 1^{11}\cdot i=i$
+
+Now that we've simplified each term, we can add them together:
+$i^5+i^{-25}+i^{45}=i-i+i=\boxed{0}$
+
+  Predicted: 0  → ✗ WRONG  (15.9s, 1 call)
+
+▶ Chain-of-Thought
+
+To evaluate the expression $i^5+i^{-25}+i^{45}$, we need to understand the properties of the imaginary unit $i$. Recall that $i$ is defined as the square root of -1, denoted by $i = \sqrt{-1}$. 
+
+We know that $i^2 = -1$, which implies that $i^4 = (i^2)^2 = (-1)^2 = 1$. This means that powers of $i$ repeat in cycles of four: $i^1=i$, $i^2=-1$, $i^3=-i$, and $i^4=1$. 
+
+Now, let's evaluate each term separately:
+
+- For $i^5$: Since the power is 5, we can write it as $(i^4) \cdot i = 1 \cdot i = i$.
+
+- For $i^{-25}$: We can rewrite this as $\frac{1}{i^{25}}$. Recall that $i^{24}=(i^4)^6=1^6=1$, so we have $\frac{1}{i^{25}}=\frac{1}{i \cdot i^{24}} = \frac{i}{i^{24}} = \frac{i}{1}=i$.
+
+- For $i^{45}$: We can write this as $(i^4)^{11} \cdot i$, which simplifies to $1^{11} \cdot i=i$.
+
+Now, we add the three terms together: $i + i + i = 3i$. 
+
+ANSWER: \boxed{3i}
+
+  Predicted: 3i  → ✗ WRONG  (15.8s, 1 call)
+
+▶ ToT-BFS
+  k=3, b=3, depth≤3, eval_samples=1
+    [BFS] depth=0, expanding node…
+      ↳ T1: Express each power of $i$ in terms of its remainder when divided by 4, since pow... -> likely
+      ↳ T2: Use the fact that the imaginary unit $i$ satisfies $i^2=-1$. Then $i^5=i\cdot(i^... -> likely
+      ↳ T3: Express $i^5$, $i^{-25}$, and $i^{45}$ in terms of their polar form. The imagina... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: **Using Remainders of Exponents**  We rewrite each power of $i$ using its remain... -> likely
+      ↳ T2: **Factoring Out Common Terms**  We can factor out a common term from each of the... -> impossible
+      ↳ T3: **Grouping and Simplifying**  We group the first two terms together: $\displayst... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: Simplify each power of i individually, then combine like terms.  We have that $i... -> likely
+      ↳ T2: Use the geometric sum formula to evaluate the expression directly.  The imaginar... -> likely
+      ↳ T3: Use properties of exponents to simplify the powers of i, then use factoring and ... -> impossible
+    [BFS] depth=1, expanding node…
+      ↳ T1: **Direct Computation with Pattern Recognition** We can simplify the given expres... -> impossible
+      ↳ T2: **Geometric Series Formula for Complex Numbers** Recall that for any complex num... -> likely
+      ↳ T3: **Complex Conjugate and Modulus Properties** We can evaluate the given expressio... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: **De Moivre's Theorem with Binomial Expansion**  We express $i$ in polar form as... -> likely
+      ↳ T2: **Complex Conjugates**  We can use complex conjugates to simplify the given expr... -> likely
+      ↳ T3: **Properties of Complex Numbers**  We know that $i^{24}=1$, so we can express $i... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: **Modular Arithmetic Approach** We can evaluate each power of i by finding its r... -> likely
+      ↳ T2: **Grouping and Simplifying Approach** We group the first two terms together: $\d... -> likely
+      ↳ T3: **Properties of Complex Numbers Approach** Recall that $i^4=1$, so we can rewrit... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: **Modulo Arithmetic Approach**  Since powers of $i$ repeat in cycles of length 4... -> likely
+      ↳ T2: **Factorization and Cancellation Approach**  We can factor out common factors fr... -> likely
+      ↳ T3: **Periodicity and Summation Approach**  Since powers of $i$ repeat in cycles of ... -> likely
+    [BFS] All paths pruned — search failed.
+
+…(trajectory preview)…
+Search failed.
+
+  Predicted: Search failed  → ✗ WRONG  (217.9s, 28 API calls)
+
+─────────────────── Problem 5/5  —  Algebra  [Level 1] ───────────────────
+
+Problem:
+If $2^8=4^x$, what is the value of $x$?
+
+Ground truth answer: 4
+
+
+▶ Single-Shot
+
+## Step 1: Rewrite both sides with the same base
+We can rewrite $4^x$ as $(2^2)^x = 2^{2x}$.
+
+## Step 2: Equate the exponents
+Since the bases are equal, we can equate the exponents. Therefore, $8=2x$.
+
+## Step 3: Solve for x
+Divide both sides by 2 to solve for x: $x = \frac{8}{2} = 4$.
+
+
+The final answer is: $\boxed{4}$
+
+  Predicted: 4  → ✓ CORRECT  (5.1s, 1 call)
+
+▶ Chain-of-Thought
+
+To find the value of x, we can start by rewriting both sides of the equation with a common base. Since 4 = 2^2, we can rewrite 4^x as (2^2)^x.
+
+(2^8) = (2^2)^x
+
+Using the property of exponents that states (a^b)^c = a^(bc), we can simplify the right-hand side:
+
+2^8 = 2^(2x)
+
+Since the bases are equal, we can equate the exponents:
+
+8 = 2x
+
+To solve for x, we divide both sides by 2:
+
+x = 4
+
+ANSWER: \boxed{4}
+
+  Predicted: 4  → ✓ CORRECT  (6.9s, 1 call)
+
+▶ ToT-BFS
+  k=3, b=3, depth≤3, eval_samples=1
+    [BFS] depth=0, expanding node…
+      ↳ T1: Rewrite both sides with a common base. Since 4 = 2^2, we can rewrite 4^x as (2^2... -> likely
+      ↳ T2: Notice that 2^8 can be written as (2^3)^2 * 2^2 = (8 * 2) * 2^2 = 16 * 4. Now we... -> likely
+      ↳ T3: Simplify the equation using logarithms. Taking the base-2 logarithm (log_2) of b... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: Using Logarithms: Since $2^8=4^x$, we can rewrite the equation as $\log_2 (2^8) ... -> likely
+      ↳ T2: Exponent Manipulation: Rewrite $4^x$ as $(2^2)^x = 2^{2x}$. Now our equation bec... -> likely
+      ↳ T3: Algebraic Manipulation: Since $4^x = (2^2)^x$, let's rewrite our equation as $(2... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: **Algebraic Manipulation** We start with the given equation: $2^8=4^x$. Since $4... -> likely
+      ↳ T2: **Logarithmic Approach** We take the logarithm of both sides with base $4$: $\lo... -> impossible
+      ↳ T3: **Exponentiation by Trial and Error** We know from the problem statement that $x... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: **Algebraic Manipulation**  We can try to isolate x by manipulating the equation... -> likely
+      ↳ T2: **Change of Base Formula**  We can use the change of base formula for logarithms... -> likely
+      ↳ T3: **Exponentiation and Equality of Powers**  We can try to solve for x by exponent... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: **Using Exponent Rules to Isolate the Variable** We already rewrote both sides w... -> likely
+      ↳ T2: **Comparing the Powers of a Common Base** We know that both sides have base 2. S... -> likely
+      ↳ T3: **Solving Using a Change of Variables** Let's introduce a new variable: $y = 4^x... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: **Logarithmic Manipulation** Take the logarithm of both sides of the equation wi... -> likely
+      ↳ T2: **Exponent Comparison** Notice that $2^8$ is a power of 2, and we want to find a... -> likely
+      ↳ T3: **Quadratic Equation** Let's manipulate the original equation to get it into a q... -> impossible
+    [BFS] depth=2, expanding node…
+      ↳ T1: **Exponent Comparison**: Since both sides have a common base (2), we can directl... -> likely
+      ↳ T2: **Logarithmic Approach**: We can use logarithms to solve this problem. Since the... -> likely
+      ↳ T3: **Equating Powers**: Since both sides have the same base (2), we can rewrite our... -> likely
+    [BFS] All paths pruned — search failed.
+
+…(trajectory preview)…
+Search failed.
+
+  Predicted: Search failed  → ✗ WRONG  (178.7s, 28 API calls)
+
+──────────────────────────────── Summary ────────────────────────────────
+
+
+  Strategy                Correct   Accuracy   Avg Time   Avg Calls
+  ───────────────────────────────────────────────────────────────────
+  Single-Shot            3/5        60%       11.4s         1.0
+  Chain-of-Thought       3/5        60%       14.3s         1.0
+  ToT-BFS                0/5         0%      278.6s        27.6
+
+  Note: accuracy uses \boxed{} extraction + LaTeX normalization.
+
+
+  Per-problem breakdown:
+  #    Level    SS           CoT          BFS          GT
+  ──────────────────────────────────────────────────────────────────────────────────────────
+  1    Level 3  2           2           Search fai.. 2
+  2    Level 1  10          10          Search fai.. 10
+  3    Level 4  7}\right)...\frac{2}{7..Search fai.. \dfrac{9}{7}
+  4    Level 5  0           3i          Search fai.. i
+  5    Level 1  4           4           Search fai.. 4
+

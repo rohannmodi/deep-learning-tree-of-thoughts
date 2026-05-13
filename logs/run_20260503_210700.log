@@ -1,0 +1,71 @@
+Logging output to run_20260503_210700.log...
+
+
+──────────── 3-Way MATH Benchmark  ·  Single-Shot | CoT | ToT ────────────
+
+  Model  : qwen2.5:1.5b
+  Subject: algebra   N: 1
+  Level  : 1
+  ToT    : k=3 thoughts, b=2 beam, depth≤5
+
+Loading dataset…
+Loaded 1 example(s).
+
+
+─────────────────── Problem 1/1  —  Algebra  [Level 1] ───────────────────
+
+Problem:
+What is the positive difference between $120\%$ of 30 and $130\%$ of 20?
+
+Ground truth answer: 10
+
+
+▶ Single-Shot
+
+\boxed{8}
+
+  Predicted: 8  → ✗ WRONG  (19.8s, 1 call)
+
+▶ Chain-of-Thought
+
+To find the positive difference between \(120\%\) of 30 and \(130\%\) of 20, we will follow these steps:
+
+1. Calculate \(120\%\) of 30.
+2. Calculate \(130\%\) of 20.
+3. Find the positive difference between the two results.
+
+**Step 1: Calculate \(120\%\) of 30**
+
+First, convert \(120\%\) to a decimal:
+\[ 120\% = \frac{120}{100} = 1.2 \]
+
+Now multiply 1.2 by 30:
+\[ 1.2 \times 30 = 36 \]
+
+So, \(120\%\) of 30 is 36.
+
+**Step 2: Calculate \(130\%\) of 20**
+
+First, convert \(130\%\) to a decimal:
+\[ 130\% = \frac{130}{100} = 1.3 \]
+
+Now multiply 1.3 by 20:
+\[ 1.3 \times 20 = 26 \]
+
+So, \(130\%\) of 20 is 26.
+
+**Step 3: Find the positive difference between the two results**
+
+Subtract the smaller result from the larger result:
+\[ 36 - 26 = 10 \]
+
+The positive difference between \(120\%\) of 30 and \(130\%\) of 20 is 10.
+
+**ANSWER:**
+\boxed{10}
+
+  Predicted: 10  → ✓ CORRECT  (8.4s, 1 call)
+
+▶ Tree-of-Thoughts
+  k=3 thoughts per node, beam b=2, max depth=5
+    [ToT] depth=0, expanding node…

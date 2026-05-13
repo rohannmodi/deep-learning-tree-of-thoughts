@@ -1,0 +1,685 @@
+Logging output to run_20260505_023209.log...
+
+
+─────────────── MATH Benchmark  ·  Single-Shot | CoT | ToT ───────────────
+
+  Model  : gemini-2.5-flash
+  Subject: algebra   N: 5
+  Level  : 4
+  ToT    : k=5 thoughts, b=5 beam, depth≤3, search=BFS, eval_samples=3
+
+Loading dataset math…
+Loaded 5 example(s).
+
+
+─────────────────── Problem 1/5  —  Algebra  [Level 4] ───────────────────
+
+Problem:
+Find $x$ such that $\lceil x \rceil + x = \dfrac{23}{7}$. Express $x$ as a common fraction.
+
+Ground truth answer: \dfrac{9}{7}
+
+
+▶ Single-Shot
+
+Let $\lceil x \rceil = n$, where $n$ is an integer.
+Then $n-1 < x \le n$.
+
+The given equation is $n + x = \dfrac{23}{7}$.
+From this, $x = \dfrac{23}{7} - n$.
+
+Substitute this expression for $x$ into the inequality:
+$n-1 < \dfrac{23}{7} - n \le n$.
+
+We can split this into two inequalities:
+1) $n-1 < \dfrac{23}{7} - n$
+$2n < 1 + \dfrac{23}{7}$
+$2n < \dfrac{7+23}{7}$
+$2n < \dfrac{30}{7}$
+$n < \dfrac{15}{7}$
+$n < 2.14...$
+
+2) $\dfrac{23}{7} - n \le n$
+$\dfrac{23}{7} \le 2n$
+$\dfrac{23}{14} \le n$
+$1.64... \le n$
+
+Combining the two inequalities for $n$:
+$1.64... \le n < 2.14...$
+
+Since $n$ must be an integer, the only possible value for $n$ is $2$.
+So, $\lceil x \rceil = 2$.
+
+Now substitute $n=2$ back into the equation for $x$:
+$x = \dfrac{23}{7} - n$
+$x = \dfrac{23}{7} - 2$
+$x = \dfrac{23}{7} - \dfrac{14}{7}$
+$x = \dfrac{9}{7}$.
+
+Let's check if this value of $x$ satisfies the original condition.
+If $x = \dfrac{9}{7}$, then $\lceil x \rceil = \lceil \dfrac{9}{7} \rceil = \lceil 1.28... \rceil = 2$.
+The equation is $\lceil x \rceil + x = \dfrac{23}{7}$.
+Substituting the values: $2 + \dfrac{9}{7} = \dfrac{14}{7} + \dfrac{9}{7} = \dfrac{23}{7}$.
+
+  Predicted: dfrac{9}{7} = \dfrac{14}{7} + \dfrac{9}{7} = \dfrac{23}{7}$.  → ✗ WRONG  (2.7s, 1 call)
+
+▶ Chain-of-Thought
+
+Solution:
+Let $n = \lceil x \rceil$. By definition of the ceiling function, $n-1 < x \le n$.
+The given equation is $n + x = \dfrac{23}{7}$.
+From this equation, we can express $x$ in terms of $n$: $x = \dfrac{23}{7} - n$.
+
+Now substitute this expression for $x$ into the inequality $n-1 < x \le n$:
+$n-1 < \dfrac{23}{7} - n \le n$
+
+We can split this into two inequalities:
+1) $n-1 < \dfrac{23}{7} - n$
+$2n < \dfrac{23}{7} + 1$
+$2n < \dfrac{23+7}{7}$
+$2n < \dfrac{30}{7}$
+$n < \dfrac{15}{7}$
+Since $\dfrac{15}{7} \approx 2.14$, we have $n \le 2$.
+
+2) $\dfrac{23}{7} - n \le n$
+$\dfrac{23}{7} \le 2n$
+$n \ge \dfrac{23}{14}$
+Since $\dfrac{23}{14} \approx 1.64$, we have $n \ge 2$.
+
+Combining the two inequalities for $n$, we have $n \le 2$ and $n \ge 2$.
+Since $n$ must be an integer (as it is the ceiling of $x$), the only possible integer value for $n$ is $n=2$.
+
+Now substitute $n=2$ back into the equation for $x$:
+$x = \dfrac{23}{7} - n$
+$x = \dfrac{23}{7} - 2$
+$x = \dfrac{23}{7} - \dfrac{14}{7}$
+$x = \dfrac{23-14}{7}$
+$x = \dfrac{9}{7}$
+
+Let's verify this solution.
+If $x = \dfrac{9}{7}$, then $\lceil x \rceil = \lceil \dfrac{9}{7} \rceil = \lceil 1 \dfrac{2}{7} \rceil = 2$.
+Then $\lceil x \rceil + x = 2 + \dfrac{9}{7} = \dfrac{14}{7} + \dfrac{9}{7} = \dfrac{23}{7}$.
+This matches the given equation.
+
+The final answer is $\dfrac{9}{7}$.
+
+The final answer is $\boxed{\frac{9}{7}}$.
+
+  Predicted: \frac{9}{7}  → ✓ CORRECT  (3.2s, 1 call)
+
+▶ ToT-BFS
+  k=5, b=5, depth≤3, eval_samples=3
+    [BFS] depth=0, expanding node…
+    [BFS] Consensus + verified: 2/2 agree at depth 1.
+
+…(trajectory preview)…
+dition is $n=2$.
+
+Now substitute $n=2$ back into the equation for $x$:
+$x = \dfrac{23}{7} - n$
+$x = \dfrac{23}{7} - 2$
+$x = \dfrac{23}{7} - \dfrac{14}{7}$
+$x = \dfrac{9}{7}$.
+
+Let's check if this value of $x$ satisfies the original equation and the definition of $\lceil x \rceil$:
+If $x = \dfrac{9}{7}$, then $\lceil x \rceil = \lceil \dfrac{9}{7} \rceil = \lceil 1 \dfrac{2}{7} \rceil = 2$.
+Then $\lceil x \rceil + x = 2 + \dfrac{9}{7} = \dfrac{14}{7} + \dfrac{9}{7} = \dfrac{23}{7}$.
+This matches the given equation.
+
+The value of $x$ is $\dfrac{9}{7}$.
+
+The final answer is $\boxed{\frac{9}{7}}$.
+
+  Predicted: \frac{9}{7}  → ✓ CORRECT  (20.0s, 6 API calls)
+
+─────────────────── Problem 2/5  —  Algebra  [Level 4] ───────────────────
+
+Problem:
+For what values of $x$ is it true that $x^2 - 5x - 4 \le 10$? Express your answer in interval notation.
+
+Ground truth answer: x \in [-2,7]
+
+
+▶ Single-Shot
+
+The problem asks for the values of $x$ for which the inequality $x^2 - 5x - 4 \le 10$ is true.
+
+First, we need to rearrange the inequality to have 0 on one side:
+$x^2 - 5x - 4 - 10 \le 0$
+$x^2 - 5x - 14 \le 0$
+
+Next, we find the roots of the quadratic equation $x^2 - 5x - 14 = 0$. We can factor the quadratic expression. We are looking for two numbers that multiply to -14 and add to -5. These numbers are -7 and 2.
+So, the quadratic factors as $(x - 7)(x + 2) = 0$.
+
+The roots are $x = 7$ and $x = -2$.
+
+These roots divide the number line into three intervals: $(-\infty, -2)$, $(-2, 7)$, and $(7, \infty)$. We need to test a value from each interval to see where the inequality $x^2 - 5x - 14 \le 0$ holds true.
+
+1. For the interval $(-\infty, -2)$, let's pick $x = -3$:
+$(-3)^2 - 5(-3) - 14 = 9 + 15 - 14 = 24 - 14 = 10$.
+Since $10 \not\le 0$, this interval is not part of the solution.
+
+2. For the interval $(-2, 7)$, let's pick $x = 0$:
+$(0)^2 - 5(0) - 14 = 0 - 0 - 14 = -14$.
+Since $-14 \le 0$, this interval is part of the solution.
+
+3. For the interval $(7, \infty)$, let's pick $x = 8$:
+$(8)^2 - 5(8) - 14 = 64 - 40 - 14 = 24 - 14 = 10$.
+Since $10 \not\le 0$, this interval is not part of the solution.
+
+Since the inequality is $x^2 - 5x - 14 \le
+
+  Predicted: of the solution.
+
+Since the inequality is $x^2 - 5x - 14 \le  → ✗ WRONG  (2.6s, 1 call)
+
+▶ Chain-of-Thought
+
+Solution:
+We are asked to find the values of $x$ for which $x^2 - 5x - 4 \le 10$.
+First, we rewrite the inequality by moving all terms to one side:
+$x^2 - 5x - 4 - 10 \le 0$
+$x^2 - 5x - 14 \le 0$
+
+Next, we find the roots of the quadratic equation $x^2 - 5x - 14 = 0$. We can factor the quadratic expression. We need two numbers that multiply to -14 and add to -5. These numbers are -7 and 2.
+So, $(x - 7)(x + 2) = 0$.
+The roots are $x = 7$ and $x = -2$.
+
+These roots divide the number line into three intervals: $(-\infty, -2)$, $(-2, 7)$, and $(7, \infty)$. We need to test a value from each interval to see where the inequality $x^2 - 5x - 14 \le 0$ holds true.
+
+Interval 1: $(-\infty, -2)$
+Let's choose $x = -3$.
+$(-3)^2 - 5(-3) - 14 = 9 + 15 - 14 = 24 - 14 = 10$.
+Since $10 \not\le 0$, this interval is not part of the solution.
+
+Interval 2: $(-2, 7)$
+Let's choose $x = 0$.
+$(0)^2 - 5(0) - 14 = 0 - 0 - 14 = -14$.
+Since $-14 \le 0$, this interval is part of the solution.
+
+Interval 3: $(7, \infty)$
+Let's choose $x = 8$.
+$(8)^2 - 5(8) - 14 = 64 - 40 - 14 = 24 - 14 = 10$.
+Since $10 \not\le 0$, this interval is not part of the solution.
+
+Since the inequality is $x^2 - 5x - 14 \le 0$, we include the roots where the expression is equal to 0.
+Therefore, the solution includes $x = -2$ and $x = 7$.
+
+Combining the results, the inequality $x^2 - 5x - 14 \le 0$ is true for $x$ in the interval $[-2, 7]$.
+
+The final answer should be expressed in interval notation.
+
+The final answer is $\boxed{[-2, 7]}$.
+
+  Predicted: [-2, 7]  → ✗ WRONG  (3.2s, 1 call)
+
+▶ ToT-BFS
+  k=5, b=5, depth≤3, eval_samples=3
+    [BFS] depth=0, expanding node…
+    [BFS] Consensus + verified: 2/2 agree at depth 1.
+
+…(trajectory preview)…
+al 2: $(-2, 7)$
+Let's pick $x = 0$.
+$(0)^2 - 5(0) - 14 = 0 - 0 - 14 = -14$.
+Since $-14 \le 0$, this interval is part of the solution.
+
+Interval 3: $(7, \infty)$
+Let's pick $x = 8$.
+$(8)^2 - 5(8) - 14 = 64 - 40 - 14 = 24 - 14 = 10$.
+Since $10 \not\le 0$, this interval is not part of the solution.
+
+Since the inequality is $x^2 - 5x - 14 \le 0$, we include the roots where the expression is equal to 0.
+Therefore, the solution includes $x = -2$ and $x = 7$.
+
+Combining the results, the inequality $x^2 - 5x - 14 \le 0$ is true for $x$ in the interval $[-2, 7]$.
+
+The final answer is $\boxed{[-2, 7]}$.
+
+  Predicted: [-2, 7]  → ✗ WRONG  (19.0s, 6 API calls)
+
+─────────────────── Problem 3/5  —  Algebra  [Level 4] ───────────────────
+
+Problem:
+Mr. Madoff invests 1000 dollars in a fund that compounds annually at a constant interest rate.  After three years, his investment has grown to 1225 dollars.  What is the annual interest rate, as a percentage?  (Round your answer to the nearest integer.)
+
+Ground truth answer: 7
+
+
+▶ Single-Shot
+
+Let P be the initial investment, which is 1000 dollars.
+Let A be the final amount after three years, which is 1225 dollars.
+Let r be the annual interest rate.
+Let n be the number of years, which is 3.
+
+The formula for compound interest is:
+A = P(1 + r)^n
+
+Substitute the given values into the formula:
+1225 = 1000(1 + r)^3
+
+Divide both sides by 1000:
+1225 / 1000 = (1 + r)^3
+1.225 = (1 + r)^3
+
+To solve for (1 + r), take the cube root of both sides:
+(1.225)^(1/3) = 1 + r
+
+Calculate the cube root of 1.225:
+(1.225)^(1/3) ≈ 1.0700000000000001
+
+Now, solve for r:
+r = (1.225)^(1/3) - 1
+r ≈ 1.0700000000000001 - 1
+r ≈ 0.0700000000000001
+
+To express the interest rate as a percentage, multiply by 100:
+Percentage rate = r * 100
+Percentage rate ≈ 0.0700000000000001 * 100
+Percentage rate ≈ 7.00000000000001
+
+Round the answer to the nearest integer:
+The nearest integer to 7.00000000000001 is 7.
+
+The final answer is $\boxed{7}$
+
+  Predicted: 7  → ✓ CORRECT  (2.3s, 1 call)
+
+▶ Chain-of-Thought
+
+Let P be the initial investment, which is 1000 dollars.
+Let A be the final amount after three years, which is 1225 dollars.
+Let r be the annual interest rate.
+Let n be the number of years, which is 3.
+
+The formula for compound interest is A = P(1 + r)^n.
+
+We have A = 1225, P = 1000, and n = 3. We need to find r.
+
+1225 = 1000(1 + r)^3
+
+Divide both sides by 1000:
+1225 / 1000 = (1 + r)^3
+1.225 = (1 + r)^3
+
+Take the cube root of both sides:
+(1.225)^(1/3) = 1 + r
+
+Calculate the cube root of 1.225:
+(1.225)^(1/3) ≈ 1.06999
+
+So, 1.06999 ≈ 1 + r
+
+Subtract 1 from both sides to find r:
+r ≈ 1.06999 - 1
+r ≈ 0.06999
+
+To express the interest rate as a percentage, multiply by 100:
+r_percentage ≈ 0.06999 × 100
+r_percentage ≈ 6.999%
+
+Round the answer to the nearest integer:
+6.999% rounded to the nearest integer is 7%.
+
+The final answer is $\boxed{7}$.
+
+  Predicted: 7  → ✓ CORRECT  (2.2s, 1 call)
+
+▶ ToT-BFS
+  k=5, b=5, depth≤3, eval_samples=3
+    [BFS] depth=0, expanding node…
+    [BFS] Consensus + verified: 3/3 agree at depth 1.
+
+…(trajectory preview)…
+)^n.
+
+We are given A = 1225, P = 1000, and n = 3. We need to find r.
+
+1225 = 1000(1 + r)^3
+
+Divide both sides by 1000:
+1225 / 1000 = (1 + r)^3
+1.225 = (1 + r)^3
+
+Take the cube root of both sides:
+(1.225)^(1/3) = 1 + r
+
+Calculate the cube root of 1.225:
+(1.225)^(1/3) ≈ 1.06999
+
+So, 1.06999 ≈ 1 + r
+
+Subtract 1 from both sides to find r:
+r ≈ 1.06999 - 1
+r ≈ 0.06999
+
+To express the interest rate as a percentage, multiply by 100:
+r_percentage ≈ 0.06999 × 100
+r_percentage ≈ 6.999%
+
+Round the answer to the nearest integer:
+6.999% rounded to the nearest integer is 7%.
+
+The final answer is $\boxed{7}$.
+
+  Predicted: 7  → ✓ CORRECT  (13.0s, 6 API calls)
+
+─────────────────── Problem 4/5  —  Algebra  [Level 4] ───────────────────
+
+Problem:
+Four distinct integers $a$, $b$, $c$ and $d$ have the property that when added in pairs, the sums 10, 18, 19, 20, 21, and 29 are obtained. What are the four integers in increasing order? (place a comma and then a space between each integer)
+
+Ground truth answer: 4,6,14,15
+
+
+▶ Single-Shot
+
+Let the four distinct integers be $a, b, c, d$ in increasing order, so $a < b < c < d$.
+When added in pairs, the sums are:
+$a+b$
+$a+c$
+$a+d$
+$b+c$
+$b+d$
+$c+d$
+
+Since $a < b < c < d$, we can deduce the order of these sums:
+$a+b < a+c < a+d$
+$a+b < b+c < b+d$
+$a+c < b+c < c+d$
+$a+d < b+d < c+d$
+
+Combining these, we can identify the smallest and largest sums:
+The smallest sum must be $a+b$.
+The largest sum must be $c+d$.
+
+Given the sums are 10, 18, 19, 20, 21, 29.
+So, $a+b = 10$ (Equation 1)
+And $c+d = 29$ (Equation 2)
+
+The sum of all pairs is $(a+b) + (a+c) + (a+d) + (b+c) + (b+d) + (c+d)$.
+This can also be written as $3(a+b+c+d)$.
+The sum of the given sums is $10+18+19+20+21+29 = 117$.
+So, $3(a+b+c+d) = 117$.
+$a+b+c+d = 117/3 = 39$ (Equation 3)
+
+Substitute Equation 1 and Equation 2 into Equation 3:
+$(a+b) + (c+d) = 39$
+$10 + 29 = 39$
+$39 = 39$. This confirms our assignments for the smallest and largest sums.
+
+Now we have the remaining sums: 18, 19, 20, 21.
+These correspond to $a+c, a+d, b+c, b+d$.
+We know $a+c < b+c$ and $a+d
+
+  Predicted: espond to $a+c, a+d, b+c, b+d$.
+We know $a+c < b+c$ and $a+d  → ✗ WRONG  (2.8s, 1 call)
+
+▶ Chain-of-Thought
+
+Solution:
+Let the four distinct integers be $a < b < c < d$.
+When added in pairs, we get six sums:
+$a+b$
+$a+c$
+$a+d$
+$b+c$
+$b+d$
+$c+d$
+
+Since $a < b < c < d$, we can order the sums:
+$a+b < a+c < b+c$ (since $a+c < a+d$ and $b+c < b+d$)
+$a+b < a+c < a+d$
+$a+b < b+c < c+d$
+$a+c < b+c < b+d$
+$a+d < b+d < c+d$
+
+The smallest sum must be $a+b$ and the largest sum must be $c+d$.
+Given sums are 10, 18, 19, 20, 21, 29.
+So, $a+b = 10$ (Equation 1)
+And $c+d = 29$ (Equation 2)
+
+The sum of all six sums is:
+$(a+b) + (a+c) + (a+d) + (b+c) + (b+d) + (c+d)$
+$= 3a + 3b + 3c + 3d = 3(a+b+c+d)$
+
+The sum of the given sums is $10+18+19+20+21+29 = 117$.
+So, $3(a+b+c+d) = 117$
+$a+b+c+d = 117/3 = 39$ (Equation 3)
+
+Substitute Equation 1 and Equation 2 into Equation 3:
+$(a+b) + (c+d) = 39$
+$10 + 29 = 39$
+$39 = 39$. This confirms our assignments for the smallest and largest sums.
+
+Now we need to find the remaining sums. The remaining sums are $a+c, a+d, b+c, b+d$.
+The remaining sums are 18, 19, 20, 21.
+
+We know $a+b < a+c < a+d < b+d < c+d$ and $a+b < b+c < c+d$.
+Also, $a+c < b+c$ and $a+d < b+d$.
+And $a+c < a+d$ and $b+c < b+d$.
+
+Consider the sums $a+c$ and $b+c$. Since $a < b$, we have $a+c < b+c$.
+Consider the sums $a+d$ and $b+d$. Since $a < b$, we have $a+d < b+d$.
+Consider the sums $a+c$ and $a+d$. Since $c < d$, we have $a+c < a+d$.
+Consider the sums $b+c$ and $b+d$. Since $c < d$, we have $b+c < b+d$.
+
+The four middle sums are $a+c, a+d, b+c, b+d$.
+We have $a+b=10$ and
+
+  Predicted: r middle sums are $a+c, a+d, b+c, b+d$.
+We have $a+b=10$ and  → ✗ WRONG  (4.1s, 1 call)
+
+▶ ToT-BFS
+  k=5, b=5, depth≤3, eval_samples=3
+    [BFS] depth=0, expanding node…
+      ↳ T1: Let the four distinct integers be $a < b < c < d$. When added in pairs, we get s... -> likely
+      ↳ T2: Let the four distinct integers be $a < b < c < d$. When added in pairs, we get s... -> likely
+      ↳ T3: Solution: Let the four distinct integers be $a < b < c < d$. When added in pairs... -> likely
+      ↳ T4: Solution: Let the four distinct integers be $a, b, c, d$ in increasing order, so... -> likely
+      ↳ T5: Let the four distinct integers be $a < b < c < d$. When added in pairs, we get s... -> impossible
+    [BFS] depth=1, expanding node…
+      ↳ T1: We have the following system of equations: 1) $a+b = 10$ 2) $c+d = 29$ 4) $a+c =... -> likely
+      ↳ T2: We have the following system of equations: 1) $a+b = 10$ 2) $c+d = 29$ 4) $a+c =... -> likely
+      ↳ T3: We have the following system of equations: 1) $a+b = 10$ 2) $c+d = 29$ 4) $a+c =... -> likely
+      ↳ T4: We have the following system of equations: 1) $a+b = 10$ 2) $c+d = 29$ 4) $a+c =... -> likely
+      ↳ T5: We have the following system of equations: 1) $a+b = 10$ 2) $c+d = 29$ 4) $a+c =... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: Let the four distinct integers be $a < b < c < d$. The six sums are $a+b$, $a+c$... -> likely
+      ↳ T2: Let the four distinct integers be $a < b < c < d$. The six possible sums when ad... -> likely
+      ↳ T3: Let the four distinct integers be $a < b < c < d$. The six sums are $a+b$, $a+c$... -> likely
+      ↳ T4: Let the four distinct integers be $a < b < c < d$. The six sums are $a+b$, $a+c$... -> likely
+      ↳ T5: Let the four distinct integers be $a < b < c < d$. The six sums are: $a+b$, $a+c... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: Solution: We have the following system of equations: 1) $a+b = 10$ 2) $c+d = 29$... -> likely
+      ↳ T2: Solution: We have the following system of equations: 1) $a+b = 10$ 2) $c+d = 29$... -> likely
+      ↳ T3: Solution: We have the following system of equations: 1) $a+b = 10$ 2) $c+d = 29$... -> likely
+      ↳ T4: Solution: We have the following system of equations: 1) $a+b = 10$ 2) $c+d = 29$... -> likely
+      ↳ T5: Solution: Let the four distinct integers be $a < b < c < d$. The six sums are $a... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: Solution: Let the four distinct integers be $a, b, c, d$ in increasing order, so... -> likely
+      ↳ T2: Solution: Let the four distinct integers be $a, b, c, d$ in increasing order, so... -> likely
+      ↳ T3: Solution: Let the four distinct integers be $a, b, c, d$ in increasing order, so... -> likely
+      ↳ T4: Solution: Let the four distinct integers be $a, b, c, d$ in increasing order, so... -> likely
+      ↳ T5: Solution: Let the four distinct integers be $a, b, c, d$ in increasing order, so... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: We have the following system of equations: 1) $a+b = 10$ 2) $c+d = 29$ 3) $a+b+c... -> likely
+      ↳ T2: We have the following system of equations: 1) $a+b = 10$ 2) $c+d = 29$ 3) $a+b+c... -> likely
+      ↳ T3: Let the four distinct integers be $a < b < c < d$. The six sums are: $a+b$, $a+c... -> likely
+      ↳ T4: We have the following system of equations: 1) $a+b = 10$ 2) $c+d = 29$ 3) $a+b+c... -> likely
+      ↳ T5: We have the following system of equations: 1) $a+b = 10$ 2) $c+d = 29$ 4) $a+c =... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: We are given four distinct integers $a < b < c < d$. The six sums in pairs are 1... -> likely
+      ↳ T2: Let the four distinct integers be $a < b < c < d$. The six sums are $a+b$, $a+c$... -> likely
+      ↳ T3: Let the four distinct integers be $a < b < c < d$. The six sums are $a+b$, $a+c$... -> likely
+      ↳ T4: Let the four distinct integers be $a < b < c < d$. The six sums are $a+b$, $a+c$... -> likely
+      ↳ T5: Let the four distinct integers be $a < b < c < d$. The six sums are $a+b$, $a+c$... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: Let the four distinct integers be $a < b < c < d$. The six sums are $a+b$, $a+c$... -> likely
+      ↳ T2: Let the four distinct integers be $a < b < c < d$. The six sums are $a+b$, $a+c$... -> likely
+      ↳ T3: We have the following system of equations: 1) $a+b = 10$ 2) $c+d = 29$ 3) $a+c =... -> likely
+      ↳ T4: We are given four distinct integers $a, b, c, d$ such that $a < b < c < d$. The ... -> likely
+      ↳ T5: Let the four distinct integers be $a < b < c < d$. The six sums are $a+b$, $a+c$... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: Let the four distinct integers be $a < b < c < d$. The six sums are $a+b$, $a+c$... -> likely
+      ↳ T2: We are given four distinct integers $a < b < c < d$. The six sums in pairs are 1... -> likely
+      ↳ T3: Let the four distinct integers be $a < b < c < d$. The six sums are $a+b$, $a+c$... -> likely
+      ↳ T4: We are given four distinct integers $a$, $b$, $c$, and $d$ such that $a < b < c ... -> likely
+      ↳ T5: We have the following system of equations: 1) $a+b = 10$ 2) $c+d = 29$ 3) $a+b+c... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: We are given four distinct integers $a < b < c < d$. The six sums in increasing ... -> likely
+      ↳ T2: We are given four distinct integers $a, b, c, d$ such that $a < b < c < d$. The ... -> likely
+      ↳ T3: We are given four distinct integers $a$, $b$, $c$, and $d$ such that $a < b < c ... -> likely
+      ↳ T4: We are given four distinct integers $a, b, c, d$ such that $a < b < c < d$. The ... -> likely
+      ↳ T5: We are given four distinct integers $a < b < c < d$. The six sums are 10, 18, 19... -> likely
+    [BFS] Search exhausted — returning greedy fallback.
+
+…(trajectory preview)…
+ow consider the remaining sums: $a+c$, $a+d$, $b+c$, $b+d$.
+These sums are 18, 19, 20, 21.
+We know that $a+b < a+c < b+c < b+d < c+d$.
+Also, $a+c < a+d$ and $b+c < b+d$.
+And $a+c < b+c$.
+And $a+d < b+d$.
+
+We have $a+b = 10$ and $c+d = 29$.
+The second smallest sum is $a+c$.
+The second largest sum is $b+d$.
+So, $a+c = 18$ (4)
+And $b+d = 21$ (5)
+
+Now we have a system of equations:
+1) $a+b = 10$
+2) $c+d = 29$
+4) $a+c = 18$
+5) $b+d = 21$
+
+From (1), $b = 10-a$.
+From (4), $c = 18-a$.
+Substitute $b$ and $c$ into (2):
+$(18-a) + d = 29$
+$d = 29 - 18 + a = 11+a$.
+
+Now substitute $b$ and $d$ into (5):
+$(1
+
+  Predicted: Search failed  → ✗ WRONG  (327.3s, 202 API calls)
+
+─────────────────── Problem 5/5  —  Algebra  [Level 4] ───────────────────
+
+Problem:
+Let $f(x)=7x+5$ and $g(x)=x-1$.  If $h(x)=f(g(x))$, then what is the inverse of $h(x)$?
+
+Ground truth answer: \frac{x+2}{7}
+
+
+▶ Single-Shot
+
+First, we need to find $h(x)$.
+Given $f(x) = 7x+5$ and $g(x) = x-1$.
+$h(x) = f(g(x))$
+Substitute $g(x)$ into $f(x)$:
+$h(x) = f(x-1) = 7(x-1) + 5$
+$h(x) = 7x - 7 + 5$
+$h(x) = 7x - 2$
+
+Next, we need to find the inverse of $h(x)$.
+Let $y = h(x)$, so $y = 7x - 2$.
+To find the inverse, we swap $x$ and $y$ and solve for $y$.
+$x = 7y - 2$
+Add 2 to both sides:
+$x + 2 = 7y$
+Divide by 7:
+$y = \frac{x+2}{7}$
+
+So, the inverse of $h(x)$ is $h^{-1}(x) = \frac{x+2}{7}$.
+
+The final answer is $\boxed{\frac{x+2}{7}}$.
+
+  Predicted: \frac{x+2}{7}  → ✓ CORRECT  (1.7s, 1 call)
+
+▶ Chain-of-Thought
+
+Solution:
+First, we need to find the expression for $h(x)$.
+Given $f(x) = 7x+5$ and $g(x) = x-1$.
+We have $h(x) = f(g(x))$.
+Substitute $g(x)$ into $f(x)$:
+$h(x) = f(x-1) = 7(x-1) + 5$
+$h(x) = 7x - 7 + 5$
+$h(x) = 7x - 2$
+
+Next, we need to find the inverse of $h(x)$.
+Let $y = h(x)$, so $y = 7x - 2$.
+To find the inverse, we swap $x$ and $y$ and solve for $y$.
+$x = 7y - 2$
+Now, solve for $y$:
+Add 2 to both sides:
+$x + 2 = 7y$
+Divide by 7:
+$y = \frac{x+2}{7}$
+
+So, the inverse of $h(x)$ is $h^{-1}(x) = \frac{x+2}{7}$.
+
+To verify, we can check if $h(h^{-1}(x)) = x$ and $h^{-1}(h(x)) = x$.
+$h(h^{-1}(x)) = h\left(\frac{x+2}{7}\right) = 7\left(\frac{x+2}{7}\right) - 2 = (x+2) - 2 = x$.
+$h^{-1}(h(x)) = h^{-1}(7x-2) = \frac{(7x-2)+2}{7} = \frac{7x}{7} = x$.
+Both checks confirm that our inverse is correct.
+
+The final answer is $\frac{x+2}{7}$.
+
+The final answer is $\boxed{\frac{x+2}{7}}$.
+
+  Predicted: \frac{x+2}{7}  → ✓ CORRECT  (2.6s, 1 call)
+
+▶ ToT-BFS
+  k=5, b=5, depth≤3, eval_samples=3
+    [BFS] depth=0, expanding node…
+    [BFS] Consensus + verified: 3/3 agree at depth 1.
+
+…(trajectory preview)…
+First, we need to find $h(x)$.
+$h(x) = f(g(x))$
+Substitute $g(x)$ into $f(x)$:
+$h(x) = f(x-1)$
+Now substitute $(x-1)$ into the expression for $f(x)$:
+$h(x) = 7(x-1) + 5$
+$h(x) = 7x - 7 + 5$
+$h(x) = 7x - 2$
+
+Next, we need to find the inverse of $h(x)$.
+Let $y = h(x)$, so $y = 7x - 2$.
+To find the inverse, we swap $x$ and $y$ and solve for $y$.
+$x = 7y - 2$
+Add 2 to both sides:
+$x + 2 = 7y$
+Divide by 7:
+$y = \frac{x+2}{7}$
+So, the inverse of $h(x)$ is $h^{-1}(x) = \frac{x+2}{7}$.
+
+The final answer is $\boxed{\frac{x+2}{7}}$.
+
+  Predicted: \frac{x+2}{7}  → ✓ CORRECT  (13.4s, 6 API calls)
+
+──────────────────────────────── Summary ────────────────────────────────
+
+
+  Strategy                Correct   Accuracy   Avg Time   Avg Calls
+  ───────────────────────────────────────────────────────────────────
+  Single-Shot            2/5        40%        2.4s         1.0
+  Chain-of-Thought       3/5        60%        3.1s         1.0
+  ToT-BFS                3/5        60%       78.5s        45.2
+
+  Note: accuracy uses \boxed{} extraction + LaTeX normalization.
+
+
+  Per-problem breakdown:
+  #    Level    SS           CoT          BFS          GT
+  ──────────────────────────────────────────────────────────────────────────────────────────
+  1    Level 4  dfrac{9}{7..\frac{9}{7..\frac{9}{7.. \dfrac{9}{7}
+  2    Level 4  of the sol..[-2, 7]     [-2, 7]      x \in [-2,7]
+  3    Level 4  7           7           7            7
+  4    Level 4  espond to ..r middle s..Search fai.. 4,6,14,15
+  5    Level 4  \frac{x+2}..\frac{x+2}..\frac{x+2}.. \frac{x+2}{7}
+

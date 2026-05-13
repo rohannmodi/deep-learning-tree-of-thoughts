@@ -1,0 +1,1415 @@
+Logging output to run_20260503_212329.log...
+
+
+──────────── 3-Way MATH Benchmark  ·  Single-Shot | CoT | ToT ────────────
+
+  Model  : qwen2.5:1.5b
+  Subject: algebra   N: 15
+  Level  : 2
+  ToT    : k=3 thoughts, b=2 beam, depth≤5
+
+Loading dataset…
+Loaded 15 example(s).
+
+
+────────────────── Problem 1/15  —  Algebra  [Level 2] ──────────────────
+
+Problem:
+What is the 100th term of the arithmetic sequence 6, 10, 14, 18, ...?
+
+Ground truth answer: 402
+
+
+▶ Single-Shot
+
+\boxed{298}
+
+  Predicted: 298  → ✗ WRONG  (0.3s, 1 call)
+
+▶ Chain-of-Thought
+
+To find the 100th term of the arithmetic sequence 6, 10, 14, 18, ..., we need to use the formula for the nth term of an arithmetic sequence:
+
+\[ a_n = a_1 + (n - 1)d \]
+
+where:
+- \( a_n \) is the nth term,
+- \( a_1 \) is the first term,
+- \( d \) is the common difference, and
+- \( n \) is the term number.
+
+Given:
+- The first term \( a_1 = 6 \),
+- The common difference \( d = 10 - 6 = 4 \).
+
+We need to find the 100th term (\( a_{100} \)):
+
+\[ a_{100} = 6 + (100 - 1) \times 4 \]
+
+First, calculate \( 100 - 1 \):
+
+\[ 100 - 1 = 99 \]
+
+Next, multiply by the common difference \( d \):
+
+\[ 99 \times 4 = 396 \]
+
+Finally, add this result to the first term:
+
+\[ a_{100} = 6 + 396 = 402 \]
+
+So, the 100th term of the arithmetic sequence is \( \boxed{402} \).
+
+  Predicted: 402  → ✓ CORRECT  (3.4s, 1 call)
+
+▶ Tree-of-Thoughts
+  k=3 thoughts per node, beam b=2, max depth=5
+    [ToT] depth=0, expanding node…
+      ↳ T1: To find the \( n \)-th term of an arithmetic sequence, we use the formula: \[ a_... -> likely
+      ↳ T2: To find the 100th term of an arithmetic sequence, we need to use the formula for... -> likely
+      ↳ T3: To find the 100th term of the given arithmetic sequence, we can use the formula ... -> likely
+    [ToT] depth=1, expanding node…
+      ↳ T1: \(\boxed{402}\) -> likely
+      ↳ T2: \boxed{402} -> likely
+    [ToT] depth=1, expanding node…
+      ↳ T1: \boxed{396} -> likely
+      ↳ T2: \(\boxed{396}\) -> likely
+    [ToT] Solution found at depth 2.
+
+…(trajectory preview)…
+s the first term, and \( d \) is the common difference.
+
+For this sequence:
+- The first term \( a_1 = 6 \)
+- The common difference \( d = 4 \)
+
+We need to find the 100th term (\( n = 100 \)):
+\[ a_{100} = 6 + (100 - 1) \cdot 4 \]
+\[ a_{100} = 6 + 99 \cdot 4 \]
+\[ a_{100} = 6 + 396 \]
+\[ a_{100} = 402 \]
+
+The next logical milestone is to verify the formula and ensure correctness by calculating several terms before the 100th term. However, since we are asked for the 100th term and already calculated it correctly, there is no need for further steps beyond this calculation.
+
+Final
+
+\(\boxed{402}\)
+
+  Predicted: 402  → ✓ CORRECT  (13.3s, 16 API calls)
+
+────────────────── Problem 2/15  —  Algebra  [Level 2] ──────────────────
+
+Problem:
+What is the number of units in the distance from the origin to the point $(-8,6)$ in a coordinate system?
+
+Ground truth answer: 10
+
+
+▶ Single-Shot
+
+\boxed{10}
+
+  Predicted: 10  → ✓ CORRECT  (0.2s, 1 call)
+
+▶ Chain-of-Thought
+
+To find the number of units in the distance from the origin to the point (-8, 6) in a coordinate system, we need to calculate the Euclidean distance between these two points. The formula for the distance \(d\) between two points \((x_1, y_1)\) and \((x_2, y_2)\) is given by:
+
+\[ d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} \]
+
+Here, the origin is the point \((0, 0)\), so \(x_1 = 0\) and \(y_1 = 0\). The given point is \((-8, 6)\), so \(x_2 = -8\) and \(y_2 = 6\).
+
+Substituting these values into the distance formula:
+
+\[ d = \sqrt{(-8 - 0)^2 + (6 - 0)^2} \]
+\[ d = \sqrt{(-8)^2 + 6^2} \]
+\[ d = \sqrt{64 + 36} \]
+\[ d = \sqrt{100} \]
+\[ d = 10 \]
+
+Therefore, the number of units in the distance from the origin to the point (-8, 6) is:
+
+ANSWER: \boxed{10}
+
+  Predicted: 10  → ✓ CORRECT  (3.6s, 1 call)
+
+▶ Tree-of-Thoughts
+  k=3 thoughts per node, beam b=2, max depth=5
+    [ToT] depth=0, expanding node…
+      ↳ T1: The next logical step would be to calculate the Euclidean distance between the o... -> likely
+      ↳ T2: To find the distance from the origin \((0, 0)\) to the point \((-8, 6)\), we use... -> likely
+      ↳ T3: The next major logical milestone or phase would be calculating the Euclidean dis... -> impossible
+    [ToT] depth=1, expanding node…
+      ↳ T1: \boxed{10} -> likely
+    [ToT] depth=1, expanding node…
+      ↳ T1: \boxed{10} -> likely
+      ↳ T2: The next major logical milestone or phase is solving for the radius of a circle ... -> likely
+    [ToT] Solution found at depth 2.
+
+…(trajectory preview)…
+The next logical step would be to calculate the Euclidean distance between the origin \((0, 0)\) and the point \((-8, 6)\).
+
+Distance formula: 
+\[ d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} \]
+
+Substitute \(x_1 = 0\), \(y_1 = 0\), \(x_2 = -8\), and \(y_2 = 6\):
+
+\[ d = \sqrt{(-8 - 0)^2 + (6 - 0)^2} \]
+\[ d = \sqrt{(-8)^2 + 6^2} \]
+\[ d = \sqrt{64 + 36} \]
+\[ d = \sqrt{100} \]
+\[ d = 10 \]
+
+So the distance is 10 units.
+
+\boxed{10}
+
+  Predicted: 10  → ✓ CORRECT  (12.9s, 15 API calls)
+
+────────────────── Problem 3/15  —  Algebra  [Level 2] ──────────────────
+
+Problem:
+Let \[f(x) =
+\begin{cases}
+3x + 5 &\text{if }x<-3, \\
+7-4x&\text{if }x\ge -3.
+\end{cases}
+\]Find $f(-10)$.
+
+Ground truth answer: -25
+
+
+▶ Single-Shot
+
+\boxed{-25}
+
+  Predicted: -25  → ✓ CORRECT  (0.2s, 1 call)
+
+▶ Chain-of-Thought
+
+To find \( f(-10) \), we need to determine which piece of the piecewise function to use based on the value of \( x \). Here, \( x = -10 \).
+
+Since \( -10 < -3 \), we use the first part of the piecewise function:
+\[ f(x) = 3x + 5. \]
+
+Now substitute \( x = -10 \) into this equation:
+\[ f(-10) = 3(-10) + 5. \]
+
+Calculate the expression:
+\[ f(-10) = -30 + 5 = -25. \]
+
+Therefore, the final answer is:
+\[
+\boxed{-25}
+\]
+
+  Predicted: -25  → ✓ CORRECT  (2.0s, 1 call)
+
+▶ Tree-of-Thoughts
+  k=3 thoughts per node, beam b=2, max depth=5
+    [ToT] depth=0, expanding node…
+      ↳ T1: To find \( f(-10) \), we need to determine which piece of the piecewise function... -> impossible
+      ↳ T2: The next logical step is to determine which part of the piecewise function \( f(... -> impossible
+      ↳ T3: To find \( f(-10) \), we need to determine which piece of the piecewise function... -> likely
+    [ToT] depth=1, expanding node…
+      ↳ T1: \[ f(-10) = 3(-10) + 5 \] -> likely
+      ↳ T2: \boxed{25} -> likely
+      ↳ T3: \[ f(-10) = 3(-10) + 5 \]  Now calculate the value:  \[ f(-10) = -30 + 5 = -25 \... -> likely
+    [ToT] Solution found at depth 2.
+
+…(trajectory preview)…
+To find \( f(-10) \), we need to determine which piece of the piecewise function applies for \( x = -10 \). According to the problem statement, if \( x < -3 \), then \( f(x) = 3x + 5 \).
+
+Since \( -10 \) is indeed less than \(-3\), we will use the first part of the piecewise function.
+
+Next logical step:
+Substitute \( x = -10 \) into the equation \( f(x) = 3x + 5 \).
+
+\boxed{25}
+
+  Predicted: 25  → ✗ WRONG  (7.4s, 12 API calls)
+
+────────────────── Problem 4/15  —  Algebra  [Level 2] ──────────────────
+
+Problem:
+What is the value of $x$ in the equation $(17^6-17^5)\div16=17^x$?
+
+Ground truth answer: 5
+
+
+▶ Single-Shot
+
+\boxed{1}
+
+  Predicted: 1  → ✗ WRONG  (0.2s, 1 call)
+
+▶ Chain-of-Thought
+
+To find the value of \( x \) in the equation \((17^6 - 17^5) \div 16 = 17^x\), we will follow these steps:
+
+1. Simplify the expression inside the parentheses.
+2. Divide by 16.
+3. Compare the result to a power of 17.
+
+Let's start with step-by-step reasoning and then provide the final answer.
+
+### Step 1: Simplify the Expression Inside the Parentheses
+The expression is \((17^6 - 17^5)\). We can factor out \(17^5\) from both terms:
+\[
+17^6 - 17^5 = 17^5(17 - 1) = 17^5 \cdot 16
+\]
+
+### Step 2: Divide by 16
+Now, we need to divide \(17^5 \cdot 16\) by 16:
+\[
+\frac{17^5 \cdot 16}{16} = 17^5
+\]
+
+### Step 3: Compare the Result to a Power of 17
+We have simplified the left side of the equation to \(17^5\). The right side is already in the form \(17^x\), so we can equate the exponents:
+\[
+17^5 = 17^x
+\]
+
+Since the bases are the same, the exponents must be equal:
+\[
+x = 5
+\]
+
+### Final Answer
+The value of \( x \) is \(\boxed{5}\).
+
+  Predicted: 5  → ✓ CORRECT  (6.0s, 1 call)
+
+▶ Tree-of-Thoughts
+  k=3 thoughts per node, beam b=2, max depth=5
+    [ToT] depth=0, expanding node…
+      ↳ T1: To solve this problem, we need to simplify the left side of the equation first. ... -> likely
+      ↳ T2: To find \( x \) in the equation \((17^6 - 17^5) \div 16 = 17^x\), let's first si... -> likely
+      ↳ T3: To solve this, we first simplify the left side of the equation:  \[ (17^6 - 17^5... -> likely
+    [ToT] Solution found at depth 1.
+
+…(trajectory preview)…
+To solve this problem, we need to simplify the left side of the equation first.
+
+\[
+(17^6 - 17^5) \div 16 = 17^x
+\]
+
+Simplify the numerator:
+
+\[
+17^6 - 17^5 = 17^5(17 - 1)
+\]
+\[
+= 17^5 \cdot 16
+\]
+
+Now substitute back into the equation:
+
+\[
+17^5 \cdot 16 \div 16 = 17^x
+\]
+\[
+17^5 = 17^x
+\]
+
+This implies that \( x = 5 \).
+
+Final answer: $\boxed{5}$
+
+  Predicted: 5  → ✓ CORRECT  (18.0s, 6 API calls)
+
+────────────────── Problem 5/15  —  Algebra  [Level 2] ──────────────────
+
+Problem:
+The point $(a, b)$ lies on the line with the equation $3x + 2y = 12.$ When $a = 4$, what is the value of $b$?
+
+Ground truth answer: 0
+
+
+▶ Single-Shot
+
+\boxed{-2}
+
+  Predicted: -2  → ✗ WRONG  (0.4s, 1 call)
+
+▶ Chain-of-Thought
+
+To find the value of \( b \) when \( a = 4 \), we start by substituting \( a = 4 \) into the equation of the line:
+
+\[ 3x + 2y = 12 \]
+
+This gives us:
+
+\[ 3(4) + 2b = 12 \]
+
+Simplify the left side:
+
+\[ 12 + 2b = 12 \]
+
+Next, isolate \( b \) by subtracting 12 from both sides of the equation:
+
+\[ 2b = 0 \]
+
+Then divide both sides by 2 to solve for \( b \):
+
+\[ b = 0 \]
+
+So, when \( a = 4 \), the value of \( b \) is:
+
+\[
+\boxed{0}
+\]
+
+  Predicted: 0  → ✓ CORRECT  (5.2s, 1 call)
+
+▶ Tree-of-Thoughts
+  k=3 thoughts per node, beam b=2, max depth=5
+    [ToT] depth=0, expanding node…
+      ↳ T1: Given that the point \((a, b)\) lies on the line with the equation \(3x + 2y = 1... -> likely
+      ↳ T2: To find the value of \( b \) when \( a = 4 \), we substitute \( a = 4 \) into th... -> likely
+      ↳ T3: To find the value of \( b \) when \( a = 4 \), we need to substitute \( a = 4 \)... -> likely
+    [ToT] Solution found at depth 1.
+
+…(trajectory preview)…
+Given that the point \((a, b)\) lies on the line with the equation \(3x + 2y = 12\), we can substitute \(a = 4\) into the equation to find \(b\).
+
+Let's solve for \(b\):
+
+\[3(4) + 2b = 12\]
+
+First, perform the multiplication:
+
+\[12 + 2b = 12\]
+
+Next, isolate \(b\) by subtracting 12 from both sides of the equation:
+
+\[2b = 0\]
+
+Now, solve for \(b\) by dividing both sides by 2:
+
+\[b = 0\]
+
+Thus, the value of \(b\) is \(\boxed{0}\).
+
+  Predicted: 0  → ✓ CORRECT  (15.5s, 6 API calls)
+
+────────────────── Problem 6/15  —  Algebra  [Level 2] ──────────────────
+
+Problem:
+Find the sum of all values of $x$ such that $|x-1| = 7$.
+
+Ground truth answer: 2
+
+
+▶ Single-Shot
+
+\boxed{8}
+
+  Predicted: 8  → ✗ WRONG  (0.4s, 1 call)
+
+▶ Chain-of-Thought
+
+To find the sum of all values of \( x \) such that \( |x - 1| = 7 \), we need to solve the absolute value equation. The equation \( |x - 1| = 7 \) means that \( x - 1 \) can be either 7 or -7, because the absolute value of a number is its distance from zero on the number line.
+
+Let's break it down step-by-step:
+
+1. **Set up the two cases:**
+   \[
+   |x - 1| = 7
+   \]
+   This gives us two separate equations:
+   \[
+   x - 1 = 7 \quad \text{or} \quad x - 1 = -7
+   \]
+
+2. **Solve each equation separately:**
+   - For \( x - 1 = 7 \):
+     \[
+     x - 1 + 1 = 7 + 1
+     \]
+     Simplifying, we get:
+     \[
+     x = 8
+     \]
+
+   - For \( x - 1 = -7 \):
+     \[
+     x - 1 + 1 = -7 + 1
+     \]
+     Simplifying, we get:
+     \[
+     x = -6
+     \]
+
+3. **Combine the solutions:**
+   The values of \( x \) that satisfy the equation are \( x = 8 \) and \( x = -6 \).
+
+4. **Sum the solutions:**
+   \[
+   8 + (-6) = 2
+   \]
+
+Therefore, the sum of all values of \( x \) such that \( |x - 1| = 7 \) is:
+\[
+\boxed{2}
+\]
+
+  Predicted: 2  → ✓ CORRECT  (9.6s, 1 call)
+
+▶ Tree-of-Thoughts
+  k=3 thoughts per node, beam b=2, max depth=5
+    [ToT] depth=0, expanding node…
+      ↳ T1: To solve for \( x \) in the equation \( |x - 1| = 7 \), we need to consider the ... -> likely
+      ↳ T2: The next logical step would be to solve for \( x \) in the equation \( |x - 1| =... -> likely
+      ↳ T3: \(\boxed{8}\) -> impossible
+    [ToT] Solution found at depth 1.
+
+…(trajectory preview)…
+inition of absolute value. The equation \( |x - 1| = 7 \) means that \( x - 1 \) can be either 7 or -7, depending on whether we are moving to the right (positive direction) or left (negative direction) from 1.
+
+First, let's solve for \( x \) when \( x - 1 = 7 \):
+\[
+x - 1 = 7
+\]
+Adding 1 to both sides:
+\[
+x = 8
+\]
+
+Next, let's solve for \( x \) when \( x - 1 = -7 \):
+\[
+x - 1 = -7
+\]
+Adding 1 to both sides:
+\[
+x = -6
+\]
+
+So the values of \( x \) that satisfy the equation are \( x = 8 \) and \( x = -6 \).
+
+The sum of these values is:
+\[
+8 + (-6) = 2
+\]
+
+Therefore, the final answer is:
+\boxed{2}
+
+  Predicted: 2  → ✓ CORRECT  (15.2s, 6 API calls)
+
+────────────────── Problem 7/15  —  Algebra  [Level 2] ──────────────────
+
+Problem:
+Solve for $w$ and express as a common fraction: $\frac{1\frac16}w=\frac{42}3$.
+
+Ground truth answer: \frac{1}{12}
+
+
+▶ Single-Shot
+
+\boxed{\frac1{5}}
+
+  Predicted: \frac1{5}  → ✗ WRONG  (0.4s, 1 call)
+
+▶ Chain-of-Thought
+
+To solve the problem, we need to isolate \( w \) in the equation:
+
+\[
+\frac{\frac{7}{6}}{w} = \frac{42}{3}
+\]
+
+First, simplify the right-hand side of the equation:
+
+\[
+\frac{42}{3} = 14
+\]
+
+So our equation becomes:
+
+\[
+\frac{\frac{7}{6}}{w} = 14
+\]
+
+Next, we can rewrite this as:
+
+\[
+\frac{7}{6w} = 14
+\]
+
+To solve for \( w \), multiply both sides by \( 6w \):
+
+\[
+7 = 14 \cdot 6w
+\]
+
+Simplify the right-hand side:
+
+\[
+7 = 84w
+\]
+
+Now, divide both sides by 84 to isolate \( w \):
+
+\[
+w = \frac{7}{84}
+\]
+
+Finally, simplify the fraction:
+
+\[
+w = \frac{1}{12}
+\]
+
+So, the answer is:
+
+\boxed{\frac{1}{12}}
+
+  Predicted: \frac{1}{12}  → ✓ CORRECT  (7.3s, 1 call)
+
+▶ Tree-of-Thoughts
+  k=3 thoughts per node, beam b=2, max depth=5
+    [ToT] depth=0, expanding node…
+      ↳ T1: Divide both sides by 7:  $$ \frac{1\frac16}{7w} = \frac{42}{3 \cdot 7} $$  Simpl... -> likely
+      ↳ T2: To solve the equation \(\frac{1\frac{1}{6}}{w} = \frac{42}{3}\), we need to foll... -> likely
+      ↳ T3: To solve the equation \(\frac{1\frac16}{w} = \frac{42}{3}\), we first convert th... -> likely
+    [ToT] Solution found at depth 1.
+
+…(trajectory preview)…
+Divide both sides by 7:
+
+$$
+\frac{1\frac16}{7w} = \frac{42}{3 \cdot 7}
+$$
+
+Simplify the right side:
+
+$$
+\frac{1\frac16}{7w} = \frac{42}{21}
+$$
+
+Further simplify the fraction on the right side:
+
+$$
+\frac{1\frac16}{7w} = 2
+$$
+
+Convert the mixed number to an improper fraction for easier calculation:
+
+$$
+\frac{\frac{7}{6}}{7w} = 2
+$$
+
+Multiply both sides by $7w$ and then divide by 2 to isolate $\frac{7}{6}$:
+
+$$
+\frac{7}{12} = 2w
+$$
+
+Divide both sides by 2:
+
+$$
+\frac{7}{24} = w
+$$
+
+Now that the problem is simplified, we can express $w$ as a common fraction: \boxed{\frac{7}{24}}
+
+  Predicted: \frac{7}{24}  → ✗ WRONG  (28.8s, 6 API calls)
+
+────────────────── Problem 8/15  —  Algebra  [Level 2] ──────────────────
+
+Problem:
+Suppose $P$ is the point $(5,3)$ and $Q$ is the point $(-3,6)$. What is the midpoint of $\overline{PQ}$?
+
+Ground truth answer: \left(1,\frac{9}{2}\right)
+
+
+▶ Single-Shot
+
+\boxed{(1,-\frac{3}{2})}
+
+  Predicted: (1,-\frac{3}{2})  → ✗ WRONG  (0.6s, 1 call)
+
+▶ Chain-of-Thought
+
+To find the midpoint of a line segment with endpoints \( P(x_1, y_1) \) and \( Q(x_2, y_2) \), we use the midpoint formula:
+
+\[
+M = \left( \frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2} \right)
+\]
+
+Given:
+- Point \( P \) is \( (5, 3) \)
+- Point \( Q \) is \( (-3, 6) \)
+
+Let's apply the formula:
+
+1. Calculate the x-coordinate of the midpoint:
+   \[
+   \frac{x_1 + x_2}{2} = \frac{5 + (-3)}{2}
+   \]
+   Simplify inside the parentheses first:
+   \[
+   \frac{5 - 3}{2} = \frac{2}{2} = 1
+   \]
+
+2. Calculate the y-coordinate of the midpoint:
+   \[
+   \frac{y_1 + y_2}{2} = \frac{3 + 6}{2}
+   \]
+   Simplify inside the parentheses first:
+   \[
+   \frac{3 + 6}{2} = \frac{9}{2} = 4.5
+   \]
+
+Therefore, the midpoint \( M \) of line segment \( \overline{PQ} \) is:
+
+\[
+M = (1, 4.5)
+\]
+
+ANSWER: \boxed{(1, 4.5)}
+
+  Predicted: (1, 4.5)  → ✗ WRONG  (11.5s, 1 call)
+
+▶ Tree-of-Thoughts
+  k=3 thoughts per node, beam b=2, max depth=5
+    [ToT] depth=0, expanding node…
+      ↳ T1: To find the midpoint of \(\overline{PQ}\), we use the midpoint formula:  \[ M = ... -> likely
+      ↳ T2: To find the midpoint \( M \) of the line segment connecting points \( P(5, 3) \)... -> likely
+      ↳ T3: To find the midpoint of \(\overline{PQ}\), we use the midpoint formula. The coor... -> impossible
+    [ToT] Solution found at depth 1.
+
+…(trajectory preview)…
+To find the midpoint of \(\overline{PQ}\), we use the midpoint formula:
+
+\[
+M = \left( \frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2} \right)
+\]
+
+Given points \( P(5, 3) \) and \( Q(-3, 6) \), we substitute the coordinates into the formula:
+
+\[
+M = \left( \frac{5 + (-3)}{2}, \frac{3 + 6}{2} \right)
+\]
+
+Simplify each component:
+
+\[
+M = \left( \frac{5 - 3}{2}, \frac{3 + 6}{2} \right) = \left( \frac{2}{2}, \frac{9}{2} \right) = (1, 4.5)
+\]
+
+Thus, the midpoint of \(\overline{PQ}\) is:
+
+\[
+\boxed{(1, 4.5)}
+\]
+
+  Predicted: (1, 4.5)  → ✗ WRONG  (21.2s, 6 API calls)
+
+────────────────── Problem 9/15  —  Algebra  [Level 2] ──────────────────
+
+Problem:
+If $j$ and $k$ are inversely proportional and $j = 16$ when $k = 21$, what is the value of $j$ when $k = 14$?
+
+Ground truth answer: 24
+
+
+▶ Single-Shot
+
+\boxed{\frac{336}{7}}
+
+  Predicted: \frac{336}{7}  → ✗ WRONG  (0.5s, 1 call)
+
+▶ Chain-of-Thought
+
+To find the value of \( j \) when \( k = 14 \), we start by using the fact that \( j \) and \( k \) are inversely proportional. This means their product is constant, so we can write:
+
+\[ j \cdot k = c \]
+
+where \( c \) is a constant. We first need to determine the value of \( c \). Given that \( j = 16 \) when \( k = 21 \), we substitute these values into the equation:
+
+\[ 16 \cdot 21 = c \]
+\[ c = 336 \]
+
+Now, we know that \( j \cdot k = 336 \). We need to find \( j \) when \( k = 14 \). Substituting \( k = 14 \) into the equation gives:
+
+\[ j \cdot 14 = 336 \]
+\[ j = \frac{336}{14} \]
+\[ j = 24 \]
+
+Therefore, the value of \( j \) when \( k = 14 \) is \(\boxed{24}\).
+
+  Predicted: 24  → ✓ CORRECT  (12.7s, 1 call)
+
+▶ Tree-of-Thoughts
+  k=3 thoughts per node, beam b=2, max depth=5
+    [ToT] depth=0, expanding node…
+      ↳ T1: Since \( j \) and \( k \) are inversely proportional, we have the relationship: ... -> likely
+      ↳ T2: The problem involves finding the constant of proportionality first, then using t... -> impossible
+      ↳ T3: To solve this problem, we first need to determine the constant of proportionalit... -> likely
+    [ToT] Solution found at depth 1.
+
+…(trajectory preview)…
+portional, we have the relationship:
+
+\[ j \cdot k = c \]
+
+where \( c \) is a constant. First, let's find the value of \( c \):
+
+Given \( j = 16 \) when \( k = 21 \), substitute these values into the equation to get \( c \):
+
+\[ 16 \times 21 = c \]
+\[ c = 336 \]
+
+Now we have the constant for inverse proportionality. We can use this value to find \( j \) when \( k = 14 \):
+
+Let’s denote \( j' \) as the new value of \( j \). Using the relationship:
+
+\[ j' \cdot 14 = 336 \]
+
+Solve for \( j' \):
+
+\[ j' = \frac{336}{14} \]
+\[ j' = 24 \]
+
+So, when \( k = 14 \), \( j \) is equal to:
+
+\[
+\boxed{24}
+\]
+
+  Predicted: 24  → ✓ CORRECT  (25.7s, 6 API calls)
+
+────────────────── Problem 10/15  —  Algebra  [Level 2] ──────────────────
+
+Problem:
+Evaluate $\sqrt[3]{12}\times \sqrt[3]{20}\times \sqrt[3]{15}\times \sqrt[3]{60}$.
+
+Ground truth answer: 60
+
+
+▶ Single-Shot
+
+\boxed{2}
+
+  Predicted: 2  → ✗ WRONG  (0.4s, 1 call)
+
+▶ Chain-of-Thought
+
+To evaluate the expression \(\sqrt[3]{12} \times \sqrt[3]{20} \times \sqrt[3]{15} \times \sqrt[3]{60}\), we can use the property of cube roots that states:
+
+\[
+\sqrt[n]{a_1} \times \sqrt[n]{a_2} = \sqrt[n]{a_1 \times a_2}
+\]
+
+Applying this property to our expression, we get:
+
+\[
+\sqrt[3]{12} \times \sqrt[3]{20} \times \sqrt[3]{15} \times \sqrt[3]{60} = \sqrt[3]{(12) \times (20) \times (15) \times (60)}
+\]
+
+Next, we need to calculate the product inside the cube root:
+
+\[
+12 \times 20 \times 15 \times 60
+\]
+
+First, let's break down each number into its prime factors:
+
+- \(12 = 2^2 \times 3\)
+- \(20 = 2^2 \times 5\)
+- \(15 = 3 \times 5\)
+- \(60 = 2^2 \times 3 \times 5\)
+
+Now, multiply these together:
+
+\[
+(2^2 \times 3) \times (2^2 \times 5) \times (3 \times 5) \times (2^2 \times 3 \times 5)
+\]
+
+Combine the like terms:
+
+- \(2^2\) appears three times: \(2^{2+2+2} = 2^6\)
+- The remaining factors are all different primes and their powers.
+
+So, we have:
+
+\[
+2^6 \times 3^1 \times 5^1
+\]
+
+Now, take the cube root of this product:
+
+\[
+\sqrt[3]{2^6 \times 3^1 \times 5^1}
+\]
+
+Using the property of exponents that states \(\sqrt[n]{a^m} = a^{m/n}\), we get:
+
+\[
+(2^6)^{1/3} \times (3^{1/3}) \times (5^{1/3})
+\]
+
+Simplify each term:
+
+- \(2^6\) is the same as \(2^6\)
+- The cube root of 3 and 5 remain as they are.
+
+So, we have:
+
+\[
+2^2 \times 3^{1/3} \times 5^{1/3}
+\]
+
+This can be written in a more compact form using exponents:
+
+\[
+4 \times 3^{1/3} \times 5^{1/3}
+\]
+
+Combine the terms with the same base:
+
+\[
+(4 \times 3^{1/3}) \times (5^{1/3})
+\]
+
+Since \(3^{1/3}\) and \(5^{1/3}\) are like terms, we can combine them into a single cube root:
+
+\[
+(4 \times 3^{1/3} \times 5^{1/3}) = 4 \times (3 \times 5)^{1/3}
+\]
+
+Simplify the expression inside the parentheses:
+
+\[
+3 \times 5 = 15
+\]
+
+So, we have:
+
+\[
+4 \times 15^{1/3}
+\]
+
+Thus, the final answer is:
+
+\[
+\boxed{4 \times 15^{1/
+
+  Predicted: 4 \times 15^{1  → ✗ WRONG  (23.9s, 1 call)
+
+▶ Tree-of-Thoughts
+  k=3 thoughts per node, beam b=2, max depth=5
+    [ToT] depth=0, expanding node…
+      ↳ T1: \(\boxed{3}\) -> impossible
+      ↳ T2: \boxed{4} -> impossible
+      ↳ T3: To evaluate the expression \(\sqrt[3]{12} \times \sqrt[3]{20} \times \sqrt[3]{15... -> likely
+    [ToT] depth=1, expanding node…
+      ↳ T1: The next logical step is to simplify \(\sqrt[3]{216,000}\) by finding its cube r... -> likely
+      ↳ T2: To find the cube root of 216,000 efficiently, we can factorize and simplify:  \[... -> likely
+      ↳ T3: To proceed further, we simplify \(216,000\) into a cube:  \[ 216,000 = 216 \time... -> likely
+    [ToT] Solution found at depth 2.
+
+…(trajectory preview)…
+nd the cube root of 216,000 efficiently, we can factorize and simplify:
+
+\[
+216,000 = 2^5 \times 3^4 \times 5^2
+\]
+
+Now take the cube roots of each factor separately:
+
+\[
+\sqrt[3]{2^5} = 2^{5/3}
+\]
+\[
+\sqrt[3]{3^4} = 3^{4/3}
+\]
+\[
+\sqrt[3]{5^2} = 5^{2/3}
+\]
+
+Combine these results:
+
+\[
+\sqrt[3]{216,000} = 2^{5/3} \times 3^{4/3} \times 5^{2/3}
+\]
+
+Since we are looking for the cube root of a number and simplifying it as much as possible without further numerical evaluation (as this is not easily simplified to an integer), the final answer remains in its current form:
+
+\[
+\boxed{10 \sqrt[3]{6}}
+\]
+
+  Predicted: 10 \sqrt[3]{6}  → ✗ WRONG  (28.4s, 12 API calls)
+
+────────────────── Problem 11/15  —  Algebra  [Level 2] ──────────────────
+
+Problem:
+A horse 64 feet from the center of a merry-go-round makes 27 revolutions. In order to travel the same distance, how many revolutions would a horse 16 feet from the center have to make?
+
+Ground truth answer: 108
+
+
+▶ Single-Shot
+
+\boxed{9}
+
+  Predicted: 9  → ✗ WRONG  (0.2s, 1 call)
+
+▶ Chain-of-Thought
+
+To determine how many revolutions a horse 16 feet from the center would need to make in order to travel the same distance as a horse 64 feet from the center that makes 27 revolutions, we can follow these steps:
+
+1. **Calculate the circumference of each circle:**
+   - The circumference \( C \) of a circle is given by the formula:
+     \[
+     C = 2\pi r
+     \]
+   - For the horse at 64 feet from the center:
+     \[
+     C_1 = 2\pi \times 64 = 128\pi \text{ feet}
+     \]
+   - For the horse at 16 feet from the center:
+     \[
+     C_2 = 2\pi \times 16 = 32\pi \text{ feet}
+     \]
+
+2. **Determine the total distance traveled by each horse:**
+   - The total distance \( D \) traveled is given by the product of the circumference and the number of revolutions:
+     \[
+     D_1 = C_1 \times 27
+     \]
+     \[
+     D_2 = C_2 \times x
+     \]
+   - Since both horses travel the same distance, we set \( D_1 = D_2 \):
+     \[
+     128\pi \times 27 = 32\pi \times x
+     \]
+
+3. **Solve for \( x \):**
+   - Divide both sides by \( 32\pi \) to isolate \( x \):
+     \[
+     \frac{128\pi \times 27}{32\pi} = x
+     \]
+   - Simplify the fraction:
+     \[
+     \frac{128 \times 27}{32} = x
+     \]
+     \[
+     \frac{128}{32} \times 27 = x
+     \]
+     \[
+     4 \times 27 = x
+     \]
+     \[
+     108 = x
+     \]
+
+Therefore, the horse 16 feet from the center would need to make \( \boxed{108} \) revolutions to travel the same distance as a horse 64 feet from the center that makes 27 revolutions.
+
+  Predicted: 108  → ✓ CORRECT  (6.0s, 1 call)
+
+▶ Tree-of-Thoughts
+  k=3 thoughts per node, beam b=2, max depth=5
+    [ToT] depth=0, expanding node…
+      ↳ T1: To solve this problem efficiently, we need to combine the distances traveled by ... -> impossible
+      ↳ T2: **Next Logical Step:**  To find out how many revolutions a horse that is 16 feet... -> impossible
+      ↳ T3: To solve this problem efficiently by combining multiple smaller calculations int... -> impossible
+    [ToT] All paths scored impossible. Using fallback mechanism.
+    [ToT] Solution found at depth 1.
+
+…(trajectory preview)…
+To solve this problem efficiently, we need to combine the distances traveled by both horses into one substantial calculation. 
+
+**Final Answer:**
+\boxed{90}
+
+  Predicted: 90  → ✗ WRONG  (5.3s, 6 API calls)
+
+────────────────── Problem 12/15  —  Algebra  [Level 2] ──────────────────
+
+Problem:
+The sum of the two $5$-digit numbers $AMC10$ and $AMC12$ is $123422.$ What is $A + M + C?$
+
+Ground truth answer: 14
+
+
+▶ Single-Shot
+
+\boxed{6}
+
+  Predicted: 6  → ✗ WRONG  (0.2s, 1 call)
+
+▶ Chain-of-Thought
+
+To find \( A + M + C \) for the two five-digit numbers \( AMC10 \) and \( AMC12 \), we start by expressing these numbers in terms of their digits. Let's denote \( AMC10 \) as \( 1000A + 100M + 10C + 10 \) and \( AMC12 \) as \( 1000A + 100M + 10C + 20 \).
+
+The sum of these two numbers is given by:
+\[
+(1000A + 100M + 10C + 10) + (1000A + 100M + 10C + 20)
+\]
+
+Combining like terms, we get:
+\[
+1000A + 1000A + 100M + 100M + 10C + 10C + 10 + 20 = 2000A + 200M + 20C + 30
+\]
+
+We know this sum is equal to 123422:
+\[
+2000A + 200M + 20C + 30 = 123422
+\]
+
+Subtracting 30 from both sides, we get:
+\[
+2000A + 200M + 20C = 123422 - 30 = 123392
+\]
+
+Next, we divide the entire equation by 20 to simplify it further:
+\[
+100A + 10M + C = \frac{123392}{20} = 6169.6
+\]
+
+Since \( A \), \( M \), and \( C \) are digits (i.e., integers between 0 and 9), the equation must be re-evaluated to ensure it fits within these constraints. Let's check if there was an error in interpretation or calculation.
+
+Revisiting the initial setup, we realize that the sum of two five-digit numbers should not exceed a reasonable range for digits. Given \( AMC10 \) and \( AMC12 \), let’s re-evaluate by considering possible values:
+
+Given:
+\[
+2000A + 200M + 20C = 123422 - 30 = 123392
+\]
+
+Dividing by 20:
+\[
+100A + 10M + C = \frac{123392}{20} = 6169.6
+\]
+
+Since \( A, M, \) and \( C \) are digits (0-9), this suggests a mistake in the initial setup or interpretation. Revisiting the problem statement confirms that the sum should be within reasonable digit constraints.
+
+Given:
+\[
+2000A + 200M + 20C = 123422 - 30 = 123392
+\]
+
+Dividing by 20:
+\[
+100A + 10M + C = \frac{123392}{20} = 6169.6
+\]
+
+Revisiting the problem statement confirms that the sum should be within reasonable digit constraints.
+
+Given this, we realize there was an error in interpretation or calculation. Revisiting the initial setup and
+
+  Predicted: erpretation or calculation. Revisiting the initial setup and  → ✗ WRONG  (9.3s, 1 call)
+
+▶ Tree-of-Thoughts
+  k=3 thoughts per node, beam b=2, max depth=5
+    [ToT] depth=0, expanding node…
+      ↳ T1: To solve this problem, we need to find the two 5-digit numbers AM10 and AM12 suc... -> likely
+      ↳ T2: To solve this problem, we need to find two 5-digit numbers \( AMC10 \) and \( AM... -> impossible
+      ↳ T3: To solve this problem efficiently, we need to find the values of \( A \), \( M \... -> impossible
+    [ToT] depth=1, expanding node…
+      ↳ T1: \boxed{8} -> impossible
+      ↳ T2: \boxed{6} -> impossible
+      ↳ T3: To find the values of \( A \), \( M \), and \( C \), we need to solve the equati... -> impossible
+    [ToT] All paths scored impossible. Using fallback mechanism.
+    [ToT] Solution found at depth 2.
+
+…(trajectory preview)…
+To solve this problem, we need to find the two 5-digit numbers AM10 and AM12 such that their sum is 123422. Let's denote these numbers as \( N_1 = 10000A + 1000M + 10A \) for AM10 and \( N_2 = 10000A + 1000M + 10C \) for AM12. We are given that:
+
+\[ N_1 + N_2 = 123422 \]
+
+Substituting the expressions for \( N_1 \) and \( N_2 \):
+
+\[ (10000A + 100M + A) + (10000A + 100M + C) = 123422 \]
+\[ 10001A + 200M + A + C = 123422 \]
+\[ 10002A + 200M + C = 123422 \]
+
+Since \( M \) and \( C \) are digits,
+
+\boxed{8}
+
+  Predicted: 8  → ✗ WRONG  (15.1s, 12 API calls)
+
+────────────────── Problem 13/15  —  Algebra  [Level 2] ──────────────────
+
+Problem:
+Evaluate $\log_21$.
+
+Ground truth answer: 0
+
+
+▶ Single-Shot
+
+\boxed{0}
+
+  Predicted: 0  → ✓ CORRECT  (0.2s, 1 call)
+
+▶ Chain-of-Thought
+
+To evaluate \(\log_2 1\), we need to determine the exponent \(x\) such that:
+
+\[2^x = 1\]
+
+Let's reason step-by-step:
+
+1. **Understand the properties of logarithms:**
+   - The base of a logarithm is raised to its own power to get back to the original number.
+   - For any positive real numbers \(a\) and \(b\) (where \(a > 0\) and \(b \neq 1\)), we have:
+     \[
+     \log_a b = x \quad \text{if and only if} \quad a^x = b
+     \]
+
+2. **Apply the property to our problem:**
+   - We need to find \(x\) such that:
+     \[
+     2^x = 1
+     \]
+
+3. **Identify the base and the target value:**
+   - The base is \(2\).
+   - The target value is \(1\).
+
+4. **Determine the exponent:**
+   - We need to find an exponent \(x\) such that when \(2\) is raised to it, we get \(1\).
+   - Since any number (except 0) raised to the power of 0 equals 1:
+     \[
+     2^0 = 1
+     \]
+
+5. **Conclude the value:**
+   - Therefore, the exponent \(x\) that satisfies \(2^x = 1\) is \(0\).
+
+Thus, we have:
+
+\[
+\log_2 1 = 0
+\]
+
+ANSWER: \(\boxed{0}\)
+
+  Predicted: 0  → ✓ CORRECT  (4.1s, 1 call)
+
+▶ Tree-of-Thoughts
+  k=3 thoughts per node, beam b=2, max depth=5
+    [ToT] depth=0, expanding node…
+      ↳ T1: The next logical step would be to recognize that any logarithm with an argument ... -> likely
+      ↳ T2: The next major logical milestone or phase of solving the problem would be to und... -> likely
+      ↳ T3: The next major logical milestone or phase of solving for $\log_2 1$ would be rec... -> likely
+    [ToT] depth=1, expanding node…
+      ↳ T1: \boxed{0} -> likely
+    [ToT] depth=1, expanding node…
+      ↳ T1: \boxed{0} -> impossible
+      ↳ T2: Next logical step: Recognize that $\log_2 1 = x$ implies $2^x = 1$. From the bas... -> likely
+    [ToT] Solution found at depth 2.
+
+…(trajectory preview)…
+The next logical step would be to recognize that any logarithm with an argument of 1, base equal to some positive number greater than 1, is equivalent to the logarithm of 1 in its own base. Specifically:
+
+\[
+\log_b(1) = 0 \quad \text{for} \; b > 1
+\]
+
+In this case, since the base \( b = 2 \):
+
+\[
+\log_2(1) = 0
+\]
+
+\boxed{0}
+
+  Predicted: 0  → ✓ CORRECT  (8.1s, 15 API calls)
+
+────────────────── Problem 14/15  —  Algebra  [Level 2] ──────────────────
+
+Problem:
+Simplify $\frac{2s^5}{s^3} - 6s^2 + \frac{7s^3}{s}$.
+
+Ground truth answer: 3s^2
+
+
+▶ Single-Shot
+
+\boxed{s^4 - 6s^2 + 7s}
+
+  Predicted: s^4 - 6s^2 + 7s  → ✗ WRONG  (0.3s, 1 call)
+
+▶ Chain-of-Thought
+
+To simplify the expression \(\frac{2s^5}{s^3} - 6s^2 + \frac{7s^3}{s}\), we will follow these steps:
+
+1. Simplify each term individually.
+2. Combine like terms.
+
+Let's start with the first term, \(\frac{2s^5}{s^3}\):
+
+\[
+\frac{2s^5}{s^3} = 2s^{5-3} = 2s^2
+\]
+
+Next, simplify the second term, \(6s^2\), which is already in its simplest form.
+
+Finally, simplify the third term, \(\frac{7s^3}{s}\):
+
+\[
+\frac{7s^3}{s} = 7s^{3-1} = 7s^2
+\]
+
+Now we substitute these simplified terms back into the original expression:
+
+\[
+2s^2 - 6s^2 + 7s^2
+\]
+
+Combine like terms:
+
+\[
+(2s^2) + (-6s^2) + (7s^2) = (2-6+7)s^2 = 3s^2
+\]
+
+So the simplified expression is \(3s^2\).
+
+ANSWER: \boxed{3s^2}
+
+  Predicted: 3s^2  → ✓ CORRECT  (3.5s, 1 call)
+
+▶ Tree-of-Thoughts
+  k=3 thoughts per node, beam b=2, max depth=5
+    [ToT] depth=0, expanding node…
+      ↳ T1: To simplify the expression $\frac{2s^5}{s^3} - 6s^2 + \frac{7s^3}{s}$, we need t... -> likely
+      ↳ T2: \boxed{2s^2 - 6s^2 + 7s} -> impossible
+    [ToT] depth=1, expanding node…
+      ↳ T1: \boxed{0}  Explanation: After simplifying both parts of the original expression,... -> impossible
+      ↳ T2: \boxed{0} -> impossible
+      ↳ T3: \boxed{2s^2 - 6s^2 + 7s^2} -> likely
+    [ToT] Solution found at depth 2.
+
+…(trajectory preview)…
+To simplify the expression $\frac{2s^5}{s^3} - 6s^2 + \frac{7s^3}{s}$, we need to combine like terms and simplify each term individually.
+
+1. Simplify $\frac{2s^5}{s^3}$:
+   - Use the rule of exponents: $a^m / a^n = a^{m-n}$
+   - Here, $a = s$, $m = 5$, and $n = 3$
+   - So, $\frac{2s^5}{s^3} = 2s^{5-3} = 2s^2$
+
+Now the expression becomes: 
+\[ 2s^2 - 6s^2 + \frac{7s^3}{s} \]
+
+2. Simplify $\frac{7s^3}{s}$:
+   - Use the rule of exponents again, but now with $a = s$ and $m = 3$, $n = 1$
+   - So, $\frac{7s^3}{s} = 7s^{3-1} = 7s^2$
+
+Now the expression is:
+\[ 2s
+
+\boxed{2s^2 - 6s^2 + 7s^2}
+
+  Predicted: 2s^2 - 6s^2 + 7s^2  → ✗ WRONG  (7.4s, 11 API calls)
+
+────────────────── Problem 15/15  —  Algebra  [Level 2] ──────────────────
+
+Problem:
+Twelve people purchased supplies for a ten-day camping trip with the understanding that each of the twelve will get equal daily shares. They are then joined by three more people, but make no further purchases. How many days will the supplies last if the original daily share for each person is not changed?
+
+Ground truth answer: 8
+
+
+▶ Single-Shot
+
+\boxed{6}
+
+  Predicted: 6  → ✗ WRONG  (0.2s, 1 call)
+
+▶ Chain-of-Thought
+
+To solve this problem, we need to determine how long the supplies will last after the additional people join in.
+
+1. **Calculate the total number of people:**
+   - Original 12 people.
+   - Additional 3 people.
+   - Total = 12 + 3 = 15 people.
+
+2. **Determine the original daily share for each person:**
+   - Each of the 12 people gets an equal share of supplies over 10 days.
+   - Therefore, each person's daily share is \(\frac{1}{10}\) of the total supplies.
+
+3. **Calculate the new daily share per person after the additional people join:**
+   - With 15 people, each person will now get an equal share of supplies over 10 days.
+   - Therefore, each person's new daily share is \(\frac{1}{10}\) of the total supplies.
+
+4. **Determine how many days the supplies will last with the new number of people:**
+   - Since each person still needs to consume their original share (which is 1/10th of the total supplies), and there are now 15 people, we need to find out how many days it takes for all 15 people to finish their shares.
+   - The new daily share per person remains \(\frac{1}{10}\) of the total supplies.
+
+5. **Calculate the number of days:**
+   - Since each person's daily share is still \(\frac{1}{10}\) of the total supplies, and there are 15 people sharing the supplies equally over 10 days, we need to find out how many times 1/10 fits into 1 (the whole supply).
+   - The number of days the supplies will last is \( \frac{1}{\frac{1}{10}} = 10 \) days.
+
+**ANSWER:**
+The supplies will last for \(\boxed{10}\) days.
+
+  Predicted: 10  → ✗ WRONG  (5.3s, 1 call)
+
+▶ Tree-of-Thoughts
+  k=3 thoughts per node, beam b=2, max depth=5
+    [ToT] depth=0, expanding node…
+      ↳ T1: To solve this problem, we need to determine how many days the remaining supplies... -> likely
+      ↳ T2: **Next Logical Step:** Calculate the total number of people after the additional... -> likely
+      ↳ T3: **Boxed Solution:** 30  Final Answer: 30 -> impossible
+    [ToT] Solution found at depth 1.
+
+…(trajectory preview)…
+umber of people = 12 + 3 = 15
+- Each person gets a daily share for 10 days.
+- Therefore, each person needs an equal share of supplies that lasts for 10 days. 
+
+The next step is to calculate this total amount of supplies (let's denote it as S) and then determine how many days the entire group will last with S divided by the total number of people.
+
+Total daily usage per person = S / 15
+
+Since each person needs an equal share for 10 days, we need:
+(Useful calculation to finalize)
+
+\boxed{4}
+
+This answer indicates that the supplies will last for 4 full days after the additional three people join.
+
+  Predicted: 4  → ✗ WRONG  (7.9s, 6 API calls)
+
+──────────────────────────────── Summary ────────────────────────────────
+
+
+  Strategy              Correct   Accuracy   Avg Time   Avg Calls
+  ─────────────────────────────────────────────────────────────────
+  Single-Shot          3/15        20%        0.3s         1.0
+  Chain-of-Thought     11/15        73%        7.6s         1.0
+  Tree-of-Thoughts     7/15        47%       15.3s         9.4
+
+  Note: accuracy uses \boxed{} extraction + LaTeX normalization.
+  ToT makes more API calls but explores multiple reasoning paths.
+
+
+  Per-problem breakdown:
+  #    Level    SS Ans             CoT Ans            ToT Ans            GT Ans
+  ──────────────────────────────────────────────────────────────────────────────────────────
+  1    Level 2  298                402                402                402
+  2    Level 2  10                 10                 10                 10
+  3    Level 2  -25                -25                25                 -25
+  4    Level 2  1                  5                  5                  5
+  5    Level 2  -2                 0                  0                  0
+  6    Level 2  8                  2                  2                  2
+  7    Level 2  \frac1{5}          \frac{1}{12}       \frac{7}{24}       \frac{1}{12}
+  8    Level 2  (1,-\frac{3}{2}..  (1, 4.5)           (1, 4.5)           \left(1,\frac{9}{2}\right)
+  9    Level 2  \frac{336}{7}      24                 24                 24
+  10   Level 2  2                  4 \times 15^{1     10 \sqrt[3]{6}     60
+  11   Level 2  9                  108                90                 108
+  12   Level 2  6                  erpretation or ..  8                  14
+  13   Level 2  0                  0                  0                  0
+  14   Level 2  s^4 - 6s^2 + 7s    3s^2               2s^2 - 6s^2 + 7..  3s^2
+  15   Level 2  6                  10                 4                  8
+

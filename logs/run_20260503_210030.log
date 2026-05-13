@@ -1,0 +1,95 @@
+Logging output to run_20260503_210030.log...
+
+
+──────────── 3-Way MATH Benchmark  ·  Single-Shot | CoT | ToT ────────────
+
+  Model  : gemma4:e4b
+  Subject: algebra   N: 1
+  Level  : 1
+  ToT    : k=3 thoughts, b=2 beam, depth≤5
+
+Loading dataset…
+Loaded 1 example(s).
+
+
+─────────────────── Problem 1/1  —  Algebra  [Level 1] ───────────────────
+
+Problem:
+What is the positive difference between $120\%$ of 30 and $130\%$ of 20?
+
+Ground truth answer: 10
+
+
+▶ Single-Shot
+
+The problem asks for the positive difference between $120\%$ of 30 and $130\%$ of 20.
+
+Step 1: Calculate $120\%$ of 30.
+$$120\% \text{ of } 30 = 1.20 \times 30 = 36$$
+
+Step 2: Calculate $130\%$ of 20.
+$$130\% \text{ of } 20 = 1.30 \times 20 = 26$$
+
+Step 3: Find the positive difference between the results.
+$$\text{Difference} = |36 - 26| = 10$$
+
+The positive difference is 10.
+
+$$\boxed{10}$$
+
+  Predicted: 10  → ✓ CORRECT  (47.2s, 1 call)
+
+▶ Chain-of-Thought
+
+Solution:
+The problem asks for the positive difference between two values: $120\%$ of 30 and $130\%$ of 20.
+
+Step 1: Calculate $120\%$ of 30.
+To find $120\%$ of 30, we convert the percentage to a decimal or fraction:
+$120\% = 1.20$
+$120\%$ of 30 = $1.20 \times 30 = 36$.
+
+Step 2: Calculate $130\%$ of 20.
+To find $130\%$ of 20, we convert the percentage to a decimal or fraction:
+$130\% = 1.30$
+$130\%$ of 20 = $1.30 \times 20 = 26$.
+
+Step 3: Find the positive difference between the results from Step 1 and Step 2.
+Positive difference = $|(120\% \text{ of } 30) - (130\% \text{ of } 20)|$
+Positive difference = $|36 - 26|$
+Positive difference = $10$.
+
+ANSWER: \boxed{10}
+
+  Predicted: 10  → ✓ CORRECT  (24.4s, 1 call)
+
+▶ Tree-of-Thoughts
+  k=3 thoughts per node, beam b=2, max depth=5
+    [ToT] depth=0, expanding node…
+      ↳ T1: The problem asks for the positive difference between two calculated values: $120... -> likely
+    [ToT] depth=1, expanding node…
+    [ToT] All paths pruned — search failed.
+
+…(trajectory preview)…
+Search failed.
+
+  Predicted: Search failed  → ✗ WRONG  (60.7s, 7 API calls)
+
+──────────────────────────────── Summary ────────────────────────────────
+
+
+  Strategy              Correct   Accuracy   Avg Time   Avg Calls
+  ─────────────────────────────────────────────────────────────────
+  Single-Shot          1/1       100%       47.2s         1.0
+  Chain-of-Thought     1/1       100%       24.4s         1.0
+  Tree-of-Thoughts     0/1         0%       60.7s         7.0
+
+  Note: accuracy uses \boxed{} extraction + LaTeX normalization.
+  ToT makes more API calls but explores multiple reasoning paths.
+
+
+  Per-problem breakdown:
+  #    Level    SS Ans             CoT Ans            ToT Ans            GT Ans
+  ──────────────────────────────────────────────────────────────────────────────────────────
+  1    Level 1  10                 10                 Search failed      10
+

@@ -1,0 +1,120 @@
+Logging output to run_20260503_212411.log...
+
+
+──────────── 3-Way MATH Benchmark  ·  Single-Shot | CoT | ToT ────────────
+
+  Model  : llama3.1:8b
+  Subject: algebra   N: 2
+  ToT    : k=3 thoughts, b=2 beam, depth≤5
+
+Loading dataset…
+Loaded 2 example(s).
+
+
+─────────────────── Problem 1/2  —  Algebra  [Level 3] ───────────────────
+
+Problem:
+How many vertical asymptotes does the graph of $y=\frac{2}{x^2+x-6}$ have?
+
+Ground truth answer: 2
+
+
+▶ Single-Shot
+
+To find the number of vertical asymptotes, we need to determine how many values of x make the denominator equal to zero.
+
+The denominator is given by:
+$x^2 + x - 6$
+
+We can factor this expression as:
+$(x+3)(x-2)$
+
+Setting each factor equal to zero gives us:
+$x+3=0$ or $x-2=0$
+$x=-3$ or $x=2$
+
+Therefore, the graph of $y=\frac{2}{x^2+x-6}$ has two vertical asymptotes at x = -3 and x = 2.
+
+The final answer is: $\boxed{2}$
+
+  Predicted: 2  → ✓ CORRECT  (15.7s, 1 call)
+
+▶ Chain-of-Thought
+
+To find the number of vertical asymptotes for the given function $y=\frac{2}{x^2+x-6}$, we need to determine where the denominator is equal to zero.
+
+Step 1: Factorize the denominator.
+The denominator can be factored as $(x+3)(x-2)$.
+
+Step 2: Set each factor equal to zero and solve for x.
+Setting each factor equal to zero gives us:
+$x+3=0$ or $x-2=0$
+Solving these equations yields:
+$x=-3$ or $x=2$
+
+Step 3: Check if the numerator is also equal to zero at these points.
+Since the numerator is a constant (2), it will never be equal to zero.
+
+Step 4: Determine the number of vertical asymptotes.
+The function has vertical asymptotes at the values of x where the denominator is equal to zero and the numerator is not. Therefore, there are two vertical asymptotes at $x=-3$ and $x=2$.
+
+
+ANSWER: \boxed{2}
+
+  Predicted: 2  → ✓ CORRECT  (18.9s, 1 call)
+
+▶ Tree-of-Thoughts
+  k=3 thoughts per node, beam b=2, max depth=5
+    [ToT] depth=0, expanding node…
+      ↳ T1: ## Step 1: Identify the denominator of the given function The function given is ... -> likely
+      ↳ T2: ## Step 1: Factorize the denominator To determine the number of vertical asympto... -> likely
+      ↳ T3: ## Step 1 To find the number of vertical asymptotes for the given rational funct... -> likely
+    [ToT] depth=1, expanding node…
+      ↳ T1: ## Step 6: Determine the nature of the vertical asymptotes by checking if there ... -> likely
+      ↳ T2: ## Step 6: Determine if there are any common factors in the numerator that cance... -> likely
+      ↳ T3: To efficiently move forward with the solution, let's combine the smaller steps i... -> likely
+    [ToT] depth=1, expanding node…
+      ↳ T1: ## Step 5: Determine which factors lead to vertical asymptotes by checking for c... -> likely
+      ↳ T2: ## Step 5: Determine which roots are actually vertical asymptotes by checking fo... -> likely
+      ↳ T3: ## Step 5: Check for cancellation and determine actual vertical asymptotes To co... -> likely
+    [ToT] Solution found at depth 2.
+
+…(trajectory preview)…
+ asymptotes at $x = -3$ and $x = 2$.
+
+## Step 5:
+
+## Step 6: Determine the nature of the vertical asymptotes by checking if there are any common factors between the numerator and the factored denominator
+Before we conclude that these points are indeed vertical asymptotes, we need to check if the function is undefined at these points due to division by zero. However, since the numerator is a constant (2), it does not share any non-constant factors with the denominator $(x + 3)(x - 2)$. Thus, these points indeed represent where the graph has vertical asymptotes.
+
+The final answer is: $\boxed{2}$
+
+  Predicted: 2  → ✓ CORRECT  (175.0s, 18 API calls)
+
+─────────────────── Problem 2/2  —  Algebra  [Level 1] ───────────────────
+
+Problem:
+What is the positive difference between $120\%$ of 30 and $130\%$ of 20?
+
+Ground truth answer: 10
+
+
+▶ Single-Shot
+
+## Step 1: First, let's calculate 120% of 30.
+To find 120% of 30, we multiply 30 by 1.2.
+
+## Step 2: Next, let's calculate 130% of 20.
+To find 130% of 20, we multiply 20 by 1.3.
+
+## Step 3: Now, let's compute the actual values for both calculations from step 1 and step 2.
+120% of 30 is 36, and 130% of 20 is 26.
+
+## Step 4: Calculate the positive difference between the two results obtained in step 3.
+The positive difference between 36 and 26 is 10.
+
+The final answer is: $\boxed{10}$
+
+  Predicted: 10  → ✓ CORRECT  (12.5s, 1 call)
+
+▶ Chain-of-Thought

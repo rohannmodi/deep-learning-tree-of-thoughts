@@ -1,0 +1,23 @@
+Logging output to run_20260503_210851.log...
+
+
+──────────── 3-Way MATH Benchmark  ·  Single-Shot | CoT | ToT ────────────
+
+  Model  : gemma4:e4b
+  Subject: algebra   N: 3
+  Level  : 1
+  ToT    : k=3 thoughts, b=2 beam, depth≤5
+
+Loading dataset…
+Loaded 3 example(s).
+
+
+─────────────────── Problem 1/3  —  Algebra  [Level 1] ───────────────────
+
+Problem:
+What is the positive difference between $120\%$ of 30 and $130\%$ of 20?
+
+Ground truth answer: 10
+
+
+▶ Single-Shot

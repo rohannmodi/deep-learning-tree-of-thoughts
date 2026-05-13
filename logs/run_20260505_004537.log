@@ -1,0 +1,190 @@
+Logging output to run_20260505_004537.log...
+
+
+─────────────── MATH Benchmark  ·  Single-Shot | CoT | ToT ───────────────
+
+  Model  : gemini-2.5-flash
+  Subject: algebra   N: 2
+  ToT    : k=5 thoughts, b=5 beam, depth≤3, search=BFS, eval_samples=1
+
+Loading dataset…
+Loaded 2 example(s).
+
+
+─────────────────── Problem 1/2  —  Algebra  [Level 3] ───────────────────
+
+Problem:
+How many vertical asymptotes does the graph of $y=\frac{2}{x^2+x-6}$ have?
+
+Ground truth answer: 2
+
+
+▶ Single-Shot
+
+The vertical asymptotes of a rational function occur at the values of $x$ for which the denominator is equal to zero and the numerator is non-zero.
+
+The given function is $y=\frac{2}{x^2+x-6}$.
+
+Set the denominator equal to zero:
+$x^2+x-6 = 0$
+
+Factor the quadratic equation:
+We need two numbers that multiply to -6 and add to 1. These numbers are 3 and -2.
+So, the equation can be factored as:
+$(x+3)(x-2) = 0$
+
+This gives two possible values for $x$:
+$x+3 = 0 \implies x = -3$
+$x-2 = 0 \implies x = 2$
+
+Now, we check the numerator at these values of $x$. The numerator is $2$.
+For $x=-3$, the numerator is $2$, which is not zero.
+For $x=2$, the numerator is $2$, which is not zero.
+
+Since the numerator is non-zero at both $x=-3$ and $x=2$,
+
+  Predicted: .
+
+Since the numerator is non-zero at both $x=-3$ and $x=2$,  → ✗ WRONG  (3.0s, 1 call)
+
+▶ Chain-of-Thought
+
+To find the vertical asymptotes of a rational function, we need to find the values of x for which the denominator is equal to zero and the numerator is non-zero.
+
+The given function is $y=\frac{2}{x^2+x-6}$.
+
+Step 1: Set the denominator equal to zero.
+$x^2+x-6=0$
+
+Step 2: Solve the quadratic equation for x.
+We can factor the quadratic expression. We are looking for two numbers that multiply to -6 and add to 1. These numbers are 3 and -2.
+So, we can factor the quadratic as:
+$(x+3)(x-2)=0$
+
+Step 3: Set each factor equal to zero and solve for x.
+$x+3=0 \Rightarrow x=-3$
+$x-2=0 \Rightarrow x=2$
+
+Step 4: Check if the numerator is non-zero at these x-values.
+The numerator is 2, which is a constant and never zero.
+Since the numerator is non-zero at $x=-3$ and $x=2$, these are indeed the equations of the vertical asymptotes.
+
+Step 5: Count the number of vertical asymptotes.
+We found two distinct values of x for which the denominator is zero and the numerator is non-zero: $x=-3$ and $x=2$.
+Therefore, there are two vertical asymptotes.
+
+The final answer is $\boxed{2}$.
+
+  Predicted: 2  → ✓ CORRECT  (2.9s, 1 call)
+
+▶ ToT-BFS
+  k=5, b=5, depth≤3, eval_samples=1
+    [BFS] depth=0, expanding node…
+    [BFS] Consensus 4/4 but verifier disagrees — falling through.
+      ↳ T1: To find the vertical asymptotes of a rational function, we need to find the valu... -> likely
+      ↳ T2: To find the vertical asymptotes of a rational function, we need to find the valu... -> likely
+      ↳ T3: To find the vertical asymptotes of the graph of a rational function, we need to ... -> likely
+      ↳ T4: To find the vertical asymptotes of a rational function, we need to find the valu... -> likely
+      ↳ T5: [GEMINI HTTP 429: {   "error": {     "code": 429,     "message": "You exceeded y... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: [GEMINI HTTP 429: {   "error": {     "code": 429,     "message": "You exceeded y... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: [GEMINI HTTP 429: {   "error": {     "code": 429,     "message": "You exceeded y... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: [GEMINI HTTP 429: {   "error": {     "code": 429,     "message": "You exceeded y... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: [GEMINI HTTP 429: {   "error": {     "code": 429,     "message": "You exceeded y... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: [GEMINI HTTP 429: {   "error": {     "code": 429,     "message": "You exceeded y... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: [GEMINI HTTP 429: {   "error": {     "code": 429,     "message": "You exceeded y... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: [GEMINI HTTP 429: {   "error": {     "code": 429,     "message": "You exceeded y... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: [GEMINI HTTP 429: {   "error": {     "code": 429,     "message": "You exceeded y... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: [GEMINI HTTP 429: {   "error": {     "code": 429,     "message": "You exceeded y... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: [GEMINI HTTP 429: {   "error": {     "code": 429,     "message": "You exceeded y... -> likely
+    [BFS] Search exhausted — returning greedy fallback.
+
+…(trajectory preview)…
+
+So, we can factor the quadratic as:
+$(x+3)(x-2) = 0$
+
+Now, set each factor equal to zero to find the values of x:
+$x+3 = 0 \Rightarrow x = -3$
+$x-2 = 0 \Rightarrow x = 2$
+
+These are the x-values where the denominator is zero.
+Finally, we check if the numerator is zero at these x-values. The numerator is 2, which is a non-zero constant. Since the numerator is never zero, both $x=-3$ and $x=2$ correspond to vertical asymptotes.
+
+Since we found two distinct values for x that make the denominator zero and the numerator non-zero, there are two vertical asymptotes.
+
+The final answer is $\boxed{2}$.
+
+  Predicted: 2  → ✓ CORRECT  (28.0s, 75 API calls)
+
+─────────────────── Problem 2/2  —  Algebra  [Level 1] ───────────────────
+
+Problem:
+What is the positive difference between $120\%$ of 30 and $130\%$ of 20?
+
+Ground truth answer: 10
+
+
+▶ Single-Shot
+
+[GEMINI HTTP 429: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a]
+
+  Predicted: tion on this error, head to: https://ai.google.dev/gemini-a]  → ✗ WRONG  (0.2s, 1 call)
+
+▶ Chain-of-Thought
+
+[GEMINI HTTP 429: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a]
+
+  Predicted: tion on this error, head to: https://ai.google.dev/gemini-a]  → ✗ WRONG  (0.2s, 1 call)
+
+▶ ToT-BFS
+  k=5, b=5, depth≤3, eval_samples=1
+    [BFS] depth=0, expanding node…
+      ↳ T1: [GEMINI HTTP 429: {   "error": {     "code": 429,     "message": "You exceeded y... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: [GEMINI HTTP 429: {   "error": {     "code": 429,     "message": "You exceeded y... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: [GEMINI HTTP 429: {   "error": {     "code": 429,     "message": "You exceeded y... -> likely
+    [BFS] Search exhausted — returning greedy fallback.
+
+…(trajectory preview)…
+[GEMINI HTTP 429: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a]
+
+  Predicted: Search failed  → ✗ WRONG  (3.9s, 18 API calls)
+
+──────────────────────────────── Summary ────────────────────────────────
+
+
+  Strategy                Correct   Accuracy   Avg Time   Avg Calls
+  ───────────────────────────────────────────────────────────────────
+  Single-Shot            0/2         0%        1.6s         1.0
+  Chain-of-Thought       1/2        50%        1.6s         1.0
+  ToT-BFS                1/2        50%       15.9s        46.5
+
+  Note: accuracy uses \boxed{} extraction + LaTeX normalization.
+
+
+  Per-problem breakdown:
+  #    Level    SS           CoT          BFS          GT
+  ──────────────────────────────────────────────────────────────────────────────────────────
+  1    Level 3  .  Since t..2           2            2
+  2    Level 1  tion on th..tion on th..Search fai.. 10
+

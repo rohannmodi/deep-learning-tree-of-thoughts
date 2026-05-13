@@ -1,0 +1,613 @@
+Logging output to run_20260505_022513.log...
+
+
+─────────────── MATH Benchmark  ·  Single-Shot | CoT | ToT ───────────────
+
+  Model  : gemini-2.5-flash
+  Subject: algebra   N: 5
+  Level  : 3
+  ToT    : k=5 thoughts, b=5 beam, depth≤3, search=BFS, eval_samples=3
+
+Loading dataset math…
+Loaded 5 example(s).
+
+
+─────────────────── Problem 1/5  —  Algebra  [Level 3] ───────────────────
+
+Problem:
+How many vertical asymptotes does the graph of $y=\frac{2}{x^2+x-6}$ have?
+
+Ground truth answer: 2
+
+
+▶ Single-Shot
+
+To find the number of vertical asymptotes, we need to find the values of $x$ for which the denominator is zero and the numerator is non-zero.
+The given function is $y=\frac{2}{x^2+x-6}$.
+Set the denominator equal to zero:
+$x^2+x-6=0$
+
+Factor the quadratic equation:
+We need two numbers that multiply to -6 and add to 1. These numbers are 3 and -2.
+So, $(x+3)(x-2)=0$
+
+This gives us two possible values for $x$:
+$x+3=0 \Rightarrow x=-3$
+$x-2=0 \Rightarrow x=2$
+
+For these values of $x$, the numerator is $2$, which is non-zero.
+Therefore, there are vertical asymptotes at $x=-3$ and $x=2$.
+
+The number of vertical asymptotes is 2.
+
+\boxed{2}
+
+  Predicted: 2  → ✓ CORRECT  (1.5s, 1 call)
+
+▶ Chain-of-Thought
+
+Solution:
+To find the vertical asymptotes of the graph of a rational function, we need to find the values of x for which the denominator is equal to zero and the numerator is non-zero.
+
+The given function is $y=\frac{2}{x^2+x-6}$.
+
+First, set the denominator equal to zero:
+$x^2+x-6 = 0$
+
+Next, factor the quadratic expression. We need two numbers that multiply to -6 and add to 1. These numbers are 3 and -2.
+So, we can factor the quadratic as:
+$(x+3)(x-2) = 0$
+
+Now, set each factor equal to zero to find the values of x:
+$x+3 = 0 \Rightarrow x = -3$
+$x-2 = 0 \Rightarrow x = 2$
+
+These are the values of x for which the denominator is zero.
+Now, we need to check if the numerator is non-zero at these values of x.
+The numerator is 2, which is a constant and is never zero.
+
+Since the numerator is non-zero at $x=-3$ and $x=2$, these values of x correspond to vertical asymptotes.
+Therefore, there are two vertical asymptotes.
+
+The vertical asymptotes are at $x=-3$ and $x=2$.
+
+The number of vertical asymptotes is 2.
+
+The final answer is $\boxed{2}$.
+
+  Predicted: 2  → ✓ CORRECT  (2.2s, 1 call)
+
+▶ ToT-BFS
+  k=5, b=5, depth≤3, eval_samples=3
+    [BFS] depth=0, expanding node…
+    [BFS] Consensus + verified: 2/2 agree at depth 1.
+
+…(trajectory preview)…
+numbers that multiply to -6 and add to 1. These numbers are 3 and -2.
+$(x+3)(x-2) = 0$
+
+Step 3: Set each factor equal to zero and solve for x.
+$x+3 = 0 \Rightarrow x = -3$
+$x-2 = 0 \Rightarrow x = 2$
+
+Step 4: Check if the numerator is zero at these x-values. The numerator is 2, which is never zero.
+Since the numerator is not zero at $x=-3$ and $x=2$, these are indeed the locations of vertical asymptotes.
+
+Step 5: Count the number of distinct vertical asymptotes.
+We found two distinct values for x, which are -3 and 2. Therefore, there are 2 vertical asymptotes.
+
+The final answer is $\boxed{2}$.
+
+  Predicted: 2  → ✓ CORRECT  (11.1s, 6 API calls)
+
+─────────────────── Problem 2/5  —  Algebra  [Level 3] ───────────────────
+
+Problem:
+Kite $ABCD$ (a quadrilateral with two pairs of adjacent equal sides) has coordinates $A\ (0,7),\ B\ (1,0),\ C\ (12,-2),$ and $D\ (7,8).$ What is the area of $ABCD,$ given that the area of a kite is equal to half the product of its diagonals?
+
+[asy]
+string sp(pair P, string P2){return "$" + P2 + "\,(" + string(P.x) + "," + string(P.y) + ")$";}
+size(150); defaultpen(fontsize(10)); draw((-5,0)--(15,0),Arrows(4)); draw((0,-5)--(0,10),Arrows(4)); pair A=(0,7),B=(1,0),C=(12,-2),D=(7,8); draw(A--B--C--D--cycle, linewidth(0.7)); draw(A--C, dashed); draw(B--D, dashed); label(sp(A,"A"),A,W); label(sp(B,"B"),B,S); label(sp(C,"C"),C,E); label(sp(D,"D"),D,N);
+[/asy]
+
+Ground truth answer: 75
+
+
+▶ Single-Shot
+
+Let's calculate the lengths of the diagonals AC and BD.
+The coordinates are $A\ (0,7),\ B\ (1,0),\ C\ (12,-2),$ and $D\ (7,8).$
+
+Length of diagonal AC:
+$AC = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$
+$AC = \sqrt{(12-0)^2 + (-2-7)^2}$
+$AC = \sqrt{(12)^2 + (-9)^2}$
+$AC = \sqrt{144 + 81}$
+$AC = \sqrt{225}$
+$AC = 15$
+
+Length of diagonal BD:
+$BD = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$
+$BD = \sqrt{(7-1)^2 + (8-0)^2}$
+$BD = \sqrt{(6)^2 + (8)^2}$
+$BD = \sqrt{36 + 64}$
+$BD = \sqrt{100}$
+$BD = 10$
+
+The area of a kite is equal to half the product of its diagonals.
+Area $= \frac{1}{2} \times AC \times BD$
+Area $= \frac{1}{2} \times 15 \times 10$
+Area $= \frac{1}{2} \times 150$
+Area $= 75$
+
+The final answer is $\boxed{75}$.
+
+  Predicted: 75  → ✓ CORRECT  (1.9s, 1 call)
+
+▶ Chain-of-Thought
+
+The problem asks for the area of kite $ABCD$ with given coordinates $A\ (0,7),\ B\ (1,0),\ C\ (12,-2),$ and $D\ (7,8).$
+The area of a kite is given by half the product of its diagonals.
+The diagonals of the kite are $AC$ and $BD.$
+We need to find the lengths of the diagonals $AC$ and $BD.$
+The distance formula between two points $(x_1, y_1)$ and $(x_2, y_2)$ is $\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}.$
+
+Length of diagonal $AC$:
+$A = (0,7)$ and $C = (12,-2).$
+$AC = \sqrt{(12-0)^2 + (-2-7)^2}$
+$AC = \sqrt{12^2 + (-9)^2}$
+$AC = \sqrt{144 + 81}$
+$AC = \sqrt{225}$
+$AC = 15$
+
+Length of diagonal $BD$:
+$B = (1,0)$ and $D = (7,8).$
+$BD = \sqrt{(7-1)^2 + (8-0)^2}$
+$BD = \sqrt{6^2 + 8^2}$
+$BD = \sqrt{36 + 64}$
+$BD = \sqrt{100}$
+$BD = 10$
+
+Area of kite $ABCD = \frac{1}{2} \times AC \times BD$
+Area $= \frac{1}{2} \times 15 \times 10$
+Area $= \frac{1}{2} \times 150$
+Area $= 75$
+
+The final answer is $\boxed{75}$.
+
+  Predicted: 75  → ✓ CORRECT  (2.2s, 1 call)
+
+▶ ToT-BFS
+  k=5, b=5, depth≤3, eval_samples=3
+    [BFS] depth=0, expanding node…
+    [BFS] Consensus + verified: 3/3 agree at depth 1.
+
+…(trajectory preview)…
+ngth of diagonal $AC$:
+$A = (0,7)$ and $C = (12,-2)$
+$AC = \sqrt{(12-0)^2 + (-2-7)^2}$
+$AC = \sqrt{12^2 + (-9)^2}$
+$AC = \sqrt{144 + 81}$
+$AC = \sqrt{225}$
+$AC = 15$
+
+Length of diagonal $BD$:
+$B = (1,0)$ and $D = (7,8)$
+$BD = \sqrt{(7-1)^2 + (8-0)^2}$
+$BD = \sqrt{6^2 + 8^2}$
+$BD = \sqrt{36 + 64}$
+$BD = \sqrt{100}$
+$BD = 10$
+
+Now, we can calculate the area of the kite using the formula: Area = (1/2) * product of diagonals.
+Area of $ABCD = (1/2) \times AC \times BD$
+Area of $ABCD = (1/2) \times 15 \times 10$
+Area of $ABCD = (1/2) \times 150$
+Area of $ABCD = 75$
+
+The final answer is $\boxed{75}$.
+
+  Predicted: 75  → ✓ CORRECT  (14.3s, 6 API calls)
+
+─────────────────── Problem 3/5  —  Algebra  [Level 3] ───────────────────
+
+Problem:
+If $A$, $B$ and $C$ are positive integers such that $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$, what is the value of $A+B+C$ given that $A$ and $C$ have no common prime factors, and $B$ has no perfect-square factors other than 1?
+
+Ground truth answer: 8
+
+
+▶ Single-Shot
+
+Let the given equation be
+$$ \frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}} $$
+We can rationalize the denominator on the right side:
+$$ \frac{9}{2\sqrt{3}} = \frac{9\sqrt{3}}{2\sqrt{3}\sqrt{3}} = \frac{9\sqrt{3}}{2 \cdot 3} = \frac{9\sqrt{3}}{6} = \frac{3\sqrt{3}}{2} $$
+So we have
+$$ \frac{A\sqrt{B}}{C} = \frac{3\sqrt{3}}{2} $$
+We can rewrite this as
+$$ \frac{A}{C} = \frac{3\sqrt{3}}{2\sqrt{B}} $$
+To eliminate the square roots from the denominator, we can multiply the numerator and denominator by $\sqrt{B}$:
+$$ \frac{A}{C} = \frac{3\sqrt{3}\sqrt{B}}{2B} = \frac{3\sqrt{3B}}{2B} $$
+For $\frac{A}{C}$ to be a rational number, $\sqrt{3B}$ must be an integer. This means $3B$ must be a perfect square.
+Since $B$ has no perfect-square factors other than 1, for $3B$ to be a perfect square, $B$ must contain a factor of 3. Let $B = 3k^2$ for some integer $k$.
+However, if $B=3k^2$, then $B$ would have a perfect square factor $k^2$ (unless $k=1$).
+Since $B$ has no perfect-square factors other than 1, $B$ must be of the form $3 \times (\text{product of distinct primes not equal to 3})$.
+For $3B$ to be a perfect square, $B$ must be of the form $3 \times (\text{a perfect square})$.
+Let $3B = m^2$ for some integer $m$.
+Since $B$ has no perfect-square factors other than 1, $B$ must be a square-free integer.
+For $3B$ to be a perfect square, $B$ must be of the form $3 \times (\text{a perfect
+
+  Predicted: t square, $B$ must be of the form $3 \times (\text{a perfect  → ✗ WRONG  (2.9s, 1 call)
+
+▶ Chain-of-Thought
+
+Solution:
+We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$.
+We need to rationalize the denominator on the right side:
+$\frac{9}{2\sqrt{3}} = \frac{9}{2\sqrt{3}} \times \frac{\sqrt{3}}{\sqrt{3}} = \frac{9\sqrt{3}}{2 \times 3} = \frac{9\sqrt{3}}{6} = \frac{3\sqrt{3}}{2}$.
+
+So, we have $\frac{A\sqrt{B}}{C} = \frac{3\sqrt{3}}{2}$.
+This can be rewritten as $A\sqrt{B} \times 2 = 3\sqrt{3} \times C$, or $2A\sqrt{B} = 3C\sqrt{3}$.
+
+We are given that $A$, $B$, and $C$ are positive integers.
+We are also given that $A$ and $C$ have no common prime factors.
+And $B$ has no perfect-square factors other than 1. This means $B$ is square-free.
+
+Let's compare the terms in the equation $2A\sqrt{B} = 3C\sqrt{3}$.
+Since $B$ is square-free, $\sqrt{B}$ is an irrational number unless $B=1$.
+If $B=1$, then $2A = 3C\sqrt{3}$, which is impossible since $2A$ and $3C$ are integers and $\sqrt{3}$ is irrational.
+Therefore, $B$ must be a square-free integer greater than 1.
+
+For the equality to hold, the irrational parts must be equal and the rational parts must be equal.
+Comparing the square roots, we must have $\sqrt{B} = \sqrt{3}$, which implies $B=3$.
+Since $B=3$, it is a square-free integer.
+
+Now substitute $B=3$ into the equation:
+$2A\sqrt{3} = 3C\sqrt{3}$.
+Divide both sides by $\sqrt{3}$:
+$2A = 3C$.
+
+We are given that $A$ and $C$ have no common prime factors.
+From $2A = 3C$, we can see that $2$ must be a factor of $3C$. Since $2$ is not a factor of $3$, $2$ must be a factor of $C$.
+Also, $3$ must be a factor of $2A$. Since $3$ is not a factor of $2$, $3$ must be a factor of $A$.
+
+Let $A = 3k$ and $C = 2m$ for some positive integers $k$ and $m$.
+Substitute these into $2A = 3C$:
+$2(3k) = 3(2m)$
+$6k = 6m$
+$k = m$.
+
+So, $A = 3k$ and $C = 2k$.
+Since $A$ and $C$ have no common prime factors, the greatest common divisor of $A$ and $C$ must be 1.
+$\text{gcd}(A, C) = \text{gcd}(3k, 2k) = k \times \text{gcd}(3, 2) = k \times 1 = k$.
+For $\text{gcd}(A, C) =
+
+  Predicted:  \text{gcd}(3, 2) = k \times 1 = k$.
+For $\text{gcd}(A, C) =  → ✗ WRONG  (4.0s, 1 call)
+
+▶ ToT-BFS
+  k=5, b=5, depth≤3, eval_samples=3
+    [BFS] depth=0, expanding node…
+      ↳ T1: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T2: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, le... -> likely
+      ↳ T3: Solution: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$.... -> likely
+      ↳ T4: Solution: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$.... -> likely
+      ↳ T5: Given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$, we want to find ... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: We are given the equation $4A^2B = 27C^2$. We are given that $A$, $B$, and $C$ a... -> likely
+      ↳ T2: We are given the equation $4A^2B = 27C^2$. We are also given that $A$, $B$, and ... -> likely
+      ↳ T3: We are given the equation $4A^2B = 27C^2$. We are also given that $A$, $B$, and ... -> likely
+      ↳ T4: We have the equation $4A^2B = 27C^2$. We are given that $A$, $B$, and $C$ are po... -> likely
+      ↳ T5: We have the equation $4A^2B = 27C^2$. We are given that $A$, $B$, and $C$ are po... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: We have the equation $4A^2B = 27C^2$. We are given that $A$, $B$, and $C$ are po... -> likely
+      ↳ T2: We have the equation $4A^2B = 27C^2$. We are given that $A$, $B$, and $C$ are po... -> likely
+      ↳ T3: We have the equation $4A^2B = 27C^2$. We are given that $A$, $B$, and $C$ are po... -> likely
+      ↳ T4: We have the equation $4A^2B = 27C^2$. We are given that $A$, $B$, and $C$ are po... -> likely
+      ↳ T5: We have the equation $4A^2B = 27C^2$. We are given that $A$, $B$, and $C$ are po... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T2: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T3: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T4: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: Solution: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$.... -> likely
+      ↳ T2: Solution: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$.... -> likely
+      ↳ T3: Solution: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$.... -> likely
+      ↳ T4: Solution: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$.... -> likely
+      ↳ T5: Solution: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$.... -> likely
+    [BFS] depth=1, expanding node…
+      ↳ T1: We have the equation $B = 27k^2 = 3^3 k^2$. We are given that $B$ has no perfect... -> likely
+      ↳ T2: We have the equation $4A^2 B = 27C^2$. We are given that $A$ and $C$ have no com... -> impossible
+      ↳ T3: We have the equation $B = 27k^2 = 3^3 k^2$. We are given that $B$ has no perfect... -> likely
+      ↳ T4: We have the equation $B = 27k^2 = 3^3 k^2$. We are given that $B$ has no perfect... -> likely
+      ↳ T5: We have the equation $4A^2 B = 27C^2$. We are given that $A$ and $C$ have no com... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T2: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T3: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T4: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T2: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T3: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T4: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T5: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T2: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T3: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T4: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T5: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T2: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T3: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T4: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T5: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+    [BFS] depth=2, expanding node…
+      ↳ T1: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T2: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T3: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T4: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+      ↳ T5: We are given the equation $\frac{A\sqrt{B}}{C} = \frac{9}{2\sqrt{3}}$. First, we... -> likely
+    [BFS] Search exhausted — returning greedy fallback.
+
+…(trajectory preview)…
+d $\gcd(4, 27) = 1$, $4$ must be a factor of $C^2$.
+Since $4$ is a factor of $C^2$, $C$ must be an even number. Let $C = 2k$ for some integer $k$.
+Then $C^2 = 4k^2$.
+Substituting $C^2 = 4k^2$ into $4A^2B = 27C^2$, we get $4A^2B = 27(4k^2)$.
+$A^2B = 27k^2$.
+Since $C = 2k$, $k = C/2$. So $A^2B = 27(C/2)^2 = 27C^2/4$. This brings us back to the previous step.
+
+Let's use the prime factorization.
+Since $A$ and $C$ have no common prime factors, $A^2$ and $C^2$ have no common prime factors.
+From $4A^2B = 27C^2$:
+Since $27$ is a factor of $4A^2B$ and $\gcd(4, 27) = 1$, $27$ must be a factor of $A^2B$.
+
+  Predicted: Search failed  → ✗ WRONG  (339.2s, 216 API calls)
+
+─────────────────── Problem 4/5  —  Algebra  [Level 3] ───────────────────
+
+Problem:
+Ten treeks weigh as much as three squigs and one goolee. Two treeks and one goolee are equal in weight to one squig. The combined weight of how many treeks equals the weight of one squig?
+
+Ground truth answer: 3
+
+
+▶ Single-Shot
+
+Let T be the weight of a treek, S be the weight of a squig, and G be the weight of a goolee.
+From the problem statement, we can form the following equations:
+
+1) 10T = 3S + G
+2) 2T + G = S
+
+We want to find out how many treeks equal the weight of one squig, which means we want to express S in terms of T (S = xT, where x is the number of treeks).
+
+From equation (2), we can express G in terms of S and T:
+G = S - 2T
+
+Now substitute this expression for G into equation (1):
+10T = 3S + (S - 2T)
+10T = 4S - 2T
+
+Now, we want to isolate S. Add 2T to both sides of the equation:
+10T + 2T = 4S
+12T = 4S
+
+Finally, divide by 4 to find S in terms of T:
+S = 12T / 4
+S = 3T
+
+So, the weight of one squig is equal to the weight of 3 treeks.
+
+The final answer is $\boxed{3}$
+
+  Predicted: 3  → ✓ CORRECT  (2.0s, 1 call)
+
+▶ Chain-of-Thought
+
+Let T be the weight of one treek.
+Let S be the weight of one squig.
+Let G be the weight of one goolee.
+
+From the problem statement, we can set up two equations:
+1) 10T = 3S + G
+2) 2T + G = S
+
+We want to find out how many treeks equal the weight of one squig. This means we want to express S in terms of T.
+
+From equation (2), we can express G in terms of S and T:
+G = S - 2T
+
+Now substitute this expression for G into equation (1):
+10T = 3S + (S - 2T)
+10T = 4S - 2T
+
+Now, we want to isolate S. Add 2T to both sides of the equation:
+10T + 2T = 4S
+12T = 4S
+
+Finally, divide by 4 to find S in terms of T:
+S = 12T / 4
+S = 3T
+
+So, the weight of one squig is equal to the weight of three treeks.
+
+The combined weight of 3 treeks equals the weight of one squig.
+ANSWER: \boxed{3}
+
+  Predicted: 3  → ✓ CORRECT  (1.9s, 1 call)
+
+▶ ToT-BFS
+  k=5, b=5, depth≤3, eval_samples=3
+    [BFS] depth=0, expanding node…
+    [BFS] Consensus + verified: 2/2 agree at depth 1.
+
+…(trajectory preview)…
+eight of how many treeks equals the weight of one squig. This means we want to express S in terms of T, i.e., S = xT, where x is the number of treeks.
+
+From Equation 2, we can express G in terms of S and T:
+G = S - 2T
+
+Now substitute this expression for G into Equation 1:
+10T = 3S + (S - 2T)
+10T = 3S + S - 2T
+10T = 4S - 2T
+
+Now, we want to solve for S in terms of T. Add 2T to both sides of the equation:
+10T + 2T = 4S
+12T = 4S
+
+Divide both sides by 4 to find S in terms of T:
+S = 12T / 4
+S = 3T
+
+So, the weight of one squig is equal to the weight of three treeks.
+
+The final answer is $\boxed{3}$.
+
+  Predicted: 3  → ✓ CORRECT  (11.8s, 6 API calls)
+
+─────────────────── Problem 5/5  —  Algebra  [Level 3] ───────────────────
+
+Problem:
+At constant temperature, the pressure of a sample of gas is inversely proportional to its volume. I have some hydrogen in a 3.67 liter container with a pressure of 4 kPa. If I move all of it to a 1.835 liter container at the same temperature, what will the new pressure be in kPa?
+
+Ground truth answer: 8
+
+
+▶ Single-Shot
+
+Let $P_1$ be the initial pressure and $V_1$ be the initial volume.
+Let $P_2$ be the final pressure and $V_2$ be the final volume.
+
+Given that pressure is inversely proportional to volume, we can write the relationship as:
+$P_1 V_1 = P_2 V_2$
+
+From the problem statement, we have:
+Initial volume $V_1 = 3.67$ liters
+Initial pressure $P_1 = 4$ kPa
+Final volume $V_2 = 1.835$ liters
+We need to find the new pressure $P_2$.
+
+Substitute the given values into the formula:
+$(4 \text{ kPa}) \times (3.67 \text{ L}) = P_2 \times (1.835 \text{ L})$
+
+Now, solve for $P_2$:
+$P_2 = \frac{(4 \text{ kPa}) \times (3.67 \text{ L})}{1.835 \text{ L}}$
+
+Calculate the product of the initial pressure and volume:
+$4 \times 3.67 = 14.68$
+
+Now divide by the final volume:
+$P_2 = \frac{14.68}{1.835}$
+
+$P_2 = 8$ kPa
+
+The new pressure will be 8 kPa.
+
+The final answer is $\boxed{8}$
+
+  Predicted: 8  → ✓ CORRECT  (1.9s, 1 call)
+
+▶ Chain-of-Thought
+
+Solution:
+Let P be the pressure and V be the volume.
+Given that the pressure of a sample of gas is inversely proportional to its volume at constant temperature.
+This can be written as P ∝ 1/V, or P = k/V, where k is the constant of proportionality.
+Therefore, P * V = k.
+
+We are given the initial conditions:
+Initial volume (V1) = 3.67 liters
+Initial pressure (P1) = 4 kPa
+
+Using the relationship P * V = k, we can find the constant k:
+k = P1 * V1 = 4 kPa * 3.67 liters = 14.68 kPa·liters
+
+Now, we are given the new volume:
+New volume (V2) = 1.835 liters
+
+We need to find the new pressure (P2).
+Since k is constant, we have P2 * V2 = k.
+So, P2 = k / V2
+
+Substitute the value of k and V2:
+P2 = 14.68 kPa·liters / 1.835 liters
+P2 = 8 kPa
+
+The new pressure will be 8 kPa.
+
+The final answer is $\boxed{8}$.
+
+  Predicted: 8  → ✓ CORRECT  (1.9s, 1 call)
+
+▶ ToT-BFS
+  k=5, b=5, depth≤3, eval_samples=3
+    [BFS] depth=0, expanding node…
+    [BFS] Consensus + verified: 4/4 agree at depth 1.
+
+…(trajectory preview)…
+ k:
+P1 = k/V1
+4 = k/3.67
+k = 4 * 3.67
+k = 14.68
+
+Now, we are given the new volume:
+New volume (V2) = 1.835 liters
+We need to find the new pressure (P2).
+
+Using the constant k we found:
+P2 = k/V2
+P2 = 14.68 / 1.835
+
+Now, we calculate the value of P2:
+P2 = 14.68 / 1.835 = 8
+
+So, the new pressure will be 8 kPa.
+
+Alternatively, since P1V1 = k and P2V2 = k, we can write P1V1 = P2V2.
+Given:
+P1 = 4 kPa
+V1 = 3.67 liters
+V2 = 1.835 liters
+
+We need to find P2.
+P1V1 = P2V2
+4 * 3.67 = P2 * 1.835
+14.68 = P2 * 1.835
+P2 = 14.68 / 1.835
+P2 = 8
+
+The new pressure will be 8 kPa.
+
+The final answer is $\boxed{8}$.
+
+  Predicted: 8  → ✓ CORRECT  (14.1s, 6 API calls)
+
+──────────────────────────────── Summary ────────────────────────────────
+
+
+  Strategy                Correct   Accuracy   Avg Time   Avg Calls
+  ───────────────────────────────────────────────────────────────────
+  Single-Shot            4/5        80%        2.0s         1.0
+  Chain-of-Thought       4/5        80%        2.4s         1.0
+  ToT-BFS                4/5        80%       78.1s        48.0
+
+  Note: accuracy uses \boxed{} extraction + LaTeX normalization.
+
+
+  Per-problem breakdown:
+  #    Level    SS           CoT          BFS          GT
+  ──────────────────────────────────────────────────────────────────────────────────────────
+  1    Level 3  2           2           2            2
+  2    Level 3  75          75          75           75
+  3    Level 3  t square, .. \text{gcd..Search fai.. 8
+  4    Level 3  3           3           3            3
+  5    Level 3  8           8           8            8
+

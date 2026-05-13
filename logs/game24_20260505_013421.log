@@ -1,0 +1,1333 @@
+Logging to game24_20260505_013421.log
+
+
+───────────────────── Game of 24  ·  IO | CoT | ToT ─────────────────────
+
+  Model: gemini-2.5-flash   Value model: gemini-2.5-flash   N: 15   ToT: k=5, b=5, depth=3, search=bfs
+
+
+──────────────────────── Puzzle 1/15  —  1 2 3 4 ────────────────────────
+
+
+▶ IO (Single-Shot)
+  (1+3)*(2+4)  →  ✓  (0.8s)
+
+▶ Chain-of-Thought
+  (4*3*2)*1  →  ✓  (0.8s)
+
+▶ ToT-BFS
+    [BFS] depth=0, beam size=1
+      ↳ 1 + 2 = 3 (left: 3 3 4) → sure
+      ↳ 1 + 3 = 4 (left: 2 4 4) → sure
+      ↳ 1 + 4 = 5 (left: 2 3 5) → likely
+      ↳ 2 + 3 = 5 (left: 1 4 5) → likely
+      ↳ 2 + 4 = 6 (left: 1 3 6) → likely
+      ↳ 3 + 4 = 7 (left: 1 2 7) → likely
+      ↳ 2 - 1 = 1 (left: 1 3 4) → likely
+      ↳ 3 - 1 = 2 (left: 2 2 4) → sure
+      ↳ 3 - 2 = 1 (left: 1 1 4) → imposs
+      ↳ 4 - 1 = 3 (left: 2 3 3) → imposs
+      ↳ 4 - 2 = 2 (left: 1 3 2) → imposs
+      ↳ 4 - 3 = 1 (left: 1 2 1) → imposs
+      ↳ 1 * 2 = 2 (left: 2 3 4) → sure
+      ↳ 1 * 3 = 3 (left: 2 3 4) → sure
+      ↳ 1 * 4 = 4 (left: 2 3 4) → sure
+      ↳ 2 * 3 = 6 (left: 1 4 6) → likely
+      ↳ 2 * 4 = 8 (left: 1 3 8) → likely
+      ↳ 3 * 4 = 12 (left: 1 2 12) → sure
+      ↳ 2 / 1 = 2 (left: 2 3 4) → sure
+      ↳ 3 / 1 = 3 (left: 2 3 4) → sure
+      ↳ 4 / 1 = 4 (left: 2 3 4) → sure
+      ↳ 4 / 2 = 2 (left: 1 3 2) → imposs
+    [BFS] depth=1, beam size=5
+      ↳ 3 + 3 = 6 (left: 4 6) → imposs
+      ↳ 3 + 4 = 7 (left: 3 7) → imposs
+      ↳ 3 - 3 = 0 (left: 0 4) → imposs
+      ↳ 4 - 3 = 1 (left: 1 3) → imposs
+      ↳ 3 * 3 = 9 (left: 4 9) → likely
+      ↳ 3 * 4 = 12 (left: 3 12) → imposs
+      ↳ 3 / 3 = 1 (left: 1 4) → imposs
+      ↳ 2 + 4 = 6 (left: 4 6) → imposs
+      ↳ 4 + 4 = 8 (left: 2 8) → imposs
+      ↳ 4 - 2 = 2 (left: 2 4) → imposs
+      ↳ 4 - 4 = 0 (left: 0 2) → imposs
+      ↳ 2 * 4 = 8 (left: 4 8) → imposs
+      ↳ 4 * 4 = 16 (left: 2 16) → imposs
+      ↳ 4 / 2 = 2 (left: 2 4) → imposs
+      ↳ 4 / 4 = 1 (left: 1 2) → imposs
+      ↳ 2 + 2 = 4 (left: 4 4) → imposs
+      ↳ 2 + 4 = 6 (left: 2 6) → imposs
+      ↳ 4 - 2 = 2 (left: 2 2) → imposs
+      ↳ 2 * 2 = 4 (left: 4 4) → imposs
+      ↳ 2 / 2 = 1 (left: 1 4) → imposs
+      ↳ 2 + 3 = 5 (left: 4 5) → imposs
+      ↳ 2 + 4 = 6 (left: 3 6) → imposs
+      ↳ 3 + 4 = 7 (left: 2 7) → imposs
+      ↳ 3 - 2 = 1 (left: 1 4) → imposs
+      ↳ 4 - 2 = 2 (left: 2 3) → imposs
+      ↳ 4 - 3 = 1 (left: 1 2) → imposs
+      ↳ 2 * 3 = 6 (left: 4 6) → imposs
+      ↳ 2 * 4 = 8 (left: 3 8) → imposs
+      ↳ 3 * 4 = 12 (left: 2 12) → sure
+      ↳ 4 / 2 = 2 (left: 2 3) → imposs
+      ↳ 2 + 3 = 5 (left: 4 5) → imposs
+      ↳ 2 + 4 = 6 (left: 3 6) → imposs
+      ↳ 3 + 4 = 7 (left: 2 7) → imposs
+      ↳ 3 - 2 = 1 (left: 1 4) → imposs
+      ↳ 4 - 2 = 2 (left: 2 3) → imposs
+      ↳ 4 - 3 = 1 (left: 1 2) → imposs
+      ↳ 2 * 3 = 6 (left: 4 6) → imposs
+      ↳ 2 * 4 = 8 (left: 3 8) → imposs
+      ↳ 3 * 4 = 12 (left: 2 12) → sure
+      ↳ 4 / 2 = 2 (left: 2 3) → imposs
+    [BFS] depth=2, beam size=3
+      ↳ 2 + 12 = 14 (left: 14) → imposs
+      ↳ 12 - 2 = 10 (left: 10) → imposs
+      ↳ 2 * 12 = 24 (left: 24) → sure
+    [BFS] Reached 24 at depth 3.
+  Final: ((1*2)*(3*4))  →  ✓  (49.4s, 69 API calls)
+
+──────────────────────── Puzzle 2/15  —  4 5 6 7 ────────────────────────
+
+
+▶ IO (Single-Shot)
+  (7-5)*6*4/4  →  ✗  (0.8s)
+
+▶ Chain-of-Thought
+  (6/(7-5))*4  →  ✗  (0.9s)
+
+▶ ToT-BFS
+    [BFS] depth=0, beam size=1
+      ↳ 4 + 5 = 9 (left: 6 7 9) → likely
+      ↳ 4 + 6 = 10 (left: 5 7 10) → likely
+      ↳ 4 + 7 = 11 (left: 5 6 11) → sure
+      ↳ 5 + 6 = 11 (left: 4 7 11) → likely
+      ↳ 5 + 7 = 12 (left: 4 6 12) → sure
+      ↳ 6 + 7 = 13 (left: 4 5 13) → sure
+      ↳ 5 - 4 = 1 (left: 1 6 7) → likely
+      ↳ 6 - 4 = 2 (left: 2 5 7) → likely
+      ↳ 6 - 5 = 1 (left: 1 4 7) → likely
+      ↳ 7 - 4 = 3 (left: 3 5 6) → sure
+      ↳ 7 - 5 = 2 (left: 2 4 6) → sure
+      ↳ 7 - 6 = 1 (left: 1 4 5) → likely
+      ↳ 4 * 5 = 20 (left: 6 7 20) → likely
+      ↳ 4 * 6 = 24 (left: 5 7 24) → sure
+      ↳ 4 * 7 = 28 (left: 5 6 28) → likely
+      ↳ 5 * 6 = 30 (left: 4 7 30) → imposs
+      ↳ 5 * 7 = 35 (left: 4 6 35) → imposs
+      ↳ 6 * 7 = 42 (left: 4 5 42) → imposs
+      ↳ 6 / 4 = 1.5 (left: 1.5 5 7) → likely
+      ↳ 4 / 5 = 0.8 (left: 0.8 6 7) → likely
+      ↳ 4 / 6 = 0.6666666666666666 (left: 0.6666666666666666 5 7) → sure
+    [BFS] depth=1, beam size=5
+      ↳ 5 + 6 = 11 (left: 11 11) → imposs
+      ↳ 6 - 5 = 1 (left: 1 11) → imposs
+      ↳ 5 * 6 = 30 (left: 11 30) → imposs
+      ↳ 11 / 5 = 2.2 (left: 2.2 6) → imposs
+      ↳ 4 + 6 = 10 (left: 10 12) → sure
+      ↳ 4 + 12 = 16 (left: 6 16) → sure
+      ↳ 6 + 12 = 18 (left: 4 18) → sure
+      ↳ 6 - 4 = 2 (left: 2 12) → sure
+      ↳ 12 - 4 = 8 (left: 6 8) → likely
+      ↳ 12 - 6 = 6 (left: 4 6) → imposs
+      ↳ 4 * 6 = 24 (left: 12 24) → imposs
+      ↳ 4 * 12 = 48 (left: 6 48) → sure
+      ↳ 6 * 12 = 72 (left: 4 72) → imposs
+      ↳ 12 / 4 = 3 (left: 3 6) → imposs
+      ↳ 12 / 6 = 2 (left: 2 4) → imposs
+      ↳ 4 + 5 = 9 (left: 9 13) → sure
+      ↳ 4 + 13 = 17 (left: 5 17) → sure
+      ↳ 5 + 13 = 18 (left: 4 18) → sure
+      ↳ 5 - 4 = 1 (left: 1 13) → imposs
+      ↳ 13 - 4 = 9 (left: 5 9) → likely
+      ↳ 13 - 5 = 8 (left: 4 8) → imposs
+      ↳ 4 * 5 = 20 (left: 13 20) → imposs
+      ↳ 4 * 13 = 52 (left: 5 52) → imposs
+      ↳ 5 * 13 = 65 (left: 4 65) → imposs
+      ↳ 3 + 5 = 8 (left: 6 8) → likely
+      ↳ 3 + 6 = 9 (left: 5 9) → likely
+      ↳ 5 + 6 = 11 (left: 3 11) → imposs
+      ↳ 5 - 3 = 2 (left: 2 6) → imposs
+      ↳ 6 - 3 = 3 (left: 3 5) → imposs
+      ↳ 6 - 5 = 1 (left: 1 3) → imposs
+      ↳ 3 * 5 = 15 (left: 6 15) → likely
+      ↳ 3 * 6 = 18 (left: 5 18) → likely
+      ↳ 5 * 6 = 30 (left: 3 30) → imposs
+      ↳ 6 / 3 = 2 (left: 2 5) → imposs
+      ↳ 2 + 4 = 6 (left: 6 6) → imposs
+      ↳ 2 + 6 = 8 (left: 4 8) → imposs
+      ↳ 4 + 6 = 10 (left: 2 10) → imposs
+      ↳ 2 * 4 = 8 (left: 6 8) → likely
+      ↳ 2 * 6 = 12 (left: 4 12) → sure
+      ↳ 4 * 6 = 24 (left: 2 24) → sure
+      ↳ 6 / 2 = 3 (left: 4 3) → imposs
+    [BFS] depth=2, beam size=5
+      ↳ 10 + 12 = 22 (left: 22) → imposs
+      ↳ 12 - 10 = 2 (left: 2) → imposs
+      ↳ 10 * 12 = 120 (left: 120) → imposs
+      ↳ 10 / 12 = 0.8333333333333334 (left: 0.8333333333333334) → imposs
+      ↳ 12 / 10 = 1.2 (left: 1.2) → imposs
+      ↳ 6 + 16 = 22 (left: 22) → imposs
+      ↳ 16 - 6 = 10 (left: 10) → imposs
+      ↳ 6 * 16 = 96 (left: 96) → imposs
+      ↳ 4 + 18 = 22 (left: 22) → imposs
+      ↳ 18 - 4 = 14 (left: 14) → imposs
+      ↳ 4 * 18 = 72 (left: 72) → imposs
+      ↳ 18 / 4 = 4.5 (left: 4.5) → imposs
+      ↳ 2 + 12 = 14 (left: 14) → imposs
+      ↳ 12 - 2 = 10 (left: 10) → imposs
+      ↳ 2 * 12 = 24 (left: 24) → sure
+    [BFS] Reached 24 at depth 3.
+  Final: ((6-4)*(5+7))  →  ✓  (52.8s, 72 API calls)
+
+──────────────────────── Puzzle 3/15  —  5 6 7 8 ────────────────────────
+
+
+▶ IO (Single-Shot)
+  (8-5)*6+7  →  ✗  (0.7s)
+
+▶ Chain-of-Thought
+  (8/(7-5))*6  →  ✓  (1.8s)
+
+▶ ToT-BFS
+    [BFS] depth=0, beam size=1
+      ↳ 5 + 6 = 11 (left: 7 8 11) → likely
+      ↳ 5 + 7 = 12 (left: 6 8 12) → sure
+      ↳ 5 + 8 = 13 (left: 6 7 13) → sure
+      ↳ 6 + 7 = 13 (left: 5 8 13) → sure
+      ↳ 6 + 8 = 14 (left: 5 7 14) → likely
+      ↳ 7 + 8 = 15 (left: 5 6 15) → sure
+      ↳ 6 - 5 = 1 (left: 1 7 8) → likely
+      ↳ 7 - 5 = 2 (left: 2 6 8) → sure
+      ↳ 7 - 6 = 1 (left: 1 5 8) → likely
+      ↳ 8 - 5 = 3 (left: 3 6 7) → likely
+      ↳ 8 - 6 = 2 (left: 2 5 7) → likely
+      ↳ 8 - 7 = 1 (left: 1 5 6) → likely
+      ↳ 5 * 6 = 30 (left: 7 8 30) → imposs
+      ↳ 5 * 7 = 35 (left: 6 8 35) → imposs
+      ↳ 5 * 8 = 40 (left: 6 7 40) → imposs
+      ↳ 6 * 7 = 42 (left: 5 8 42) → imposs
+      ↳ 6 * 8 = 48 (left: 5 7 48) → likely
+      ↳ 7 * 8 = 56 (left: 5 6 56) → sure
+      ↳ 6 / 5 = 1.2 (left: 1.2 7 8) → likely
+      ↳ 7 / 5 = 1.4 (left: 1.4 6 8) → likely
+      ↳ 7 / 6 = 1.1666666666666667 (left: 1.1666666666666667 5 8) → likely
+      ↳ 8 / 5 = 1.6 (left: 1.6 6 7) → likely
+    [BFS] depth=1, beam size=5
+      ↳ 6 + 8 = 14 (left: 12 14) → imposs
+      ↳ 6 + 12 = 18 (left: 8 18) → sure
+      ↳ 8 + 12 = 20 (left: 6 20) → sure
+      ↳ 8 - 6 = 2 (left: 2 12) → sure
+      ↳ 12 - 6 = 6 (left: 6 8) → likely
+      ↳ 12 - 8 = 4 (left: 4 6) → imposs
+      ↳ 6 * 8 = 48 (left: 12 48) → imposs
+      ↳ 6 * 12 = 72 (left: 8 72) → sure
+      ↳ 8 * 12 = 96 (left: 6 96) → sure
+      ↳ 12 / 6 = 2 (left: 2 8) → imposs
+      ↳ 6 + 7 = 13 (left: 13 13) → imposs
+      ↳ 7 - 6 = 1 (left: 1 13) → imposs
+      ↳ 6 * 7 = 42 (left: 13 42) → imposs
+      ↳ 5 + 8 = 13 (left: 13 13) → imposs
+      ↳ 5 + 13 = 18 (left: 8 18) → sure
+      ↳ 8 + 13 = 21 (left: 5 21) → sure
+      ↳ 8 - 5 = 3 (left: 3 13) → imposs
+      ↳ 13 - 5 = 8 (left: 8 8) → imposs
+      ↳ 13 - 8 = 5 (left: 5 5) → imposs
+      ↳ 5 * 8 = 40 (left: 13 40) → imposs
+      ↳ 5 * 13 = 65 (left: 8 65) → imposs
+      ↳ 8 * 13 = 104 (left: 5 104) → imposs
+      ↳ 13 / 5 = 2.6 (left: 2.6 8) → likely
+      ↳ 13 / 8 = 1.625 (left: 1.625 5) → likely
+      ↳ 5 + 6 = 11 (left: 11 15) → sure
+      ↳ 5 + 15 = 20 (left: 6 20) → sure
+      ↳ 6 + 15 = 21 (left: 5 21) → sure
+      ↳ 6 - 5 = 1 (left: 1 15) → imposs
+      ↳ 15 - 5 = 10 (left: 6 10) → sure
+      ↳ 15 - 6 = 9 (left: 5 9) → likely
+      ↳ 5 * 6 = 30 (left: 15 30) → imposs
+      ↳ 5 * 15 = 75 (left: 6 75) → imposs
+      ↳ 6 * 15 = 90 (left: 5 90) → imposs
+      ↳ 15 / 5 = 3 (left: 3 6) → imposs
+      ↳ 2 + 6 = 8 (left: 8 8) → imposs
+      ↳ 2 + 8 = 10 (left: 6 10) → sure
+      ↳ 6 + 8 = 14 (left: 2 14) → imposs
+      ↳ 6 - 2 = 4 (left: 4 8) → imposs
+      ↳ 8 - 2 = 6 (left: 6 6) → imposs
+      ↳ 8 - 6 = 2 (left: 2 2) → imposs
+      ↳ 2 * 6 = 12 (left: 8 12) → sure
+      ↳ 2 * 8 = 16 (left: 6 16) → sure
+      ↳ 6 * 8 = 48 (left: 2 48) → imposs
+      ↳ 6 / 2 = 3 (left: 3 8) → imposs
+      ↳ 8 / 2 = 4 (left: 4 6) → imposs
+    [BFS] depth=2, beam size=5
+      ↳ 8 + 18 = 26 (left: 26) → imposs
+      ↳ 18 - 8 = 10 (left: 10) → imposs
+      ↳ 8 * 18 = 144 (left: 144) → imposs
+      ↳ 18 / 8 = 2.25 (left: 2.25) → imposs
+      ↳ 6 + 20 = 26 (left: 26) → imposs
+      ↳ 20 - 6 = 14 (left: 14) → imposs
+      ↳ 6 * 20 = 120 (left: 120) → imposs
+      ↳ 2 + 12 = 14 (left: 14) → imposs
+      ↳ 12 - 2 = 10 (left: 10) → imposs
+      ↳ 2 * 12 = 24 (left: 24) → sure
+    [BFS] Reached 24 at depth 3.
+  Final: ((8-6)*(5+7))  →  ✓  (56.1s, 76 API calls)
+
+──────────────────────── Puzzle 4/15  —  2 2 4 6 ────────────────────────
+
+
+▶ IO (Single-Shot)
+  (6-2)*2*4  →  ✗  (0.7s)
+
+▶ Chain-of-Thought
+  6 * 4 * (2 / 2)  →  ✓  (1.2s)
+
+▶ ToT-BFS
+    [BFS] depth=0, beam size=1
+      ↳ 2 + 2 = 4 (left: 4 4 6) → sure
+      ↳ 2 + 6 = 8 (left: 2 4 8) → sure
+      ↳ 4 + 6 = 10 (left: 2 2 10) → sure
+      ↳ 2 - 2 = 0 (left: 0 4 6) → likely
+      ↳ 4 - 2 = 2 (left: 2 2 6) → sure
+      ↳ 6 - 2 = 4 (left: 2 4 4) → sure
+      ↳ 6 - 4 = 2 (left: 2 2 2) → imposs
+      ↳ 2 * 2 = 4 (left: 4 4 6) → sure
+      ↳ 2 * 4 = 8 (left: 2 6 8) → sure
+      ↳ 2 * 6 = 12 (left: 2 4 12) → sure
+      ↳ 4 * 6 = 24 (left: 2 2 24) → sure
+      ↳ 2 / 2 = 1 (left: 1 4 6) → likely
+      ↳ 4 / 2 = 2 (left: 2 2 6) → sure
+      ↳ 6 / 2 = 3 (left: 2 4 3) → sure
+    [BFS] depth=1, beam size=5
+      ↳ 4 + 4 = 8 (left: 6 8) → likely
+      ↳ 4 + 6 = 10 (left: 4 10) → likely
+      ↳ 4 - 4 = 0 (left: 0 6) → imposs
+      ↳ 6 - 4 = 2 (left: 2 4) → imposs
+      ↳ 4 * 4 = 16 (left: 6 16) → sure
+      ↳ 4 * 6 = 24 (left: 4 24) → sure
+      ↳ 4 / 4 = 1 (left: 1 6) → imposs
+      ↳ 6 / 4 = 1.5 (left: 1.5 4) → imposs
+      ↳ 2 + 4 = 6 (left: 6 8) → likely
+      ↳ 2 + 8 = 10 (left: 4 10) → likely
+      ↳ 4 + 8 = 12 (left: 2 12) → sure
+      ↳ 8 - 2 = 6 (left: 4 6) → imposs
+      ↳ 8 - 4 = 4 (left: 2 4) → imposs
+      ↳ 2 * 4 = 8 (left: 8 8) → imposs
+      ↳ 2 * 8 = 16 (left: 4 16) → sure
+      ↳ 4 * 8 = 32 (left: 2 32) → imposs
+      ↳ 8 / 2 = 4 (left: 4 4) → imposs
+      ↳ 8 / 4 = 2 (left: 2 2) → imposs
+      ↳ 2 + 2 = 4 (left: 4 10) → likely
+      ↳ 2 + 10 = 12 (left: 2 12) → sure
+      ↳ 2 - 2 = 0 (left: 0 10) → imposs
+      ↳ 10 - 2 = 8 (left: 2 8) → imposs
+      ↳ 2 * 2 = 4 (left: 4 10) → likely
+      ↳ 2 * 10 = 20 (left: 2 20) → sure
+      ↳ 2 / 2 = 1 (left: 1 10) → imposs
+      ↳ 10 / 2 = 5 (left: 2 5) → imposs
+      ↳ 2 + 2 = 4 (left: 4 6) → imposs
+      ↳ 2 + 6 = 8 (left: 2 8) → imposs
+      ↳ 6 - 2 = 4 (left: 2 4) → imposs
+      ↳ 2 * 2 = 4 (left: 4 6) → imposs
+      ↳ 2 * 6 = 12 (left: 2 12) → sure
+      ↳ 6 / 2 = 3 (left: 2 3) → imposs
+      ↳ 2 + 4 = 6 (left: 4 6) → imposs
+      ↳ 4 + 4 = 8 (left: 2 8) → imposs
+      ↳ 4 - 2 = 2 (left: 2 4) → imposs
+      ↳ 4 / 2 = 2 (left: 2 4) → imposs
+      ↳ 4 * 2 = 8 (left: 4 8) → imposs
+      ↳ 4 * 4 = 16 (left: 2 16) → imposs
+    [BFS] depth=2, beam size=5
+      ↳ 6 + 16 = 22 (left: 22) → imposs
+      ↳ 16 - 6 = 10 (left: 10) → imposs
+      ↳ 6 * 16 = 96 (left: 96) → imposs
+      ↳ 16 / 6 = 2.6666666666666665 (left: 2.6666666666666665) → imposs
+      ↳ 4 + 24 = 28 (left: 28) → imposs
+      ↳ 24 - 4 = 20 (left: 20) → imposs
+      ↳ 4 * 24 = 96 (left: 96) → imposs
+      ↳ 24 / 4 = 6 (left: 6) → imposs
+      ↳ 2 + 12 = 14 (left: 14) → imposs
+      ↳ 12 - 2 = 10 (left: 10) → imposs
+      ↳ 2 * 12 = 24 (left: 24) → sure
+    [BFS] Reached 24 at depth 3.
+  Final: (2*(4+(2+6)))  →  ✓  (45.2s, 61 API calls)
+
+─────────────────────── Puzzle 5/15  —  4 9 10 13 ───────────────────────
+
+
+▶ IO (Single-Shot)
+  (10-4)*9/((13-9)/4)  →  ✗  (0.7s)
+
+▶ Chain-of-Thought
+  (13-9)*(10-4)  →  ✓  (0.9s)
+
+▶ ToT-BFS
+    [BFS] depth=0, beam size=1
+      ↳ 4 + 9 = 13 (left: 10 13 13) → likely
+      ↳ 4 + 10 = 14 (left: 9 13 14) → sure
+      ↳ 4 + 13 = 17 (left: 9 10 17) → likely
+      ↳ 9 + 10 = 19 (left: 4 13 19) → likely
+      ↳ 9 + 13 = 22 (left: 4 10 22) → likely
+      ↳ 10 + 13 = 23 (left: 4 9 23) → likely
+      ↳ 9 - 4 = 5 (left: 5 10 13) → sure
+      ↳ 10 - 4 = 6 (left: 6 9 13) → likely
+      ↳ 10 - 9 = 1 (left: 1 4 13) → likely
+      ↳ 13 - 4 = 9 (left: 9 9 10) → likely
+      ↳ 13 - 9 = 4 (left: 4 4 10) → sure
+      ↳ 13 - 10 = 3 (left: 3 4 9) → sure
+      ↳ 4 * 9 = 36 (left: 10 13 36) → likely
+      ↳ 4 * 10 = 40 (left: 9 13 40) → likely
+      ↳ 4 * 13 = 52 (left: 9 10 52) → imposs
+      ↳ 9 * 10 = 90 (left: 4 13 90) → likely
+      ↳ 9 * 13 = 117 (left: 4 10 117) → imposs
+      ↳ 10 * 13 = 130 (left: 4 9 130) → imposs
+    [BFS] depth=1, beam size=5
+      ↳ 9 + 13 = 22 (left: 14 22) → imposs
+      ↳ 9 + 14 = 23 (left: 13 23) → imposs
+      ↳ 13 + 14 = 27 (left: 9 27) → imposs
+      ↳ 13 - 9 = 4 (left: 4 14) → imposs
+      ↳ 14 - 9 = 5 (left: 5 13) → sure
+      ↳ 14 - 13 = 1 (left: 1 9) → imposs
+      ↳ 9 * 13 = 117 (left: 14 117) → imposs
+      ↳ 9 * 14 = 126 (left: 13 126) → imposs
+      ↳ 13 * 14 = 182 (left: 9 182) → imposs
+      ↳ 5 + 10 = 15 (left: 13 15) → sure
+      ↳ 5 + 13 = 18 (left: 10 18) → sure
+      ↳ 10 + 13 = 23 (left: 5 23) → sure
+      ↳ 10 - 5 = 5 (left: 5 13) → sure
+      ↳ 13 - 5 = 8 (left: 8 10) → sure
+      ↳ 13 - 10 = 3 (left: 3 5) → imposs
+      ↳ 5 * 10 = 50 (left: 13 50) → imposs
+      ↳ 5 * 13 = 65 (left: 10 65) → imposs
+      ↳ 10 * 13 = 130 (left: 5 130) → imposs
+      ↳ 10 / 5 = 2 (left: 2 13) → imposs
+      ↳ 4 + 4 = 8 (left: 8 10) → sure
+      ↳ 4 + 10 = 14 (left: 4 14) → imposs
+      ↳ 4 - 4 = 0 (left: 0 10) → imposs
+      ↳ 10 - 4 = 6 (left: 4 6) → imposs
+      ↳ 4 * 4 = 16 (left: 10 16) → sure
+      ↳ 4 * 10 = 40 (left: 4 40) → likely
+      ↳ 4 / 4 = 1 (left: 1 10) → imposs
+      ↳ 10 / 4 = 2.5 (left: 4 2.5) → likely
+      ↳ 3 + 4 = 7 (left: 7 9) → sure
+      ↳ 3 + 9 = 12 (left: 4 12) → sure
+      ↳ 4 + 9 = 13 (left: 3 13) → imposs
+      ↳ 4 - 3 = 1 (left: 1 9) → imposs
+      ↳ 9 - 3 = 6 (left: 4 6) → imposs
+      ↳ 9 - 4 = 5 (left: 3 5) → imposs
+      ↳ 3 * 4 = 12 (left: 9 12) → likely
+      ↳ 3 * 9 = 27 (left: 4 27) → imposs
+      ↳ 4 * 9 = 36 (left: 3 36) → imposs
+      ↳ 9 / 3 = 3 (left: 3 4) → imposs
+      ↳ 10 + 13 = 23 (left: 13 23) → imposs
+      ↳ 13 + 13 = 26 (left: 10 26) → imposs
+      ↳ 13 - 10 = 3 (left: 3 13) → imposs
+      ↳ 13 - 13 = 0 (left: 0 10) → imposs
+      ↳ 10 * 13 = 130 (left: 13 130) → imposs
+      ↳ 13 * 13 = 169 (left: 10 169) → imposs
+      ↳ 10 / 13 = 0.7692307692307693 (left: 0.7692307692307693 13) → sure
+      ↳ 13 / 10 = 1.3 (left: 1.3 13) → imposs
+      ↳ 13 / 13 = 1 (left: 1 10) → imposs
+    [BFS] depth=2, beam size=5
+      ↳ 5 + 13 = 18 (left: 18) → imposs
+      ↳ 13 - 5 = 8 (left: 8) → imposs
+      ↳ 5 * 13 = 65 (left: 65) → imposs
+      ↳ 13 + 15 = 28 (left: 28) → imposs
+      ↳ 15 - 13 = 2 (left: 2) → imposs
+      ↳ 13 * 15 = 195 (left: 195) → imposs
+      ↳ 15 / 13 = 1.1538461538461537 (left: 1.1538461538461537) → imposs
+      ↳ 10 + 18 = 28 (left: 28) → imposs
+      ↳ 18 - 10 = 8 (left: 8) → imposs
+      ↳ 10 * 18 = 180 (left: 180) → imposs
+      ↳ 18 / 10 = 1.8 (left: 1.8) → imposs
+      ↳ 5 + 23 = 28 (left: 28) → imposs
+      ↳ 23 - 5 = 18 (left: 18) → imposs
+      ↳ 5 * 23 = 115 (left: 115) → imposs
+      ↳ 23 / 5 = 4.6 (left: 4.6) → imposs
+      ↳ 5 + 13 = 18 (left: 18) → imposs
+      ↳ 13 - 5 = 8 (left: 8) → imposs
+      ↳ 5 * 13 = 65 (left: 65) → imposs
+  Final: (no solution)  →  ✗  (52.0s, 75 API calls)
+
+──────────────────────── Puzzle 6/15  —  1 1 8 8 ────────────────────────
+
+
+▶ IO (Single-Shot)
+  (8+1)*(8/1-1)  →  ✗  (0.8s)
+
+▶ Chain-of-Thought
+  Step 2: 8 - 1 = 7 (left: 9 7)  →  ✗  (8.5s)
+
+▶ ToT-BFS
+    [BFS] depth=0, beam size=1
+      ↳ 1 + 1 = 2 (left: 2 8 8) → likely
+      ↳ 1 + 8 = 9 (left: 1 8 9) → likely
+      ↳ 8 + 8 = 16 (left: 1 1 16) → likely
+      ↳ 1 - 1 = 0 (left: 0 8 8) → sure
+      ↳ 8 - 1 = 7 (left: 1 7 8) → likely
+      ↳ 8 - 8 = 0 (left: 0 1 1) → imposs
+      ↳ 1 * 1 = 1 (left: 1 8 8) → likely
+      ↳ 1 * 8 = 8 (left: 1 8 8) → likely
+      ↳ 8 * 8 = 64 (left: 1 1 64) → likely
+      ↳ 1 / 1 = 1 (left: 1 8 8) → likely
+      ↳ 8 / 1 = 8 (left: 1 8 8) → likely
+      ↳ 8 / 8 = 1 (left: 1 1 1) → imposs
+    [BFS] depth=1, beam size=5
+      ↳ 0 + 8 = 8 (left: 8 8) → imposs
+      ↳ 8 - 0 = 8 (left: 8 8) → imposs
+      ↳ 0 * 8 = 0 (left: 0 8) → imposs
+      ↳ 8 / 8 = 1 (left: 0 1) → imposs
+      ↳ 2 + 8 = 10 (left: 8 10) → sure
+      ↳ 8 + 8 = 16 (left: 2 16) → imposs
+      ↳ 8 - 2 = 6 (left: 6 8) → likely
+      ↳ 8 / 2 = 4 (left: 4 8) → imposs
+      ↳ 8 / 8 = 1 (left: 1 2) → imposs
+      ↳ 2 * 8 = 16 (left: 8 16) → sure
+      ↳ 8 * 8 = 64 (left: 2 64) → imposs
+      ↳ 1 + 8 = 9 (left: 9 9) → imposs
+      ↳ 1 + 9 = 10 (left: 8 10) → sure
+      ↳ 8 + 9 = 17 (left: 1 17) → imposs
+      ↳ 8 - 1 = 7 (left: 7 9) → sure
+      ↳ 9 - 1 = 8 (left: 8 8) → imposs
+      ↳ 9 - 8 = 1 (left: 1 1) → imposs
+      ↳ 1 * 8 = 8 (left: 8 9) → likely
+      ↳ 1 * 9 = 9 (left: 8 9) → likely
+      ↳ 8 * 9 = 72 (left: 1 72) → imposs
+      ↳ 8 / 1 = 8 (left: 8 9) → likely
+      ↳ 9 / 1 = 9 (left: 8 9) → likely
+      ↳ 1 + 1 = 2 (left: 2 16) → imposs
+      ↳ 1 + 16 = 17 (left: 1 17) → imposs
+      ↳ 1 - 1 = 0 (left: 0 16) → likely
+      ↳ 16 - 1 = 15 (left: 1 15) → imposs
+      ↳ 1 * 1 = 1 (left: 1 16) → imposs
+      ↳ 1 * 16 = 16 (left: 1 16) → imposs
+      ↳ 16 / 1 = 16 (left: 1 16) → imposs
+      ↳ 1 + 7 = 8 (left: 8 8) → imposs
+      ↳ 1 + 8 = 9 (left: 7 9) → sure
+      ↳ 7 + 8 = 15 (left: 1 15) → imposs
+      ↳ 7 - 1 = 6 (left: 6 8) → likely
+      ↳ 8 - 1 = 7 (left: 7 7) → imposs
+      ↳ 8 - 7 = 1 (left: 1 1) → imposs
+      ↳ 1 * 7 = 7 (left: 7 8) → imposs
+      ↳ 1 * 8 = 8 (left: 7 8) → imposs
+      ↳ 7 * 8 = 56 (left: 1 56) → imposs
+      ↳ 7 / 1 = 7 (left: 7 8) → imposs
+      ↳ 8 / 1 = 8 (left: 7 8) → imposs
+    [BFS] depth=2, beam size=5
+      ↳ 8 + 10 = 18 (left: 18) → imposs
+      ↳ 10 - 8 = 2 (left: 2) → imposs
+      ↳ 8 * 10 = 80 (left: 80) → imposs
+      ↳ 10 / 8 = 1.25 (left: 1.25) → imposs
+      ↳ 8 + 16 = 24 (left: 24) → sure
+    [BFS] Reached 24 at depth 3.
+  Final: (8+((1+1)*8))  →  ✓  (45.5s, 60 API calls)
+
+──────────────────────── Puzzle 7/15  —  3 3 7 7 ────────────────────────
+
+
+▶ IO (Single-Shot)
+  (7+7-3)*3  →  ✗  (0.6s)
+
+▶ Chain-of-Thought
+  Step 1: 7 - 3 = 4 (left: 3 4 7)  →  ✗  (8.0s)
+
+▶ ToT-BFS
+    [BFS] depth=0, beam size=1
+      ↳ 3 + 3 = 6 (left: 6 7 7) → likely
+      ↳ 3 + 7 = 10 (left: 3 7 10) → sure
+      ↳ 7 + 7 = 14 (left: 3 3 14) → sure
+      ↳ 3 - 3 = 0 (left: 0 7 7) → likely
+      ↳ 7 - 3 = 4 (left: 3 4 7) → sure
+      ↳ 3 * 3 = 9 (left: 7 7 9) → likely
+      ↳ 3 * 7 = 21 (left: 3 7 21) → sure
+      ↳ 7 * 7 = 49 (left: 3 3 49) → likely
+      ↳ 3 / 3 = 1 (left: 1 7 7) → likely
+      ↳ 7 / 7 = 1 (left: 1 3 3) → imposs
+    [BFS] depth=1, beam size=5
+      ↳ 3 + 7 = 10 (left: 10 10) → imposs
+      ↳ 3 + 10 = 13 (left: 7 13) → sure
+      ↳ 7 + 10 = 17 (left: 3 17) → likely
+      ↳ 7 - 3 = 4 (left: 4 10) → likely
+      ↳ 10 - 3 = 7 (left: 7 7) → imposs
+      ↳ 10 - 7 = 3 (left: 3 3) → imposs
+      ↳ 3 * 7 = 21 (left: 10 21) → imposs
+      ↳ 3 * 10 = 30 (left: 7 30) → imposs
+      ↳ 7 * 10 = 70 (left: 3 70) → imposs
+      ↳ 3 + 3 = 6 (left: 6 14) → sure
+      ↳ 3 + 14 = 17 (left: 3 17) → likely
+      ↳ 3 - 3 = 0 (left: 0 14) → likely
+      ↳ 14 - 3 = 11 (left: 3 11) → imposs
+      ↳ 3 * 3 = 9 (left: 9 14) → likely
+      ↳ 3 * 14 = 42 (left: 3 42) → imposs
+      ↳ 3 / 3 = 1 (left: 1 14) → imposs
+      ↳ 3 + 4 = 7 (left: 7 7) → imposs
+      ↳ 3 + 7 = 10 (left: 4 10) → likely
+      ↳ 4 + 7 = 11 (left: 3 11) → imposs
+      ↳ 4 - 3 = 1 (left: 1 7) → imposs
+      ↳ 7 - 3 = 4 (left: 4 4) → imposs
+      ↳ 7 - 4 = 3 (left: 3 3) → imposs
+      ↳ 3 * 4 = 12 (left: 7 12) → likely
+      ↳ 3 * 7 = 21 (left: 4 21) → sure
+      ↳ 4 * 7 = 28 (left: 3 28) → imposs
+      ↳ 3 + 7 = 10 (left: 10 21) → imposs
+      ↳ 3 + 21 = 24 (left: 7 24) → sure
+      ↳ 7 + 21 = 28 (left: 3 28) → imposs
+      ↳ 7 - 3 = 4 (left: 4 21) → sure
+      ↳ 21 - 3 = 18 (left: 7 18) → sure
+      ↳ 21 - 7 = 14 (left: 3 14) → imposs
+      ↳ 3 * 7 = 21 (left: 21 21) → imposs
+      ↳ 3 * 21 = 63 (left: 7 63) → imposs
+      ↳ 7 * 21 = 147 (left: 3 147) → imposs
+      ↳ 21 / 3 = 7 (left: 7 7) → imposs
+      ↳ 6 + 7 = 13 (left: 7 13) → sure
+      ↳ 7 + 7 = 14 (left: 6 14) → sure
+      ↳ 7 - 6 = 1 (left: 1 7) → imposs
+      ↳ 7 - 7 = 0 (left: 0 6) → imposs
+      ↳ 6 * 7 = 42 (left: 7 42) → imposs
+      ↳ 7 * 7 = 49 (left: 6 49) → imposs
+      ↳ 7 / 7 = 1 (left: 1 6) → imposs
+    [BFS] depth=2, beam size=5
+      ↳ 7 + 13 = 20 (left: 20) → imposs
+      ↳ 13 - 7 = 6 (left: 6) → imposs
+      ↳ 7 * 13 = 91 (left: 91) → imposs
+      ↳ 13 / 7 = 1.8571428571428572 (left: 1.8571428571428572) → imposs
+      ↳ 6 + 14 = 20 (left: 20) → imposs
+      ↳ 14 - 6 = 8 (left: 8) → imposs
+      ↳ 6 * 14 = 84 (left: 84) → imposs
+      ↳ 4 + 21 = 25 (left: 25) → imposs
+      ↳ 21 - 4 = 17 (left: 17) → imposs
+      ↳ 4 * 21 = 84 (left: 84) → imposs
+      ↳ 21 / 4 = 5.25 (left: 5.25) → imposs
+      ↳ 7 + 24 = 31 (left: 31) → imposs
+      ↳ 24 - 7 = 17 (left: 17) → imposs
+      ↳ 7 * 24 = 168 (left: 168) → imposs
+      ↳ 4 + 21 = 25 (left: 25) → imposs
+      ↳ 21 - 4 = 17 (left: 17) → imposs
+      ↳ 4 * 21 = 84 (left: 84) → imposs
+      ↳ 21 / 4 = 5.25 (left: 5.25) → imposs
+  Final: (no solution)  →  ✗  (47.8s, 63 API calls)
+
+─────────────────────── Puzzle 8/15  —  4 4 10 10 ───────────────────────
+
+
+▶ IO (Single-Shot)
+  (10*10 - 4)/4  →  ✓  (0.6s)
+
+▶ Chain-of-Thought
+  Step 2: 20 + 4 = 24 (left: 4 2  →  ✗  (8.5s)
+
+▶ ToT-BFS
+    [BFS] depth=0, beam size=1
+      ↳ 4 + 4 = 8 (left: 8 10 10) → sure
+      ↳ 4 + 10 = 14 (left: 4 10 14) → sure
+      ↳ 10 + 10 = 20 (left: 4 4 20) → sure
+      ↳ 4 - 4 = 0 (left: 0 10 10) → sure
+      ↳ 10 - 4 = 6 (left: 4 6 10) → sure
+      ↳ 4 * 4 = 16 (left: 10 10 16) → likely
+      ↳ 4 * 10 = 40 (left: 4 10 40) → likely
+      ↳ 10 * 10 = 100 (left: 4 4 100) → likely
+      ↳ 4 / 4 = 1 (left: 1 10 10) → likely
+      ↳ 10 / 10 = 1 (left: 4 4 1) → likely
+    [BFS] depth=1, beam size=5
+      ↳ 8 + 10 = 18 (left: 10 18) → sure
+      ↳ 10 + 10 = 20 (left: 8 20) → sure
+      ↳ 10 - 8 = 2 (left: 2 10) → imposs
+      ↳ 10 - 10 = 0 (left: 0 8) → imposs
+      ↳ 8 * 10 = 80 (left: 10 80) → imposs
+      ↳ 10 * 10 = 100 (left: 8 100) → imposs
+      ↳ 10 / 10 = 1 (left: 1 8) → imposs
+      ↳ 4 + 10 = 14 (left: 14 14) → imposs
+      ↳ 4 + 14 = 18 (left: 10 18) → sure
+      ↳ 10 + 14 = 24 (left: 4 24) → sure
+      ↳ 10 - 4 = 6 (left: 6 14) → sure
+      ↳ 14 - 4 = 10 (left: 10 10) → imposs
+      ↳ 14 - 10 = 4 (left: 4 4) → imposs
+      ↳ 4 * 10 = 40 (left: 14 40) → imposs
+      ↳ 4 * 14 = 56 (left: 10 56) → imposs
+      ↳ 10 * 14 = 140 (left: 4 140) → imposs
+      ↳ 10 / 4 = 2.5 (left: 2.5 14) → likely
+      ↳ 14 / 4 = 3.5 (left: 3.5 10) → likely
+      ↳ 14 / 10 = 1.4 (left: 1.4 4) → imposs
+      ↳ 4 + 4 = 8 (left: 8 20) → sure
+      ↳ 4 + 20 = 24 (left: 4 24) → sure
+      ↳ 4 - 4 = 0 (left: 0 20) → likely
+      ↳ 20 - 4 = 16 (left: 4 16) → sure
+      ↳ 4 * 4 = 16 (left: 16 20) → imposs
+      ↳ 4 * 20 = 80 (left: 4 80) → imposs
+      ↳ 4 / 4 = 1 (left: 1 20) → imposs
+      ↳ 20 / 4 = 5 (left: 4 5) → imposs
+      ↳ 0 + 10 = 10 (left: 10 10) → imposs
+      ↳ 10 + 0 = 10 (left: 10 10) → imposs
+      ↳ 10 + 10 = 20 (left: 0 20) → likely
+      ↳ 10 - 0 = 10 (left: 10 10) → imposs
+      ↳ 10 - 10 = 0 (left: 0 0) → imposs
+      ↳ 0 * 10 = 0 (left: 10 0) → sure
+      ↳ 10 * 0 = 0 (left: 10 0) → sure
+      ↳ 10 * 10 = 100 (left: 0 100) → imposs
+      ↳ 0 / 10 = 0 (left: 10 0) → sure
+      ↳ 10 / 10 = 1 (left: 0 1) → imposs
+      ↳ 4 + 6 = 10 (left: 10 10) → imposs
+      ↳ 4 + 10 = 14 (left: 6 14) → sure
+      ↳ 6 + 10 = 16 (left: 4 16) → sure
+      ↳ 6 - 4 = 2 (left: 2 10) → imposs
+      ↳ 10 - 4 = 6 (left: 6 6) → imposs
+      ↳ 10 - 6 = 4 (left: 4 4) → imposs
+      ↳ 4 * 6 = 24 (left: 10 24) → sure
+      ↳ 4 * 10 = 40 (left: 6 40) → imposs
+      ↳ 6 * 10 = 60 (left: 4 60) → imposs
+      ↳ 6 / 4 = 1.5 (left: 1.5 10) → likely
+      ↳ 10 / 4 = 2.5 (left: 2.5 6) → likely
+      ↳ 10 / 6 = 1.6666666666666667 (left: 1.6666666666666667 4) → imposs
+    [BFS] depth=2, beam size=5
+      ↳ 10 + 18 = 28 (left: 28) → imposs
+      ↳ 18 - 10 = 8 (left: 8) → imposs
+      ↳ 10 * 18 = 180 (left: 180) → imposs
+      ↳ 18 / 10 = 1.8 (left: 1.8) → imposs
+      ↳ 8 + 20 = 28 (left: 28) → imposs
+      ↳ 20 - 8 = 12 (left: 12) → imposs
+      ↳ 8 * 20 = 160 (left: 160) → imposs
+      ↳ 20 / 8 = 2.5 (left: 2.5) → imposs
+      ↳ 10 + 18 = 28 (left: 28) → imposs
+      ↳ 18 - 10 = 8 (left: 8) → imposs
+      ↳ 10 * 18 = 180 (left: 180) → imposs
+      ↳ 18 / 10 = 1.8 (left: 1.8) → imposs
+      ↳ 4 + 24 = 28 (left: 28) → imposs
+      ↳ 24 - 4 = 20 (left: 20) → imposs
+      ↳ 4 * 24 = 96 (left: 96) → imposs
+      ↳ 24 / 4 = 6 (left: 6) → imposs
+      ↳ 6 + 14 = 20 (left: 20) → imposs
+      ↳ 14 - 6 = 8 (left: 8) → imposs
+      ↳ 6 * 14 = 84 (left: 84) → imposs
+      ↳ 14 / 6 = 2.3333333333333335 (left: 2.3333333333333335) → imposs
+  Final: (no solution)  →  ✗  (51.8s, 70 API calls)
+
+──────────────────────── Puzzle 9/15  —  3 5 6 8 ────────────────────────
+
+
+▶ IO (Single-Shot)
+  (8-5)*6+3  →  ✗  (0.6s)
+
+▶ Chain-of-Thought
+  (8*6)/(5-3)  →  ✓  (4.1s)
+
+▶ ToT-BFS
+    [BFS] depth=0, beam size=1
+      ↳ 3 + 5 = 8 (left: 6 8 8) → likely
+      ↳ 3 + 6 = 9 (left: 5 8 9) → likely
+      ↳ 3 + 8 = 11 (left: 5 6 11) → sure
+      ↳ 5 + 6 = 11 (left: 3 8 11) → sure
+      ↳ 5 + 8 = 13 (left: 3 6 13) → likely
+      ↳ 6 + 8 = 14 (left: 3 5 14) → sure
+      ↳ 5 - 3 = 2 (left: 2 6 8) → sure
+      ↳ 6 - 3 = 3 (left: 3 5 8) → sure
+      ↳ 6 - 5 = 1 (left: 1 3 8) → likely
+      ↳ 8 - 3 = 5 (left: 5 5 6) → likely
+      ↳ 8 - 5 = 3 (left: 3 3 6) → sure
+      ↳ 8 - 6 = 2 (left: 2 3 5) → likely
+      ↳ 3 * 5 = 15 (left: 6 8 15) → likely
+      ↳ 3 * 6 = 18 (left: 5 8 18) → likely
+      ↳ 3 * 8 = 24 (left: 5 6 24) → sure
+      ↳ 5 * 6 = 30 (left: 3 8 30) → likely
+      ↳ 5 * 8 = 40 (left: 3 6 40) → likely
+      ↳ 6 * 8 = 48 (left: 3 5 48) → likely
+      ↳ 6 / 3 = 2 (left: 2 5 8) → likely
+    [BFS] depth=1, beam size=5
+      ↳ 5 + 6 = 11 (left: 11 11) → imposs
+      ↳ 6 + 11 = 17 (left: 5 17) → sure
+      ↳ 11 + 5 = 16 (left: 6 16) → sure
+      ↳ 6 - 5 = 1 (left: 1 11) → imposs
+      ↳ 11 - 6 = 5 (left: 5 5) → imposs
+      ↳ 11 - 5 = 6 (left: 6 6) → imposs
+      ↳ 5 * 6 = 30 (left: 11 30) → imposs
+      ↳ 6 * 11 = 66 (left: 5 66) → imposs
+      ↳ 5 * 11 = 55 (left: 6 55) → imposs
+      ↳ 6 / 5 = 1.2 (left: 1.2 11) → imposs
+      ↳ 11 / 5 = 2.2 (left: 2.2 6) → imposs
+      ↳ 11 / 6 = 1.8333333333333333 (left: 1.8333333333333333 5) → imposs
+      ↳ 3 + 8 = 11 (left: 11 11) → imposs
+      ↳ 3 + 11 = 14 (left: 8 14) → sure
+      ↳ 8 + 11 = 19 (left: 3 19) → sure
+      ↳ 8 - 3 = 5 (left: 5 11) → imposs
+      ↳ 11 - 3 = 8 (left: 8 8) → imposs
+      ↳ 11 - 8 = 3 (left: 3 3) → imposs
+      ↳ 3 * 8 = 24 (left: 11 24) → sure
+      ↳ 3 * 11 = 33 (left: 8 33) → imposs
+      ↳ 8 * 11 = 88 (left: 3 88) → imposs
+      ↳ 3 + 5 = 8 (left: 8 14) → sure
+      ↳ 3 + 14 = 17 (left: 5 17) → sure
+      ↳ 5 + 14 = 19 (left: 3 19) → sure
+      ↳ 5 - 3 = 2 (left: 2 14) → imposs
+      ↳ 14 - 3 = 11 (left: 5 11) → imposs
+      ↳ 14 - 5 = 9 (left: 3 9) → imposs
+      ↳ 3 * 5 = 15 (left: 14 15) → imposs
+      ↳ 3 * 14 = 42 (left: 5 42) → imposs
+      ↳ 5 * 14 = 70 (left: 3 70) → imposs
+      ↳ 14 / 3 = 4.666666666666667 (left: 4.666666666666667 5) → likely
+      ↳ 14 / 5 = 2.8 (left: 2.8 3) → imposs
+      ↳ 2 + 6 = 8 (left: 8 8) → imposs
+      ↳ 2 + 8 = 10 (left: 6 10) → sure
+      ↳ 6 + 8 = 14 (left: 2 14) → imposs
+      ↳ 6 - 2 = 4 (left: 4 8) → imposs
+      ↳ 8 - 2 = 6 (left: 6 6) → imposs
+      ↳ 8 - 6 = 2 (left: 2 2) → imposs
+      ↳ 2 * 6 = 12 (left: 8 12) → sure
+      ↳ 2 * 8 = 16 (left: 6 16) → sure
+      ↳ 6 * 8 = 48 (left: 2 48) → imposs
+      ↳ 6 / 2 = 3 (left: 3 8) → imposs
+      ↳ 8 / 2 = 4 (left: 4 6) → imposs
+      ↳ 3 + 5 = 8 (left: 8 8) → imposs
+      ↳ 3 + 8 = 11 (left: 5 11) → imposs
+      ↳ 5 + 8 = 13 (left: 3 13) → sure
+      ↳ 5 - 3 = 2 (left: 2 8) → imposs
+      ↳ 8 - 3 = 5 (left: 5 5) → imposs
+      ↳ 8 - 5 = 3 (left: 3 3) → imposs
+      ↳ 3 * 5 = 15 (left: 8 15) → likely
+      ↳ 3 * 8 = 24 (left: 5 24) → sure
+      ↳ 5 * 8 = 40 (left: 3 40) → imposs
+      ↳ 8 / 3 = 2.6666666666666665 (left: 2.6666666666666665 5) → likely
+    [BFS] depth=2, beam size=5
+      ↳ 5 + 17 = 22 (left: 22) → imposs
+      ↳ 17 - 5 = 12 (left: 12) → imposs
+      ↳ 5 * 17 = 85 (left: 85) → imposs
+      ↳ 17 / 5 = 3.4 (left: 3.4) → imposs
+      ↳ 6 + 16 = 22 (left: 22) → imposs
+      ↳ 16 - 6 = 10 (left: 10) → imposs
+      ↳ 6 * 16 = 96 (left: 96) → imposs
+      ↳ 16 / 6 = 2.6666666666666665 (left: 2.6666666666666665) → imposs
+      ↳ 8 + 14 = 22 (left: 22) → imposs
+      ↳ 14 - 8 = 6 (left: 6) → imposs
+      ↳ 8 * 14 = 112 (left: 112) → imposs
+      ↳ 14 / 8 = 1.75 (left: 1.75) → imposs
+      ↳ 3 + 19 = 22 (left: 22) → imposs
+      ↳ 19 - 3 = 16 (left: 16) → imposs
+      ↳ 3 * 19 = 57 (left: 57) → imposs
+      ↳ 11 + 24 = 35 (left: 35) → imposs
+      ↳ 24 - 11 = 13 (left: 13) → imposs
+      ↳ 11 * 24 = 264 (left: 264) → imposs
+  Final: (no solution)  →  ✗  (75.5s, 83 API calls)
+
+─────────────────────── Puzzle 10/15  —  2 8 8 12 ───────────────────────
+
+
+▶ IO (Single-Shot)
+  (8+8-2)*12  →  ✗  (0.6s)
+
+▶ Chain-of-Thought
+  (8/8) * (12*2)  →  ✓  (4.0s)
+
+▶ ToT-BFS
+    [BFS] depth=0, beam size=1
+      ↳ 2 + 8 = 10 (left: 8 10 12) → sure
+      ↳ 2 + 8 = 10 (left: 8 10 12) → sure
+      ↳ 2 + 12 = 14 (left: 8 8 14) → sure
+      ↳ 8 + 8 = 16 (left: 2 12 16) → likely
+      ↳ 8 + 12 = 20 (left: 2 8 20) → sure
+      ↳ 8 + 12 = 20 (left: 2 8 20) → sure
+      ↳ 8 - 2 = 6 (left: 6 8 12) → sure
+      ↳ 8 - 2 = 6 (left: 6 8 12) → sure
+      ↳ 12 - 2 = 10 (left: 8 8 10) → sure
+      ↳ 8 - 8 = 0 (left: 0 2 12) → sure
+      ↳ 12 - 8 = 4 (left: 2 4 8) → sure
+      ↳ 12 - 8 = 4 (left: 2 4 8) → sure
+      ↳ 2 * 8 = 16 (left: 8 12 16) → likely
+      ↳ 2 * 8 = 16 (left: 8 12 16) → likely
+      ↳ 2 * 12 = 24 (left: 8 8 24) → sure
+      ↳ 8 * 8 = 64 (left: 2 12 64) → likely
+      ↳ 8 * 12 = 96 (left: 2 8 96) → sure
+      ↳ 8 * 12 = 96 (left: 2 8 96) → sure
+      ↳ 8 / 2 = 4 (left: 4 8 12) → sure
+      ↳ 8 / 2 = 4 (left: 4 8 12) → sure
+      ↳ 8 / 8 = 1 (left: 1 2 12) → sure
+      ↳ 12 / 2 = 6 (left: 6 8 8) → likely
+      ↳ 12 / 8 = 1.5 (left: 1.5 2 8) → sure
+      ↳ 12 / 8 = 1.5 (left: 1.5 2 8) → likely
+    [BFS] depth=1, beam size=5
+      ↳ 8 + 10 = 18 (left: 12 18) → imposs
+      ↳ 8 + 12 = 20 (left: 10 20) → imposs
+      ↳ 10 + 12 = 22 (left: 8 22) → imposs
+      ↳ 10 - 8 = 2 (left: 2 12) → sure
+      ↳ 12 - 8 = 4 (left: 4 10) → likely
+      ↳ 12 - 10 = 2 (left: 2 8) → imposs
+      ↳ 8 * 10 = 80 (left: 12 80) → imposs
+      ↳ 8 * 12 = 96 (left: 10 96) → imposs
+      ↳ 10 * 12 = 120 (left: 8 120) → imposs
+      ↳ 10 / 8 = 1.25 (left: 1.25 12) → likely
+      ↳ 12 / 8 = 1.5 (left: 1.5 10) → likely
+      ↳ 12 / 10 = 1.2 (left: 1.2 8) → imposs
+      ↳ 8 + 10 = 18 (left: 12 18) → imposs
+      ↳ 8 + 12 = 20 (left: 10 20) → imposs
+      ↳ 10 + 12 = 22 (left: 8 22) → imposs
+      ↳ 10 - 8 = 2 (left: 2 12) → sure
+      ↳ 12 - 8 = 4 (left: 4 10) → likely
+      ↳ 12 - 10 = 2 (left: 2 8) → imposs
+      ↳ 8 * 10 = 80 (left: 12 80) → imposs
+      ↳ 8 * 12 = 96 (left: 10 96) → imposs
+      ↳ 10 * 12 = 120 (left: 8 120) → imposs
+      ↳ 10 / 8 = 1.25 (left: 1.25 12) → likely
+      ↳ 12 / 8 = 1.5 (left: 1.5 10) → likely
+      ↳ 12 / 10 = 1.2 (left: 1.2 8) → imposs
+      ↳ 8 + 8 = 16 (left: 14 16) → imposs
+      ↳ 8 + 14 = 22 (left: 8 22) → imposs
+      ↳ 8 - 8 = 0 (left: 0 14) → likely
+      ↳ 14 - 8 = 6 (left: 6 8) → likely
+      ↳ 8 * 8 = 64 (left: 14 64) → imposs
+      ↳ 8 * 14 = 112 (left: 8 112) → imposs
+      ↳ 8 / 8 = 1 (left: 1 14) → imposs
+      ↳ 14 / 8 = 1.75 (left: 1.75 8) → likely
+      ↳ 2 + 8 = 10 (left: 10 20) → imposs
+      ↳ 2 + 20 = 22 (left: 8 22) → imposs
+      ↳ 8 + 20 = 28 (left: 2 28) → imposs
+      ↳ 8 - 2 = 6 (left: 6 20) → sure
+      ↳ 20 - 2 = 18 (left: 8 18) → sure
+      ↳ 20 - 8 = 12 (left: 2 12) → sure
+      ↳ 2 * 8 = 16 (left: 16 20) → imposs
+      ↳ 2 * 20 = 40 (left: 8 40) → likely
+      ↳ 8 * 20 = 160 (left: 2 160) → imposs
+      ↳ 8 / 2 = 4 (left: 4 20) → sure
+      ↳ 20 / 2 = 10 (left: 8 10) → sure
+      ↳ 20 / 8 = 2.5 (left: 2 2.5) → likely
+      ↳ 2 + 8 = 10 (left: 10 20) → imposs
+      ↳ 2 + 20 = 22 (left: 8 22) → imposs
+      ↳ 8 + 20 = 28 (left: 2 28) → imposs
+      ↳ 8 - 2 = 6 (left: 6 20) → sure
+      ↳ 20 - 2 = 18 (left: 8 18) → sure
+      ↳ 20 - 8 = 12 (left: 2 12) → sure
+      ↳ 2 * 8 = 16 (left: 16 20) → imposs
+      ↳ 2 * 20 = 40 (left: 8 40) → likely
+      ↳ 8 * 20 = 160 (left: 2 160) → imposs
+      ↳ 8 / 2 = 4 (left: 4 20) → sure
+      ↳ 20 / 2 = 10 (left: 8 10) → sure
+    [BFS] depth=2, beam size=5
+      ↳ 2 + 12 = 14 (left: 14) → imposs
+      ↳ 12 - 2 = 10 (left: 10) → imposs
+      ↳ 2 * 12 = 24 (left: 24) → sure
+    [BFS] Reached 24 at depth 3.
+  Final: (((2+8)-8)*12)  →  ✓  (60.9s, 86 API calls)
+
+─────────────────────── Puzzle 11/15  —  2 3 7 11 ───────────────────────
+
+
+▶ IO (Single-Shot)
+  (11-3)*7/2  →  ✗  (0.6s)
+
+▶ Chain-of-Thought
+  (11-7)*3*2  →  ✓  (2.1s)
+
+▶ ToT-BFS
+    [BFS] depth=0, beam size=1
+      ↳ 2 + 3 = 5 (left: 5 7 11) → likely
+      ↳ 2 + 7 = 9 (left: 3 9 11) → likely
+      ↳ 2 + 11 = 13 (left: 3 7 13) → likely
+      ↳ 3 + 7 = 10 (left: 2 10 11) → likely
+      ↳ 3 + 11 = 14 (left: 2 7 14) → likely
+      ↳ 7 + 11 = 18 (left: 2 3 18) → sure
+      ↳ 3 - 2 = 1 (left: 1 7 11) → likely
+      ↳ 7 - 2 = 5 (left: 3 5 11) → likely
+      ↳ 7 - 3 = 4 (left: 2 4 11) → likely
+      ↳ 11 - 2 = 9 (left: 3 7 9) → likely
+      ↳ 11 - 3 = 8 (left: 2 7 8) → likely
+      ↳ 11 - 7 = 4 (left: 2 3 4) → sure
+      ↳ 2 * 3 = 6 (left: 6 7 11) → sure
+      ↳ 2 * 7 = 14 (left: 3 11 14) → sure
+      ↳ 2 * 11 = 22 (left: 3 7 22) → likely
+      ↳ 3 * 7 = 21 (left: 2 11 21) → likely
+      ↳ 3 * 11 = 33 (left: 2 7 33) → imposs
+      ↳ 7 * 11 = 77 (left: 2 3 77) → imposs
+      ↳ 7 / 2 = 3.5 (left: 3 3.5 11) → likely
+      ↳ 11 / 2 = 5.5 (left: 3 7 5.5) → likely
+      ↳ 11 / 3 = 3.6666666666666665 (left: 2 7 3.6666666666666665) → likely
+    [BFS] depth=1, beam size=5
+      ↳ 2 + 3 = 5 (left: 5 18) → likely
+      ↳ 2 + 18 = 20 (left: 3 20) → likely
+      ↳ 3 + 18 = 21 (left: 2 21) → imposs
+      ↳ 3 - 2 = 1 (left: 1 18) → imposs
+      ↳ 18 - 2 = 16 (left: 3 16) → likely
+      ↳ 18 - 3 = 15 (left: 2 15) → imposs
+      ↳ 2 * 3 = 6 (left: 6 18) → sure
+      ↳ 2 * 18 = 36 (left: 3 36) → imposs
+      ↳ 3 * 18 = 54 (left: 2 54) → imposs
+      ↳ 18 / 2 = 9 (left: 3 9) → imposs
+      ↳ 18 / 3 = 6 (left: 2 6) → imposs
+      ↳ 2 + 3 = 5 (left: 4 5) → imposs
+      ↳ 2 + 4 = 6 (left: 3 6) → imposs
+      ↳ 3 + 4 = 7 (left: 2 7) → imposs
+      ↳ 3 - 2 = 1 (left: 1 4) → imposs
+      ↳ 4 - 2 = 2 (left: 2 3) → imposs
+      ↳ 4 - 3 = 1 (left: 1 2) → imposs
+      ↳ 2 * 3 = 6 (left: 4 6) → imposs
+      ↳ 2 * 4 = 8 (left: 3 8) → imposs
+      ↳ 3 * 4 = 12 (left: 2 12) → sure
+      ↳ 4 / 2 = 2 (left: 2 3) → imposs
+      ↳ 6 + 7 = 13 (left: 11 13) → sure
+      ↳ 6 + 11 = 17 (left: 7 17) → sure
+      ↳ 7 + 11 = 18 (left: 6 18) → sure
+      ↳ 7 - 6 = 1 (left: 1 11) → imposs
+      ↳ 11 - 6 = 5 (left: 5 7) → imposs
+      ↳ 11 - 7 = 4 (left: 4 6) → imposs
+      ↳ 6 * 7 = 42 (left: 11 42) → imposs
+      ↳ 6 * 11 = 66 (left: 7 66) → imposs
+      ↳ 7 * 11 = 77 (left: 6 77) → imposs
+      ↳ 3 + 11 = 14 (left: 14 14) → imposs
+      ↳ 3 + 14 = 17 (left: 11 17) → sure
+      ↳ 11 + 14 = 25 (left: 3 25) → likely
+      ↳ 11 - 3 = 8 (left: 8 14) → sure
+      ↳ 14 - 3 = 11 (left: 11 11) → imposs
+      ↳ 14 - 11 = 3 (left: 3 3) → imposs
+      ↳ 3 * 11 = 33 (left: 14 33) → imposs
+      ↳ 3 * 14 = 42 (left: 11 42) → imposs
+      ↳ 11 * 14 = 154 (left: 3 154) → imposs
+      ↳ 5 + 7 = 12 (left: 11 12) → imposs
+      ↳ 5 + 11 = 16 (left: 7 16) → imposs
+      ↳ 7 + 11 = 18 (left: 5 18) → likely
+      ↳ 7 - 5 = 2 (left: 2 11) → imposs
+      ↳ 11 - 5 = 6 (left: 6 7) → imposs
+      ↳ 11 - 7 = 4 (left: 4 5) → imposs
+      ↳ 5 * 7 = 35 (left: 11 35) → imposs
+      ↳ 5 * 11 = 55 (left: 7 55) → imposs
+      ↳ 7 * 11 = 77 (left: 5 77) → imposs
+      ↳ 11 / 5 = 2.2 (left: 2.2 7) → likely
+      ↳ 7 / 5 = 1.4 (left: 1.4 11) → imposs
+      ↳ 11 / 7 = 1.5714285714285714 (left: 1.5714285714285714 5) → imposs
+      ↳ 5 / 11 = 0.45454545454545453 (left: 0.45454545454545453 7) → imposs
+      ↳ 7 / 11 = 0.6363636363636364 (left: 0.6363636363636364 5) → likely
+    [BFS] depth=2, beam size=5
+      ↳ 6 + 18 = 24 (left: 24) → sure
+    [BFS] Reached 24 at depth 3.
+  Final: ((2*3)+(7+11))  →  ✓  (58.2s, 81 API calls)
+
+──────────────────────── Puzzle 12/15  —  5 5 5 5 ────────────────────────
+
+
+▶ IO (Single-Shot)
+  (5 - 5/5) * 5  →  ✗  (0.7s)
+
+▶ Chain-of-Thought
+  (5*5) - (5/5)  →  ✓  (2.1s)
+
+▶ ToT-BFS
+    [BFS] depth=0, beam size=1
+      ↳ 5 + 5 = 10 (left: 5 5 10) → sure
+      ↳ 5 - 5 = 0 (left: 0 5 5) → likely
+      ↳ 5 * 5 = 25 (left: 5 5 25) → sure
+      ↳ 5 / 5 = 1 (left: 1 5 5) → likely
+    [BFS] depth=1, beam size=4
+      ↳ 5 + 5 = 10 (left: 10 10) → imposs
+      ↳ 5 + 10 = 15 (left: 5 15) → sure
+      ↳ 10 + 5 = 15 (left: 5 15) → sure
+      ↳ 5 - 5 = 0 (left: 0 10) → imposs
+      ↳ 10 - 5 = 5 (left: 5 5) → imposs
+      ↳ 5 * 5 = 25 (left: 10 25) → imposs
+      ↳ 5 * 10 = 50 (left: 5 50) → likely
+      ↳ 10 * 5 = 50 (left: 5 50) → likely
+      ↳ 5 / 5 = 1 (left: 1 10) → imposs
+      ↳ 10 / 5 = 2 (left: 2 5) → imposs
+      ↳ 5 + 5 = 10 (left: 10 25) → imposs
+      ↳ 5 + 25 = 30 (left: 5 30) → likely
+      ↳ 5 - 5 = 0 (left: 0 25) → sure
+      ↳ 25 - 5 = 20 (left: 5 20) → sure
+      ↳ 5 * 5 = 25 (left: 25 25) → imposs
+      ↳ 5 * 25 = 125 (left: 5 125) → likely
+      ↳ 5 / 5 = 1 (left: 1 25) → imposs
+      ↳ 25 / 5 = 5 (left: 5 5) → imposs
+      ↳ 0 + 5 = 5 (left: 5 5) → imposs
+      ↳ 5 - 0 = 5 (left: 5 5) → imposs
+      ↳ 5 + 5 = 10 (left: 0 10) → imposs
+      ↳ 5 - 5 = 0 (left: 0 0) → imposs
+      ↳ 0 * 5 = 0 (left: 0 5) → imposs
+      ↳ 5 * 5 = 25 (left: 0 25) → sure
+      ↳ 5 / 5 = 1 (left: 0 1) → imposs
+      ↳ 1 + 5 = 6 (left: 5 6) → imposs
+      ↳ 5 + 5 = 10 (left: 1 10) → imposs
+      ↳ 5 - 1 = 4 (left: 4 5) → imposs
+      ↳ 5 * 1 = 5 (left: 5 5) → imposs
+      ↳ 5 * 5 = 25 (left: 1 25) → imposs
+      ↳ 5 / 5 = 1 (left: 1 1) → imposs
+    [BFS] depth=2, beam size=5
+      ↳ 5 + 15 = 20 (left: 20) → imposs
+      ↳ 15 - 5 = 10 (left: 10) → imposs
+      ↳ 5 * 15 = 75 (left: 75) → imposs
+      ↳ 15 / 5 = 3 (left: 3) → imposs
+      ↳ 5 + 15 = 20 (left: 20) → imposs
+      ↳ 15 - 5 = 10 (left: 10) → imposs
+      ↳ 5 * 15 = 75 (left: 75) → imposs
+      ↳ 15 / 5 = 3 (left: 3) → imposs
+      ↳ 0 + 25 = 25 (left: 25) → imposs
+      ↳ 25 - 0 = 25 (left: 25) → imposs
+      ↳ 0 * 25 = 0 (left: 0) → imposs
+      ↳ 25 * 0 = 0 (left: 0) → imposs
+      ↳ 0 / 25 = 0 (left: 0) → imposs
+      ↳ 5 + 20 = 25 (left: 25) → imposs
+      ↳ 20 - 5 = 15 (left: 15) → imposs
+      ↳ 5 * 20 = 100 (left: 100) → imposs
+      ↳ 20 / 5 = 4 (left: 4) → imposs
+      ↳ 0 + 25 = 25 (left: 25) → imposs
+      ↳ 25 - 0 = 25 (left: 25) → imposs
+      ↳ 0 * 25 = 0 (left: 0) → imposs
+      ↳ 25 * 0 = 0 (left: 0) → imposs
+      ↳ 0 / 25 = 0 (left: 0) → imposs
+  Final: (no solution)  →  ✗  (31.8s, 45 API calls)
+
+──────────────────────── Puzzle 13/15  —  1 3 4 6 ────────────────────────
+
+
+▶ IO (Single-Shot)
+  6/(1-3/4)  →  ✓  (0.7s)
+
+▶ Chain-of-Thought
+  Step 1: 6 / 3 = 2 (left: 1 2 4)  →  ✗  (8.2s)
+
+▶ ToT-BFS
+    [BFS] depth=0, beam size=1
+      ↳ 1 + 3 = 4 (left: 4 4 6) → sure
+      ↳ 1 + 4 = 5 (left: 3 5 6) → sure
+      ↳ 1 + 6 = 7 (left: 3 4 7) → sure
+      ↳ 3 + 4 = 7 (left: 1 6 7) → likely
+      ↳ 3 + 6 = 9 (left: 1 4 9) → likely
+      ↳ 4 + 6 = 10 (left: 1 3 10) → likely
+      ↳ 3 - 1 = 2 (left: 2 4 6) → sure
+      ↳ 4 - 1 = 3 (left: 3 3 6) → sure
+      ↳ 4 - 3 = 1 (left: 1 1 6) → imposs
+      ↳ 6 - 1 = 5 (left: 3 4 5) → sure
+      ↳ 6 - 3 = 3 (left: 1 3 4) → likely
+      ↳ 6 - 4 = 2 (left: 1 2 3) → imposs
+      ↳ 1 * 3 = 3 (left: 3 4 6) → sure
+      ↳ 1 * 4 = 4 (left: 3 4 6) → sure
+      ↳ 1 * 6 = 6 (left: 3 4 6) → sure
+      ↳ 3 * 4 = 12 (left: 1 6 12) → likely
+      ↳ 3 * 6 = 18 (left: 1 4 18) → sure
+      ↳ 4 * 6 = 24 (left: 1 3 24) → sure
+      ↳ 3 / 1 = 3 (left: 3 4 6) → sure
+      ↳ 4 / 1 = 4 (left: 3 4 6) → sure
+      ↳ 6 / 1 = 6 (left: 3 4 6) → sure
+    [BFS] depth=1, beam size=5
+      ↳ 4 + 4 = 8 (left: 6 8) → likely
+      ↳ 4 + 6 = 10 (left: 4 10) → likely
+      ↳ 4 - 4 = 0 (left: 0 6) → imposs
+      ↳ 6 - 4 = 2 (left: 2 4) → imposs
+      ↳ 4 * 4 = 16 (left: 6 16) → sure
+      ↳ 4 * 6 = 24 (left: 4 24) → sure
+      ↳ 4 / 4 = 1 (left: 1 6) → imposs
+      ↳ 3 + 5 = 8 (left: 6 8) → likely
+      ↳ 3 + 6 = 9 (left: 5 9) → likely
+      ↳ 5 + 6 = 11 (left: 3 11) → imposs
+      ↳ 5 - 3 = 2 (left: 2 6) → imposs
+      ↳ 6 - 3 = 3 (left: 3 5) → imposs
+      ↳ 6 - 5 = 1 (left: 1 3) → imposs
+      ↳ 3 * 5 = 15 (left: 6 15) → likely
+      ↳ 3 * 6 = 18 (left: 5 18) → likely
+      ↳ 5 * 6 = 30 (left: 3 30) → imposs
+      ↳ 6 / 3 = 2 (left: 2 5) → imposs
+      ↳ 3 + 4 = 7 (left: 7 7) → imposs
+      ↳ 3 + 7 = 10 (left: 4 10) → likely
+      ↳ 4 + 7 = 11 (left: 3 11) → imposs
+      ↳ 4 - 3 = 1 (left: 1 7) → imposs
+      ↳ 7 - 3 = 4 (left: 4 4) → imposs
+      ↳ 7 - 4 = 3 (left: 3 3) → imposs
+      ↳ 3 * 4 = 12 (left: 7 12) → likely
+      ↳ 3 * 7 = 21 (left: 4 21) → sure
+      ↳ 4 * 7 = 28 (left: 3 28) → imposs
+      ↳ 2 + 4 = 6 (left: 6 6) → imposs
+      ↳ 2 + 6 = 8 (left: 4 8) → imposs
+      ↳ 4 + 6 = 10 (left: 2 10) → imposs
+      ↳ 2 * 4 = 8 (left: 6 8) → likely
+      ↳ 2 * 6 = 12 (left: 4 12) → sure
+      ↳ 4 * 6 = 24 (left: 2 24) → sure
+      ↳ 6 / 2 = 3 (left: 4 3) → imposs
+      ↳ 3 + 3 = 6 (left: 6 6) → imposs
+      ↳ 3 + 6 = 9 (left: 3 9) → imposs
+      ↳ 3 - 3 = 0 (left: 0 6) → imposs
+      ↳ 6 - 3 = 3 (left: 3 3) → imposs
+      ↳ 3 * 3 = 9 (left: 6 9) → likely
+      ↳ 3 * 6 = 18 (left: 3 18) → likely
+      ↳ 6 / 3 = 2 (left: 2 3) → imposs
+    [BFS] depth=2, beam size=5
+      ↳ 6 + 16 = 22 (left: 22) → imposs
+      ↳ 16 - 6 = 10 (left: 10) → imposs
+      ↳ 6 * 16 = 96 (left: 96) → imposs
+      ↳ 4 + 24 = 28 (left: 28) → imposs
+      ↳ 24 - 4 = 20 (left: 20) → imposs
+      ↳ 4 * 24 = 96 (left: 96) → imposs
+      ↳ 24 / 4 = 6 (left: 6) → imposs
+      ↳ 4 + 21 = 25 (left: 25) → imposs
+      ↳ 21 - 4 = 17 (left: 17) → imposs
+      ↳ 4 * 21 = 84 (left: 84) → imposs
+      ↳ 21 / 4 = 5.25 (left: 5.25) → imposs
+      ↳ 4 + 12 = 16 (left: 16) → imposs
+      ↳ 12 - 4 = 8 (left: 8) → imposs
+      ↳ 4 * 12 = 48 (left: 48) → imposs
+      ↳ 12 / 4 = 3 (left: 3) → imposs
+      ↳ 2 + 24 = 26 (left: 26) → imposs
+      ↳ 24 - 2 = 22 (left: 22) → imposs
+      ↳ 2 * 24 = 48 (left: 48) → imposs
+      ↳ 24 / 2 = 12 (left: 12) → imposs
+  Final: (no solution)  →  ✗  (54.9s, 72 API calls)
+
+──────────────────────── Puzzle 14/15  —  3 3 8 8 ────────────────────────
+
+
+▶ IO (Single-Shot)
+  8 * (3 + 3) / 8  →  ✗  (0.7s)
+
+▶ Chain-of-Thought
+  3 * 8  →  ✗  (0.9s)
+
+▶ ToT-BFS
+    [BFS] depth=0, beam size=1
+      ↳ 3 + 3 = 6 (left: 6 8 8) → likely
+      ↳ 3 + 8 = 11 (left: 3 8 11) → sure
+      ↳ 8 + 8 = 16 (left: 3 3 16) → sure
+      ↳ 3 - 3 = 0 (left: 0 8 8) → sure
+      ↳ 8 - 3 = 5 (left: 3 5 8) → sure
+      ↳ 3 * 3 = 9 (left: 8 8 9) → likely
+      ↳ 3 * 8 = 24 (left: 3 8 24) → sure
+      ↳ 8 * 8 = 64 (left: 3 3 64) → likely
+      ↳ 3 / 3 = 1 (left: 1 8 8) → likely
+      ↳ 8 / 8 = 1 (left: 1 3 3) → imposs
+    [BFS] depth=1, beam size=5
+      ↳ 3 + 8 = 11 (left: 11 11) → imposs
+      ↳ 3 + 11 = 14 (left: 8 14) → sure
+      ↳ 8 + 11 = 19 (left: 3 19) → sure
+      ↳ 8 - 3 = 5 (left: 5 11) → imposs
+      ↳ 11 - 3 = 8 (left: 8 8) → imposs
+      ↳ 11 - 8 = 3 (left: 3 3) → imposs
+      ↳ 3 * 8 = 24 (left: 11 24) → sure
+      ↳ 3 * 11 = 33 (left: 8 33) → imposs
+      ↳ 8 * 11 = 88 (left: 3 88) → imposs
+      ↳ 3 + 3 = 6 (left: 6 16) → sure
+      ↳ 3 + 16 = 19 (left: 3 19) → sure
+      ↳ 3 - 3 = 0 (left: 0 16) → likely
+      ↳ 16 - 3 = 13 (left: 3 13) → sure
+      ↳ 3 * 3 = 9 (left: 9 16) → likely
+      ↳ 3 * 16 = 48 (left: 3 48) → imposs
+      ↳ 0 + 8 = 8 (left: 8 8) → imposs
+      ↳ 8 + 0 = 8 (left: 8 8) → imposs
+      ↳ 8 + 8 = 16 (left: 0 16) → likely
+      ↳ 8 - 0 = 8 (left: 8 8) → imposs
+      ↳ 8 - 8 = 0 (left: 0 0) → imposs
+      ↳ 0 * 8 = 0 (left: 8 0) → imposs
+      ↳ 8 * 0 = 0 (left: 8 0) → imposs
+      ↳ 8 * 8 = 64 (left: 0 64) → imposs
+      ↳ 0 / 8 = 0 (left: 8 0) → imposs
+      ↳ 8 / 8 = 1 (left: 0 1) → imposs
+      ↳ 3 + 5 = 8 (left: 8 8) → imposs
+      ↳ 3 + 8 = 11 (left: 5 11) → imposs
+      ↳ 5 + 8 = 13 (left: 3 13) → sure
+      ↳ 5 - 3 = 2 (left: 2 8) → imposs
+      ↳ 8 - 3 = 5 (left: 5 5) → imposs
+      ↳ 8 - 5 = 3 (left: 3 3) → imposs
+      ↳ 3 * 5 = 15 (left: 8 15) → likely
+      ↳ 3 * 8 = 24 (left: 5 24) → sure
+      ↳ 5 * 8 = 40 (left: 3 40) → imposs
+      ↳ 8 / 3 = 2.6666666666666665 (left: 2.6666666666666665 5) → likely
+      ↳ 8 / 5 = 1.6 (left: 1.6 3) → imposs
+      ↳ 3 + 8 = 11 (left: 11 24) → sure
+      ↳ 3 + 24 = 27 (left: 8 27) → imposs
+      ↳ 8 + 24 = 32 (left: 3 32) → imposs
+      ↳ 8 - 3 = 5 (left: 5 24) → sure
+      ↳ 24 - 3 = 21 (left: 8 21) → imposs
+      ↳ 24 - 8 = 16 (left: 3 16) → likely
+      ↳ 3 * 8 = 24 (left: 24 24) → sure
+      ↳ 3 * 24 = 72 (left: 8 72) → sure
+      ↳ 8 * 24 = 192 (left: 3 192) → sure
+      ↳ 24 / 3 = 8 (left: 8 8) → imposs
+    [BFS] depth=2, beam size=5
+      ↳ 8 + 14 = 22 (left: 22) → imposs
+      ↳ 14 - 8 = 6 (left: 6) → imposs
+      ↳ 8 * 14 = 112 (left: 112) → imposs
+      ↳ 14 / 8 = 1.75 (left: 1.75) → imposs
+      ↳ 3 + 19 = 22 (left: 22) → imposs
+      ↳ 19 - 3 = 16 (left: 16) → imposs
+      ↳ 3 * 19 = 57 (left: 57) → imposs
+      ↳ 11 + 24 = 35 (left: 35) → imposs
+      ↳ 24 - 11 = 13 (left: 13) → imposs
+      ↳ 11 * 24 = 264 (left: 264) → imposs
+      ↳ 6 + 16 = 22 (left: 22) → imposs
+      ↳ 16 - 6 = 10 (left: 10) → imposs
+      ↳ 6 * 16 = 96 (left: 96) → imposs
+      ↳ 16 / 6 = 2.6666666666666665 (left: 2.6666666666666665) → imposs
+      ↳ 3 + 19 = 22 (left: 22) → imposs
+      ↳ 19 - 3 = 16 (left: 16) → imposs
+      ↳ 3 * 19 = 57 (left: 57) → imposs
+  Final: (no solution)  →  ✗  (51.9s, 67 API calls)
+
+──────────────────────── Puzzle 15/15  —  1 5 5 5 ────────────────────────
+
+
+▶ IO (Single-Shot)
+  (5-1/5)*5  →  ✓  (0.6s)
+
+▶ Chain-of-Thought
+  Step 2: 25 + 5 =  →  ✗  (8.4s)
+
+▶ ToT-BFS
+    [BFS] depth=0, beam size=1
+      ↳ 1 + 5 = 6 (left: 5 5 6) → likely
+      ↳ 5 + 5 = 10 (left: 1 5 10) → likely
+      ↳ 5 - 1 = 4 (left: 4 5 5) → likely
+      ↳ 5 / 1 = 5 (left: 5 5 5) → likely
+      ↳ 1 * 5 = 5 (left: 5 5 5) → likely
+    [BFS] depth=1, beam size=5
+      ↳ 5 + 5 = 10 (left: 6 10) → sure
+      ↳ 5 + 6 = 11 (left: 5 11) → imposs
+      ↳ 6 - 5 = 1 (left: 1 5) → imposs
+      ↳ 5 * 5 = 25 (left: 6 25) → imposs
+      ↳ 5 * 6 = 30 (left: 5 30) → likely
+      ↳ 5 / 5 = 1 (left: 1 6) → imposs
+      ↳ 1 + 5 = 6 (left: 6 10) → sure
+      ↳ 1 + 10 = 11 (left: 5 11) → imposs
+      ↳ 5 + 10 = 15 (left: 1 15) → imposs
+      ↳ 5 - 1 = 4 (left: 4 10) → likely
+      ↳ 10 - 1 = 9 (left: 5 9) → likely
+      ↳ 10 - 5 = 5 (left: 1 5) → imposs
+      ↳ 1 * 5 = 5 (left: 5 10) → likely
+      ↳ 1 * 10 = 10 (left: 5 10) → likely
+      ↳ 5 * 10 = 50 (left: 1 50) → imposs
+      ↳ 5 / 1 = 5 (left: 5 10) → likely
+      ↳ 10 / 1 = 10 (left: 5 10) → likely
+      ↳ 10 / 5 = 2 (left: 1 2) → imposs
+      ↳ 4 + 5 = 9 (left: 5 9) → likely
+      ↳ 5 + 5 = 10 (left: 4 10) → likely
+      ↳ 5 - 4 = 1 (left: 1 5) → imposs
+      ↳ 4 * 5 = 20 (left: 5 20) → sure
+      ↳ 5 * 5 = 25 (left: 4 25) → imposs
+      ↳ 5 / 5 = 1 (left: 1 4) → imposs
+      ↳ 5 + 5 = 10 (left: 5 10) → likely
+      ↳ 5 - 5 = 0 (left: 0 5) → imposs
+      ↳ 5 * 5 = 25 (left: 5 25) → likely
+      ↳ 5 / 5 = 1 (left: 1 5) → imposs
+      ↳ 5 + 5 = 10 (left: 5 10) → likely
+      ↳ 5 - 5 = 0 (left: 0 5) → imposs
+      ↳ 5 * 5 = 25 (left: 5 25) → sure
+      ↳ 5 / 5 = 1 (left: 1 5) → imposs
+    [BFS] depth=2, beam size=5
+      ↳ 6 + 10 = 16 (left: 16) → imposs
+      ↳ 10 - 6 = 4 (left: 4) → imposs
+      ↳ 6 * 10 = 60 (left: 60) → imposs
+      ↳ 10 / 6 = 1.6666666666666667 (left: 1.6666666666666667) → imposs
+      ↳ 6 + 10 = 16 (left: 16) → imposs
+      ↳ 10 - 6 = 4 (left: 4) → imposs
+      ↳ 6 * 10 = 60 (left: 60) → imposs
+      ↳ 10 / 6 = 1.6666666666666667 (left: 1.6666666666666667) → imposs
+      ↳ 5 + 20 = 25 (left: 25) → imposs
+      ↳ 20 - 5 = 15 (left: 15) → imposs
+      ↳ 5 * 20 = 100 (left: 100) → imposs
+      ↳ 20 / 5 = 4 (left: 4) → imposs
+      ↳ 5 + 25 = 30 (left: 30) → imposs
+      ↳ 25 - 5 = 20 (left: 20) → imposs
+      ↳ 5 * 25 = 125 (left: 125) → imposs
+      ↳ 25 / 5 = 5 (left: 5) → imposs
+      ↳ 5 + 30 = 35 (left: 35) → imposs
+      ↳ 30 - 5 = 25 (left: 25) → imposs
+      ↳ 5 * 30 = 150 (left: 150) → imposs
+      ↳ 30 / 5 = 6 (left: 6) → imposs
+  Final: (no solution)  →  ✗  (38.8s, 48 API calls)
+
+──────────────────────────────── Summary ────────────────────────────────
+
+
+  Strategy          Correct   Accuracy   Avg Time   Avg Calls
+  ────────────────────────────────────────────────────────────
+  IO             4/15        27%        0.7s         1.0
+  CoT            8/15        53%        4.0s         1.0
+  ToT-BFS        7/15        47%       51.5s        68.5
+
