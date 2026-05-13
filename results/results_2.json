@@ -1,0 +1,371 @@
+{
+  "config": {
+    "model": "gemini-2.5-flash-lite",
+    "n_problems": 10,
+    "seed": 42,
+    "tot_k": 5,
+    "tot_b": [
+      3
+    ],
+    "tot_max_depth": 4,
+    "level_filter": null
+  },
+  "problems": [
+    {
+      "problem": "Express $\\frac{0.\\overline{666}}{1.\\overline{333}}$ as a common fraction.",
+      "answer": "\\frac{1}{2}",
+      "level": "Level 3",
+      "type": "Algebra"
+    },
+    {
+      "problem": "Find the greatest integer value of $b$ for which the expression $\\frac{9x^3+4x^2+11x+7}{x^2+bx+8}$ has a domain of all real numbers.",
+      "answer": "5",
+      "level": "Level 5",
+      "type": "Algebra"
+    },
+    {
+      "problem": "Solve for $x>0$ in the following arithmetic sequence: $1^2, x^2, 3^2, \\ldots$.",
+      "answer": "\\sqrt{5}",
+      "level": "Level 5",
+      "type": "Algebra"
+    },
+    {
+      "problem": "The points $(9, -5)$ and $(-3, -1)$ are the endpoints of a diameter of a circle. What is the sum of the coordinates of the center of the circle?",
+      "answer": "0",
+      "level": "Level 3",
+      "type": "Algebra"
+    },
+    {
+      "problem": "For how many integers $n$ is it true that $\\sqrt{n} \\le \\sqrt{4n - 6} < \\sqrt{2n + 5}$?",
+      "answer": "4",
+      "level": "Level 4",
+      "type": "Algebra"
+    },
+    {
+      "problem": "The sum of two numbers is $45$. Their difference is $3$. What is the lesser of the two numbers?",
+      "answer": "21",
+      "level": "Level 1",
+      "type": "Algebra"
+    },
+    {
+      "problem": "A rectangular band formation is a formation with $m$ band members in each of $r$ rows, where $m$ and $r$ are integers. A particular band has less than 100 band members. The director arranges them in a rectangular formation and finds that he has two members left over. If he increases the number of me",
+      "answer": "98",
+      "level": "Level 5",
+      "type": "Algebra"
+    },
+    {
+      "problem": "Solve for $x$: $\\dfrac{1}{2} + \\dfrac{1}{x} = \\dfrac{5}{6}$.",
+      "answer": "3",
+      "level": "Level 1",
+      "type": "Algebra"
+    },
+    {
+      "problem": "The greatest integer function, $\\lfloor x\\rfloor$, denotes the largest integer less than or equal to $x$. For example, $\\lfloor3.5\\rfloor=3$, $\\lfloor\\pi\\rfloor=3$ and $\\lfloor -\\pi\\rfloor=-4$. Find the sum of the three smallest positive solutions to $x-\\lfloor x\\rfloor=\\frac1{\\lfloor x\\rfloor}.$ Ex",
+      "answer": "10\\frac{1}{12}",
+      "level": "Level 5",
+      "type": "Algebra"
+    },
+    {
+      "problem": "What is the distance between the center of the circle with equation $x^2+y^2=-4x+6y-12$ and the point $(1,7)$?",
+      "answer": "5",
+      "level": "Level 4",
+      "type": "Algebra"
+    }
+  ],
+  "summary": {
+    "io": {
+      "accuracy": 0.8,
+      "n_correct": 8,
+      "n_total": 10
+    },
+    "cot": {
+      "accuracy": 1.0,
+      "n_correct": 10,
+      "n_total": 10
+    },
+    "tot_b3": {
+      "accuracy": 0.9,
+      "n_correct": 9,
+      "n_total": 10
+    }
+  },
+  "per_problem": {
+    "io": [
+      {
+        "problem": "Express $\\frac{0.\\overline{666}}{1.\\overline{333}}$ as a common fraction.",
+        "answer": "\\frac{1}{2}",
+        "predicted": "\\frac{1}{2}",
+        "correct": true,
+        "level": "Level 3",
+        "type": "Algebra",
+        "elapsed_s": 3.22
+      },
+      {
+        "problem": "Find the greatest integer value of $b$ for which the expression $\\frac{9x^3+4x^2+11x+7}{x^2+bx+8}$ has a domain of all r",
+        "answer": "5",
+        "predicted": "5",
+        "correct": true,
+        "level": "Level 5",
+        "type": "Algebra",
+        "elapsed_s": 2.11
+      },
+      {
+        "problem": "Solve for $x>0$ in the following arithmetic sequence: $1^2, x^2, 3^2, \\ldots$.",
+        "answer": "\\sqrt{5}",
+        "predicted": "\\sqrt{5}",
+        "correct": true,
+        "level": "Level 5",
+        "type": "Algebra",
+        "elapsed_s": 1.97
+      },
+      {
+        "problem": "The points $(9, -5)$ and $(-3, -1)$ are the endpoints of a diameter of a circle. What is the sum of the coordinates of t",
+        "answer": "0",
+        "predicted": "0",
+        "correct": true,
+        "level": "Level 3",
+        "type": "Algebra",
+        "elapsed_s": 1.21
+      },
+      {
+        "problem": "For how many integers $n$ is it true that $\\sqrt{n} \\le \\sqrt{4n - 6} < \\sqrt{2n + 5}$?",
+        "answer": "4",
+        "predicted": "4",
+        "correct": true,
+        "level": "Level 4",
+        "type": "Algebra",
+        "elapsed_s": 2.99
+      },
+      {
+        "problem": "The sum of two numbers is $45$. Their difference is $3$. What is the lesser of the two numbers?",
+        "answer": "21",
+        "predicted": "21",
+        "correct": true,
+        "level": "Level 1",
+        "type": "Algebra",
+        "elapsed_s": 1.64
+      },
+      {
+        "problem": "A rectangular band formation is a formation with $m$ band members in each of $r$ rows, where $m$ and $r$ are integers. A",
+        "answer": "98",
+        "predicted": null,
+        "correct": false,
+        "level": "Level 5",
+        "type": "Algebra",
+        "elapsed_s": 3.17
+      },
+      {
+        "problem": "Solve for $x$: $\\dfrac{1}{2} + \\dfrac{1}{x} = \\dfrac{5}{6}$.",
+        "answer": "3",
+        "predicted": "3",
+        "correct": true,
+        "level": "Level 1",
+        "type": "Algebra",
+        "elapsed_s": 2.08
+      },
+      {
+        "problem": "The greatest integer function, $\\lfloor x\\rfloor$, denotes the largest integer less than or equal to $x$. For example, $",
+        "answer": "10\\frac{1}{12}",
+        "predicted": null,
+        "correct": false,
+        "level": "Level 5",
+        "type": "Algebra",
+        "elapsed_s": 4.7
+      },
+      {
+        "problem": "What is the distance between the center of the circle with equation $x^2+y^2=-4x+6y-12$ and the point $(1,7)$?",
+        "answer": "5",
+        "predicted": "5",
+        "correct": true,
+        "level": "Level 4",
+        "type": "Algebra",
+        "elapsed_s": 2.88
+      }
+    ],
+    "cot": [
+      {
+        "problem": "Express $\\frac{0.\\overline{666}}{1.\\overline{333}}$ as a common fraction.",
+        "answer": "\\frac{1}{2}",
+        "predicted": "1/2",
+        "correct": true,
+        "level": "Level 3",
+        "type": "Algebra",
+        "elapsed_s": 2.62
+      },
+      {
+        "problem": "Find the greatest integer value of $b$ for which the expression $\\frac{9x^3+4x^2+11x+7}{x^2+bx+8}$ has a domain of all r",
+        "answer": "5",
+        "predicted": "5",
+        "correct": true,
+        "level": "Level 5",
+        "type": "Algebra",
+        "elapsed_s": 2.36
+      },
+      {
+        "problem": "Solve for $x>0$ in the following arithmetic sequence: $1^2, x^2, 3^2, \\ldots$.",
+        "answer": "\\sqrt{5}",
+        "predicted": "\\sqrt{5}",
+        "correct": true,
+        "level": "Level 5",
+        "type": "Algebra",
+        "elapsed_s": 2.26
+      },
+      {
+        "problem": "The points $(9, -5)$ and $(-3, -1)$ are the endpoints of a diameter of a circle. What is the sum of the coordinates of t",
+        "answer": "0",
+        "predicted": "0",
+        "correct": true,
+        "level": "Level 3",
+        "type": "Algebra",
+        "elapsed_s": 1.36
+      },
+      {
+        "problem": "For how many integers $n$ is it true that $\\sqrt{n} \\le \\sqrt{4n - 6} < \\sqrt{2n + 5}$?",
+        "answer": "4",
+        "predicted": "4",
+        "correct": true,
+        "level": "Level 4",
+        "type": "Algebra",
+        "elapsed_s": 3.26
+      },
+      {
+        "problem": "The sum of two numbers is $45$. Their difference is $3$. What is the lesser of the two numbers?",
+        "answer": "21",
+        "predicted": "21",
+        "correct": true,
+        "level": "Level 1",
+        "type": "Algebra",
+        "elapsed_s": 2.03
+      },
+      {
+        "problem": "A rectangular band formation is a formation with $m$ band members in each of $r$ rows, where $m$ and $r$ are integers. A",
+        "answer": "98",
+        "predicted": "98",
+        "correct": true,
+        "level": "Level 5",
+        "type": "Algebra",
+        "elapsed_s": 3.89
+      },
+      {
+        "problem": "Solve for $x$: $\\dfrac{1}{2} + \\dfrac{1}{x} = \\dfrac{5}{6}$.",
+        "answer": "3",
+        "predicted": "3",
+        "correct": true,
+        "level": "Level 1",
+        "type": "Algebra",
+        "elapsed_s": 2.35
+      },
+      {
+        "problem": "The greatest integer function, $\\lfloor x\\rfloor$, denotes the largest integer less than or equal to $x$. For example, $",
+        "answer": "10\\frac{1}{12}",
+        "predicted": "10 \\frac{1}{12}",
+        "correct": true,
+        "level": "Level 5",
+        "type": "Algebra",
+        "elapsed_s": 4.57
+      },
+      {
+        "problem": "What is the distance between the center of the circle with equation $x^2+y^2=-4x+6y-12$ and the point $(1,7)$?",
+        "answer": "5",
+        "predicted": "5",
+        "correct": true,
+        "level": "Level 4",
+        "type": "Algebra",
+        "elapsed_s": 1.85
+      }
+    ],
+    "tot_b3": [
+      {
+        "problem": "Express $\\frac{0.\\overline{666}}{1.\\overline{333}}$ as a common fraction.",
+        "answer": "\\frac{1}{2}",
+        "predicted": "\\frac{1}{2}",
+        "correct": true,
+        "level": "Level 3",
+        "type": "Algebra",
+        "elapsed_s": 61.62
+      },
+      {
+        "problem": "Find the greatest integer value of $b$ for which the expression $\\frac{9x^3+4x^2+11x+7}{x^2+bx+8}$ has a domain of all r",
+        "answer": "5",
+        "predicted": "5",
+        "correct": true,
+        "level": "Level 5",
+        "type": "Algebra",
+        "elapsed_s": 40.28
+      },
+      {
+        "problem": "Solve for $x>0$ in the following arithmetic sequence: $1^2, x^2, 3^2, \\ldots$.",
+        "answer": "\\sqrt{5}",
+        "predicted": "\\sqrt{5}",
+        "correct": true,
+        "level": "Level 5",
+        "type": "Algebra",
+        "elapsed_s": 34.81
+      },
+      {
+        "problem": "The points $(9, -5)$ and $(-3, -1)$ are the endpoints of a diameter of a circle. What is the sum of the coordinates of t",
+        "answer": "0",
+        "predicted": "0",
+        "correct": true,
+        "level": "Level 3",
+        "type": "Algebra",
+        "elapsed_s": 40.45
+      },
+      {
+        "problem": "For how many integers $n$ is it true that $\\sqrt{n} \\le \\sqrt{4n - 6} < \\sqrt{2n + 5}$?",
+        "answer": "4",
+        "predicted": "4",
+        "correct": true,
+        "level": "Level 4",
+        "type": "Algebra",
+        "elapsed_s": 36.25
+      },
+      {
+        "problem": "The sum of two numbers is $45$. Their difference is $3$. What is the lesser of the two numbers?",
+        "answer": "21",
+        "predicted": "21",
+        "correct": true,
+        "level": "Level 1",
+        "type": "Algebra",
+        "elapsed_s": 43.88
+      },
+      {
+        "problem": "A rectangular band formation is a formation with $m$ band members in each of $r$ rows, where $m$ and $r$ are integers. A",
+        "answer": "98",
+        "predicted": "98",
+        "correct": true,
+        "level": "Level 5",
+        "type": "Algebra",
+        "elapsed_s": 42.25
+      },
+      {
+        "problem": "Solve for $x$: $\\dfrac{1}{2} + \\dfrac{1}{x} = \\dfrac{5}{6}$.",
+        "answer": "3",
+        "predicted": "3",
+        "correct": true,
+        "level": "Level 1",
+        "type": "Algebra",
+        "elapsed_s": 43.23
+      },
+      {
+        "problem": "The greatest integer function, $\\lfloor x\\rfloor$, denotes the largest integer less than or equal to $x$. For example, $",
+        "answer": "10\\frac{1}{12}",
+        "predicted": "\\lfloor 4",
+        "correct": false,
+        "level": "Level 5",
+        "type": "Algebra",
+        "elapsed_s": 41.46
+      },
+      {
+        "problem": "What is the distance between the center of the circle with equation $x^2+y^2=-4x+6y-12$ and the point $(1,7)$?",
+        "answer": "5",
+        "predicted": "5",
+        "correct": true,
+        "level": "Level 4",
+        "type": "Algebra",
+        "elapsed_s": 38.62
+      }
+    ]
+  },
+  "total_llm_calls": 624
+}
